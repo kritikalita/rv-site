@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Core Lenis Smooth Scroll Configuration */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* FIX: Hash Redirection Offset */
+html {
+  /* This MUST be at least the height of your Navbar (approx 80px-96px) */
+  scroll-padding-top: 7rem; 
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1E293B; /* brand-text */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection Color */
+::selection {
+  background-color: #0047AB; /* brand-blue */
+  color: white;
+}
+
+/* Utility Classes */
+html.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Modal and Content Scrollbar Hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+html {
+  scroll-behavior: auto !important;
+}
+
+#sector-intelligence {
+  scroll-margin-top: 100px; /* Forces the scroll to stop 120px above the section */
+}
