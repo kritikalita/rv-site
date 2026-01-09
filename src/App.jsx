@@ -18,51 +18,32 @@ import PageTransition from './components/layout/PageTransition';
 // Hooks
 import useSmoothScroll from './hooks/useSmoothScroll';
 
-// Helper component to fix the scroll on reload/navigation
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+// 1. IMPROVED Scroll Management Component
+const ScrollManager = () => {
+  const { pathname, hash } = useLocation();
+
   useEffect(() => {
-    // This handles the hard refresh scroll reset
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // If there is no hash (like #about-section), snap to top immediately
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [pathname, hash]);
+
   return null;
 };
 
 const AppContent = () => {
   const location = useLocation();
+  
+  // NOTE: If scrolling is still locked after this fix, 
+  // try commenting out useSmoothScroll() temporarily to test.
   useSmoothScroll();
 
-  useEffect(() => {
-    // Handle Hash Scrolling with a delay for page animations
-    if (location.hash) {
-      const id = location.hash.replace('#', '');
-      const executeCleanScroll = () => {
-        const element = document.getElementById(id);
-        if (element) {
-          const offset = 100; 
-          const bodyRect = document.body.getBoundingClientRect().top;
-          const elementRect = element.getBoundingClientRect().top;
-          const elementPosition = elementRect - bodyRect;
-          const offsetPosition = elementPosition - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      };
-
-      const timer = setTimeout(executeCleanScroll, 800);
-      return () => clearTimeout(timer);
-    }
-  }, [location.pathname, location.hash]);
-
   return (
-    /* flex-grow is critical here! It tells the main content area 
-       to take up all available vertical space, pushing the footer down.
-    */
-    <main className="flex-grow relative">
-      <AnimatePresence mode="wait">
+    /* 2. THE FIX: min-h-screen here prevents the page from 
+       collapsing to 0px during Framer Motion transitions */
+    <main className="flex-grow relative min-h-screen">
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
           <Route path="/about" element={<PageTransition><About /></PageTransition>} />
@@ -79,10 +60,8 @@ const AppContent = () => {
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      {/* min-h-screen + flex-col ensures the body is always at least 
-          as tall as the window, preventing the scroll-lock bug.
-      */}
+      <ScrollManager />
+      {/* 3. Layout Wrapper: Flex-col + min-h-screen keeps footer at bottom */}
       <div className="flex flex-col min-h-screen bg-brand-dark text-brand-text font-sans selection:bg-brand-blue selection:text-brand-text">
         <Navbar />
         <AppContent />

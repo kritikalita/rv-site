@@ -52,14 +52,27 @@ html {
   scroll-margin-top: 100px; /* Forces the scroll to stop 120px above the section */
 }
 
-html, body {
+/* Add this to your global index.css */
+html {
+  /* This forces the scrollbar to always exist, preventing "jumping" 
+     and ensuring the browser doesn't lock the scroll. */
+  overflow-y: scroll !important; 
   height: 100%;
+}
+
+html, body {
+  /* Force a scrollbar so the page doesn't "jump" when content loads */
+  overflow-y: scroll !important;
+  /* Allow the height to be defined by the content */
+  height: auto;
+  min-height: 100%;
   margin: 0;
   padding: 0;
 }
 
 #root {
-  min-height: 100%;
+  /* Force the React container to fill the screen */
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
