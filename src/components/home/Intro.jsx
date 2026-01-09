@@ -134,7 +134,7 @@ const Intro = () => {
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%)' }}
             >
               <img 
-                src="public/logos/introHome.png" 
+                src="/logos/introHome.png" 
                 alt="Aerospace Engineering" 
                 className="w-full h-full object-cover grayscale-0 opacity-90 group-hover/dossier:grayscale group-hover/dossier:opacity-60 transition-all duration-1000 group-hover/dossier:scale-105"
               />
