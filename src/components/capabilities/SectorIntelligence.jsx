@@ -1,131 +1,168 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { TbCircleFilled, TbDatabase, TbArrowRight } from "react-icons/tb";
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 import { sectorData } from '../../pages/capabilitiesData';
+import { TbListSearch, TbCircleCheck, TbChevronDown, TbChevronUp} from "react-icons/tb";
 
 const SectorIntelligence = () => {
-  const [active, setActive] = useState(0);
+  const [activeSector, setActiveSector] = useState(0);
+  const [activeProduct, setActiveProduct] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
+  
+  const scrollContainerRef = useRef(null);
+  const currentSector = sectorData?.[activeSector] || {};
+  const products = currentSector?.products || [];
+                   
+  const displayItem = products[activeProduct] || products[0] || {};
+
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (scrollContainerRef.current) {
+        const { scrollHeight, clientHeight } = scrollContainerRef.current;
+        // Adding a small buffer for precision
+        setHasOverflow(scrollHeight > clientHeight + 5);
+      }
+    };
+
+    // Small timeout ensures DOM has rendered product heights
+    const timer = setTimeout(checkOverflow, 100);
+    window.addEventListener('resize', checkOverflow);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkOverflow);
+    };
+  }, [activeSector, products]);
+
+  const activeImage = isHovered 
+    ? (displayItem?.image || currentSector?.mainImage) 
+    : (currentSector?.mainImage || currentSector?.image);
+
+  const activeTitle = isHovered ? (displayItem?.name || "Unit Specification") : (currentSector?.title || "Overview");
+  const activeDesc = isHovered ? (displayItem?.details || displayItem?.desc) : (currentSector?.description || currentSector?.intel);
+
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const { scrollTop, clientHeight } = scrollContainerRef.current;
+      const scrollTo = direction === 'up' ? scrollTop - (clientHeight / 2) : scrollTop + (clientHeight / 2);
+      scrollContainerRef.current.scrollTo({ top: scrollTo, behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section 
-      id="sector-intelligence" // This must perfectly match your Link "to" prop
-      className="py-24 bg-white relative border-t border-brand-border overflow-hidden"
-    >
-      {/* Background Blueprint Grid */}
+    <section id="sector-intelligence" className="py-24 bg-white relative border-t border-slate-100 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#0047AB 1px, transparent 1px), linear-gradient(90deg, #0047AB 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 gap-8">
+        
+        {/* HEADER */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">
           <div className="max-w-2xl">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex items-center gap-3 mb-4">
               <div className="h-[2px] w-12 bg-brand-blue shadow-[0_0_10px_#0047AB]" />
-              <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">Strategic Domains</span>
+              <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">Market Intelligence</span>
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
-              Market <span className="text-brand-blue">Intelligence.</span>
+              Sector <span className="text-brand-blue">Solutions.</span>
             </h2>
+          </div>
+
+          <div className="flex flex-wrap gap-2 bg-slate-50 p-1.5 rounded-sm border border-slate-200">
+            {sectorData?.map((sector, i) => (
+              <button
+                key={sector.id || i}
+                onClick={() => { setActiveSector(i); setActiveProduct(0); setIsHovered(false); }}
+                className={`px-6 py-2 font-mono text-[10px] font-bold uppercase tracking-widest transition-all duration-300 rounded-sm ${
+                  activeSector === i ? 'bg-brand-blue text-white shadow-lg shadow-brand-blue/20' : 'text-slate-400 hover:text-brand-blue hover:bg-white'
+                }`}
+              >
+                {sector.title}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* 1. SECTOR SELECTOR GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
-          {sectorData.map((sectorItem, i) => (
-            <button
-              key={sectorItem.id}
-              onClick={() => setActive(i)}
-              className={`group relative p-4 border transition-all duration-500 rounded-sm text-left overflow-hidden
-                ${active === i 
-                  ? 'bg-brand-blue border-brand-blue shadow-[0_0_20px_rgba(0,71,171,0.3)]' 
-                  : 'bg-white border-brand-border hover:border-brand-blue/50'}`}
-            >
-              <div className="flex flex-col justify-between h-full relative z-10">
-                <sectorItem.icon size={20} className={`mb-4 ${active === i ? 'text-white' : 'text-brand-blue'}`} />
-                <span className={`text-[10px] font-black uppercase tracking-tighter leading-tight
-                  ${active === i ? 'text-white' : 'text-brand-dark'}`}>
-                  {sectorItem.title}
-                </span>
+        {/* DASHBOARD */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 bg-brand-dark border border-slate-800 rounded-sm shadow-2xl overflow-hidden h-[550px]">
+          
+          {/* LEFT VIEWPORT */}
+          <div className="lg:col-span-7 relative h-full bg-brand-dark overflow-hidden group">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`${activeSector}-${activeProduct}-${isHovered}`}
+                initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}
+                className="absolute inset-0"
+              >
+                <img src={activeImage} className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110 brightness-110' : 'scale-100 brightness-75'}`} alt="" />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #020617 15%, transparent 70%), radial-gradient(circle at center, transparent 30%, rgba(2, 6, 23, 0.6) 100%)' }} />
+                <div className="absolute bottom-10 left-10 right-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="bg-brand-blue text-white font-mono text-[9px] px-2 py-1 tracking-widest uppercase">{isHovered ? `0${activeProduct + 1}` : "Overview"}</span>
+                    <div className="h-[1px] flex-grow bg-white/20" />
+                  </div>
+                  <h3 className="text-4xl font-bold text-white uppercase tracking-tighter mb-4 leading-tight">{activeTitle}</h3>
+                  <p className="text-slate-200 text-sm leading-relaxed max-w-xl italic border-l-2 border-brand-blue pl-6 bg-black/20 backdrop-blur-sm py-2">{activeDesc}</p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* RIGHT SCROLLABLE LIST */}
+          <div className="lg:col-span-5 flex flex-col h-full bg-slate-900 border-l border-slate-800 relative overflow-hidden"
+               onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            
+            <div className="p-6 border-b border-slate-800 bg-slate-900 flex justify-between items-center z-20 shrink-0">
+              <div className="flex items-center gap-2">
+                <TbListSearch className="text-brand-blue" size={16} />
+                <span className="text-[13px] font-bold uppercase tracking-widest text-white">Our Products</span>
               </div>
-            </button>
-          ))}
-        </div>
-
-        {/* 2. INTELLIGENCE DOSSIER */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="relative bg-[#010816] border border-white/10 rounded-sm overflow-hidden min-h-[500px] grid grid-cols-1 lg:grid-cols-12 shadow-2xl"
-          >
-            {/* BACKGROUND IMAGE LAYER - UPDATED FOR VISIBILITY */}
-            <div className="absolute inset-0 z-0">
-               <img 
-                 src={sectorData[active].image} 
-                 className="w-full h-full object-cover grayscale opacity-50 transition-opacity duration-700" 
-                 alt={sectorData[active].title} 
-               />
-               {/* LIGHTER GRADIENT: Allows more image to bleed through center */}
-               <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at center, transparent 20%, #010816 100%)', opacity: 0.7 }} />
-               
-               {/* BLUEPRINT GRID: Kept over image for technical feel */}
-               <div className="absolute inset-0 opacity-30" 
-                    style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+              <button onClick={() => scroll('up')} className="text-slate-500 hover:text-brand-blue transition-colors p-1"><TbChevronUp size={20} /></button>
             </div>
 
-            {/* LEFT CONTENT AREA */}
-            <div className="lg:col-span-7 p-10 lg:p-14 flex flex-col justify-between relative z-10">
-               <div className="absolute top-0 left-0 w-full h-[1px] bg-brand-blue/30 shadow-[0_0_15px_#0047AB] animate-scan" />
-               
-               <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <TbCircleFilled className="text-brand-blue text-[6px] animate-pulse" />
-                    <span className="text-brand-blue font-mono text-[10px] font-bold tracking-[0.4em] uppercase">
-                       Dossier // {sectorData[active].id}
+            <div ref={scrollContainerRef} className="flex-grow overflow-y-auto custom-industrial-scroll scroll-smooth bg-slate-900">
+              {products.map((item, idx) => (
+                <button key={idx} onMouseEnter={() => setActiveProduct(idx)}
+                        className={`w-full flex items-center gap-4 p-5 border-b border-slate-800/50 transition-all duration-300 text-left ${isHovered && activeProduct === idx ? 'bg-brand-blue shadow-[inset_8px_0_0_#ffffff] z-10' : 'hover:bg-slate-800 opacity-80 hover:opacity-100'}`}>
+                  <div className="h-14 w-14 shrink-0 bg-black rounded-sm overflow-hidden border border-slate-700 shadow-inner">
+                    <img src={item.image} className={`w-full h-full object-cover transition-transform duration-500 ${isHovered && activeProduct === idx ? 'scale-125' : 'scale-100'}`} alt="" />
+                  </div>
+                  <div className="flex-grow">
+                    <h4 className={`text-[11px] font-bold uppercase tracking-tight leading-tight transition-colors ${isHovered && activeProduct === idx ? 'text-white' : 'text-slate-300'}`}>{item.name}</h4>
+                  </div>
+                  {isHovered && activeProduct === idx && <TbCircleCheck className="text-white animate-pulse" size={18} />}
+                </button>
+              ))}
+            </div>
+
+            {/* FOOTER - HIGH VISIBILITY MESSAGE */}
+            <div className="p-4 bg-slate-900 border-t border-slate-800 flex justify-between items-center z-20 shrink-0 min-h-[60px]">
+               <div className="flex-grow">
+                {hasOverflow && (
+                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2 px-2">
+                    <span className="text-[10px] font-black text-brand-blue uppercase tracking-[0.15em] glow-text">
+                      Scroll sidebar to view more
                     </span>
-                  </div>
-                  
-                  <h3 className="text-5xl font-bold text-white uppercase tracking-tighter mb-8 leading-none">
-                    {sectorData[active].title} <br/> <span className="text-brand-blue/80">Readiness.</span>
-                  </h3>
-                  
-                  <p className="text-white text-xl leading-relaxed mb-10 border-l-4 border-brand-blue pl-8 italic max-w-xl drop-shadow-md">
-                    "{sectorData[active].intel}"
-                  </p>
-
-                  <div className="flex flex-wrap gap-3">
-                    {sectorData[active].metrics.map((m, idx) => (
-                      <div key={idx} className="bg-brand-dark/80 backdrop-blur-md border border-white/20 px-4 py-2">
-                        <span className="text-[10px] font-mono font-bold text-brand-blue uppercase tracking-widest">
-                          {m}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-               </div>
-            </div>
-
-            {/* RIGHT CONTENT AREA (Glassmorphism) */}
-            <div className="lg:col-span-5 bg-brand-dark/40 backdrop-blur-xl border-l border-white/10 p-10 lg:p-14 relative z-10">
-               <div className="flex items-center gap-2 mb-10">
-                  <TbDatabase className="text-brand-blue" size={14} />
-                  <span className="text-[10px] font-mono text-slate-300 font-bold uppercase tracking-widest">Vertical_Protocols</span>
+                  </motion.div>
+                )}
                </div>
                
-               <div className="space-y-8">
-                  {sectorData[active].capabilities.map((cap, idx) => (
-                    <div key={idx} className="flex items-center justify-between border-b border-white/10 pb-4">
-                       <span className="text-sm font-bold text-white uppercase tracking-tight transition-colors hover:text-brand-blue">
-                          {cap}
-                       </span>
-                    </div>
-                  ))}
-               </div>
+               <button onClick={() => scroll('down')} className="text-slate-500 hover:text-brand-blue transition-colors p-1">
+                <TbChevronDown size={20} />
+              </button>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </div>
       </div>
+
+      <style jsx>{`
+        .glow-text {
+          text-shadow: 0 0 8px rgba(0, 71, 171, 0.6);
+        }
+        .custom-industrial-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-industrial-scroll::-webkit-scrollbar-track { background: #0f172a; }
+        .custom-industrial-scroll::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 0px; }
+        .custom-industrial-scroll::-webkit-scrollbar-thumb:hover { background: #0047AB; }
+      `}</style>
     </section>
   );
 };

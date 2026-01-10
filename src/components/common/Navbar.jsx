@@ -22,7 +22,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Capabilities', path: '/capabilities' },
+    { name: 'Solutions', path: '/capabilities' },
     { name: 'Stories', path: '/stories' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
@@ -41,7 +41,7 @@ const Navbar = () => {
 
 <Link to="/" className="flex items-center gap-2 z-50 relative group/logo">
   <img 
-    src="/logos/logo.png" 
+    src="/logo.png" 
     alt="Raghu Vamsi" 
     /* CHANGE: Added 'scale-125' to increase size by 25%.
        Added 'origin-left' so it grows outward from the left.

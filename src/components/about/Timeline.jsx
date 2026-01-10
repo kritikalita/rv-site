@@ -8,19 +8,19 @@ const history = [
     year: "1992", 
     title: "Inception", 
     desc: "Started as a small precision machine shop with just 3 CNC machines in Hyderabad.",
-    image: "/logos/1992 .png" 
+    image: "src/assets/images/1992 .png" 
   },
   { 
     year: "2004", 
     title: "First Global Export", 
     desc: "Secured our first major export order for critical engine components to GE Aviation.",
-    image: "/logos/2004.png"
+    image: "src/assets/images/2004.png"
   },
   { 
     year: "2006", 
     title: "AS9100D Certified", 
     desc: "Achieved the gold standard in aerospace quality management, opening doors to Tier-1 partnerships.",
-    image: "/logos/2006.png"
+    image: "src/assets/images/2006.png"
   },
   { 
     year: "2015", 

@@ -166,7 +166,7 @@ const ServicesPreview = () => {
                         </p>
 
                         <button className="group flex items-center gap-3 text-white font-black uppercase tracking-[0.4em] text-[9px] hover:text-brand-blue transition-colors">
-                          Execute Protocol <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
+                          Know More <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
                         </button>
                       </div>
                     </div>

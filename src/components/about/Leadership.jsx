@@ -4,9 +4,9 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { TbCircleFilled } from 'react-icons/tb';
 
 // Import local assets
-import vamsiImg from '../../assets/logos/vamsi.png';
-import preetiImg from '../../assets/logos/preeti.png';
-import manishImg from '../../assets/logos/manish.png';
+import vamsiImg from '../../assets/images/vamsi.png';
+import preetiImg from '../../assets/images/preeti.png';
+import manishImg from '../../assets/images/manish.png';
 
 const leaders = [
   { name: "Vamsi Vikas", role: "Managing Director", image: vamsiImg, bio: "20+ years steering strategic growth in global aerospace sectors.", id: "01" },

@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import { TbRocket, TbPlane, TbActivity, TbFlame, TbServer, TbCircleFilled } from "react-icons/tb";
 
 const industries = [
-  { id: "01", name: "Aerospace", icon: TbPlane, image: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070&auto=format&fit=crop", desc: "Critical structural components and engine parts.", stat: "10k+ Components", tag: "MARKET_AERO" },
-  { id: "02", name: "Robotics", icon: TbRocket, image: "https://images.unsplash.com/photo-1596328325608-4171804f5802?q=80&w=2070&auto=format&fit=crop", desc: "Mission-critical sub-systems for land, sea, and air.", stat: "Strategic Partner", tag: "MARKET_PROP" },
-  { id: "03", name: "Space", icon: TbServer, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", desc: "High-precision hardware for launch vehicles.", stat: "ISRO Certified", tag: "MARKET_ORBIT" },
-  { id: "04", name: "Oil & Gas", icon: TbFlame, image: "https://images.unsplash.com/photo-1516937941348-c09645f31e51?q=80&w=2070&auto=format&fit=crop", desc: "Robust valves and flow control systems.", stat: "API Compliant", tag: "MARKET_ENERGY" },
-  { id: "05", name: "Power", icon: TbActivity, image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop", desc: "Advanced components for sustainable energy grids.", stat: "Grid Scale Tech", tag: "MARKET_POWER" },
-  { id: "06", name: "Medical", icon: TbActivity, image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop", desc: "Implants and surgical instrumentation.", stat: "ISO 13485", tag: "MARKET_HEALTH" },
+  { id: "01", name: "Aerospace", icon: TbPlane, image: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070&auto=format&fit=crop", desc: "Critical structural components and engine parts.", stat: "10k+ Components"},
+  { id: "02", name: "Robotics", icon: TbRocket, image: "https://images.unsplash.com/photo-1596328325608-4171804f5802?q=80&w=2070&auto=format&fit=crop", desc: "Mission-critical sub-systems for land, sea, and air.", stat: "Strategic Partner"},
+  { id: "03", name: "Space", icon: TbServer, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", desc: "High-precision hardware for launch vehicles.", stat: "ISRO Certified"},
+  { id: "04", name: "Oil & Gas", icon: TbFlame, image: "https://images.unsplash.com/photo-1516937941348-c09645f31e51?q=80&w=2070&auto=format&fit=crop", desc: "Robust valves and flow control systems.", stat: "API Compliant"},
+  { id: "05", name: "Power", icon: TbActivity, image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop", desc: "Advanced components for sustainable energy grids.", stat: "Grid Scale Tech"},
+  { id: "06", name: "Medical", icon: TbActivity, image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop", desc: "Implants and surgical instrumentation.", stat: "ISO 13485"},
 ];
 
 const Industries = () => {
@@ -105,7 +105,7 @@ const Industries = () => {
                 className="group relative flex items-center gap-6 bg-[#020617] text-white px-8 py-4 font-black uppercase tracking-[0.4em] text-[9px] hover:bg-brand-blue transition-all shadow-2xl overflow-hidden inline-flex"
                >
                 <span className="relative z-10 flex items-center gap-3">
-                  Case Studies <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
+                  In details <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </span>
                 <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all duration-700 shadow-[0_0_20px_white]" />
               </Link>
@@ -113,59 +113,61 @@ const Industries = () => {
           </div>
 
           {/* RIGHT PREVIEW: Dossier Image & Intel */}
-          <div className="w-full lg:w-2/3 relative rounded-sm overflow-hidden h-[350px] lg:h-auto border border-white/5 shadow-2xl group/preview">
-            <AnimatePresence mode='wait'>
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.1 }}
-                transition={{ duration: 0.6, ease: "circOut" }}
-                className="absolute inset-0"
-                style={{ background: 'radial-gradient(circle at center, #1e40af 0%, #020617 100%)' }}
-              >
-                <img 
-                  src={industries[activeTab].image} 
-                  alt={industries[activeTab].name}
-                  className="w-full h-full object-cover grayscale opacity-40 mix-blend-overlay"
-                />
-                
-                {/* Scanning Line Effect from ServicesPreview */}
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-blue/30 shadow-[0_0_15px_#0047AB] z-20 animate-scan" />
+<div className="w-full lg:w-2/3 relative rounded-sm overflow-hidden h-[350px] lg:h-auto border border-white/5 shadow-2xl group/preview bg-[#020617]">
+  <AnimatePresence mode='wait'>
+    <motion.div
+      key={activeTab}
+      initial={{ opacity: 0, scale: 1.05 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 1.1 }}
+      transition={{ duration: 0.6, ease: "circOut" }}
+      className="absolute inset-0"
+    >
+      {/* 1. REMOVED radial-gradient and grayscale. ADDED higher opacity for a cleaner look */}
+      <img 
+        src={industries[activeTab].image} 
+        alt={industries[activeTab].name}
+        className="w-full h-full object-cover opacity-60" 
+      />
+      
+      {/* 2. Scanning Line Effect */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-blue/30 shadow-[0_0_15px_#0047AB] z-20 animate-scan" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
-                
-                <div className="absolute bottom-0 left-0 p-10 w-full text-white">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-start gap-5">
-                      <div className="p-4 bg-brand-blue rounded-sm text-white shadow-[0_0_20px_rgba(0,71,171,0.4)]">
-                        {React.createElement(industries[activeTab].icon, { size: 28 })}
-                      </div>
-                      <div>
-                        <h3 className="text-3xl font-black text-white mb-2 uppercase tracking-tight">
-                          {industries[activeTab].name}
-                        </h3>
-                        <div className="flex items-center gap-3 text-brand-blue font-mono text-[10px] font-black uppercase tracking-[0.3em]">
-                          <TbCircleFilled className="text-[6px] animate-pulse"/>
-                          {industries[activeTab].stat}
-                        </div>
-                      </div>
-                    </div>
-                    <span className="hidden md:block font-mono text-[10px] text-white/20 tracking-[0.5em]">
-                      //{industries[activeTab].tag}
-                    </span>
-                  </div>
-                  
-                  <p className="text-slate-300 text-sm leading-relaxed max-w-lg border-l border-brand-blue/40 pl-6 italic">
-                    "{industries[activeTab].desc}"
-                  </p>
-                </div>
-
-                {/* HUD Corner Bracket */}
-                <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-brand-blue/40" />
-              </motion.div>
-            </AnimatePresence>
+      {/* 3. Gradient overlay for text legibility (Matches high-performance dark themes) */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-[#020617]/40" />
+      
+      <div className="absolute bottom-0 left-0 p-10 w-full text-white z-30">
+        <div className="flex items-start justify-between mb-6">
+          <div className="flex items-start gap-5">
+            {/* Icon Container */}
+            <div className="p-4 bg-brand-blue rounded-sm text-white shadow-[0_0_20px_rgba(0,71,171,0.4)]">
+              {React.createElement(industries[activeTab].icon, { size: 28 })}
+            </div>
+            <div>
+              <h3 className="text-3xl font-black text-white mb-2 uppercase tracking-tight">
+                {industries[activeTab].name}
+              </h3>
+              <div className="flex items-center gap-3 text-brand-blue font-mono text-[10px] font-black uppercase tracking-[0.3em]">
+                <TbCircleFilled className="text-[6px] animate-pulse"/>
+                {industries[activeTab].stat}
+              </div>
+            </div>
           </div>
+          <span className="hidden md:block font-mono text-[10px] text-white/20 tracking-[0.5em]">
+            //{industries[activeTab].tag}
+          </span>
+        </div>
+        
+        <p className="text-slate-300 text-sm leading-relaxed max-w-lg border-l border-brand-blue/40 pl-6 italic">
+          "{industries[activeTab].desc}"
+        </p>
+      </div>
+
+      {/* HUD Corner Bracket */}
+      <div className="absolute top-6 right-6 w-12 h-12 border-t border-r border-brand-blue/40" />
+    </motion.div>
+  </AnimatePresence>
+</div>
 
         </div>
       </div>

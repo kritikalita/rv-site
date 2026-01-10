@@ -60,19 +60,3 @@ html {
   height: 100%;
 }
 
-html, body {
-  /* Force a scrollbar so the page doesn't "jump" when content loads */
-  overflow-y: scroll !important;
-  /* Allow the height to be defined by the content */
-  height: auto;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  /* Force the React container to fill the screen */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
