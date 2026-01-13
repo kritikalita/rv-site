@@ -19,12 +19,10 @@ const SectorIntelligence = () => {
     const checkOverflow = () => {
       if (scrollContainerRef.current) {
         const { scrollHeight, clientHeight } = scrollContainerRef.current;
-        // Adding a small buffer for precision
         setHasOverflow(scrollHeight > clientHeight + 5);
       }
     };
 
-    // Small timeout ensures DOM has rendered product heights
     const timer = setTimeout(checkOverflow, 100);
     window.addEventListener('resize', checkOverflow);
     return () => {
@@ -83,10 +81,10 @@ const SectorIntelligence = () => {
         </div>
 
         {/* DASHBOARD */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 bg-brand-dark border border-slate-800 rounded-sm shadow-2xl overflow-hidden h-[550px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 bg-gradient-to-br from-[#020617] via-[#010b1a] to-[#001a40] border border-white/5 rounded-sm shadow-2xl overflow-hidden h-[550px]">
           
           {/* LEFT VIEWPORT */}
-          <div className="lg:col-span-7 relative h-full bg-brand-dark overflow-hidden group">
+          <div className="lg:col-span-7 relative h-full overflow-hidden group">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`${activeSector}-${activeProduct}-${isHovered}`}
@@ -97,7 +95,7 @@ const SectorIntelligence = () => {
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #020617 15%, transparent 70%), radial-gradient(circle at center, transparent 30%, rgba(2, 6, 23, 0.6) 100%)' }} />
                 <div className="absolute bottom-10 left-10 right-10">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="bg-brand-blue text-white font-mono text-[9px] px-2 py-1 tracking-widest uppercase">{isHovered ? `0${activeProduct + 1}` : "Overview"}</span>
+                    <span className="bg-brand-blue text-white font-mono text-[9px] px-2 py-1 tracking-widest uppercase">{isHovered ? `0${activeProduct + 1}` : "Industry Overview"}</span>
                     <div className="h-[1px] flex-grow bg-white/20" />
                   </div>
                   <h3 className="text-4xl font-bold text-white uppercase tracking-tighter mb-4 leading-tight">{activeTitle}</h3>
@@ -108,22 +106,23 @@ const SectorIntelligence = () => {
           </div>
 
           {/* RIGHT SCROLLABLE LIST */}
-          <div className="lg:col-span-5 flex flex-col h-full bg-slate-900 border-l border-slate-800 relative overflow-hidden"
+          <div className="lg:col-span-5 flex flex-col h-full bg-gradient-to-br from-[#020617] via-[#010b1a] to-[#001a40] border-l border-white/5 relative overflow-hidden"
                onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             
-            <div className="p-6 border-b border-slate-800 bg-slate-900 flex justify-between items-center z-20 shrink-0">
+            <div className="p-6 border-b border-white/5 bg-black/20 backdrop-blur-md flex justify-between items-center z-20 shrink-0">
               <div className="flex items-center gap-2">
                 <TbListSearch className="text-brand-blue" size={16} />
-                <span className="text-[13px] font-bold uppercase tracking-widest text-white">Our Products</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest text-white">Our Products</span>
               </div>
               <button onClick={() => scroll('up')} className="text-slate-500 hover:text-brand-blue transition-colors p-1"><TbChevronUp size={20} /></button>
             </div>
 
-            <div ref={scrollContainerRef} className="flex-grow overflow-y-auto custom-industrial-scroll scroll-smooth bg-slate-900">
+            {/* SCROLLABLE AREA */}
+            <div ref={scrollContainerRef} className="flex-grow overflow-y-auto custom-industrial-scroll scroll-smooth">
               {products.map((item, idx) => (
                 <button key={idx} onMouseEnter={() => setActiveProduct(idx)}
-                        className={`w-full flex items-center gap-4 p-5 border-b border-slate-800/50 transition-all duration-300 text-left ${isHovered && activeProduct === idx ? 'bg-brand-blue shadow-[inset_8px_0_0_#ffffff] z-10' : 'hover:bg-slate-800 opacity-80 hover:opacity-100'}`}>
-                  <div className="h-14 w-14 shrink-0 bg-black rounded-sm overflow-hidden border border-slate-700 shadow-inner">
+                        className={`w-full flex items-center gap-4 p-5 border-b border-white/5 transition-all duration-300 text-left ${isHovered && activeProduct === idx ? 'bg-brand-blue shadow-[inset_8px_0_0_#ffffff] z-10' : 'hover:bg-white/5 opacity-80 hover:opacity-100'}`}>
+                  <div className="h-14 w-14 shrink-0 bg-black rounded-sm overflow-hidden border border-white/10 shadow-inner">
                     <img src={item.image} className={`w-full h-full object-cover transition-transform duration-500 ${isHovered && activeProduct === idx ? 'scale-125' : 'scale-100'}`} alt="" />
                   </div>
                   <div className="flex-grow">
@@ -134,8 +133,8 @@ const SectorIntelligence = () => {
               ))}
             </div>
 
-            {/* FOOTER - HIGH VISIBILITY MESSAGE */}
-            <div className="p-4 bg-slate-900 border-t border-slate-800 flex justify-between items-center z-20 shrink-0 min-h-[60px]">
+            {/* FOOTER */}
+            <div className="p-4 bg-black/20 border-t border-white/5 flex justify-between items-center z-20 shrink-0 min-h-[60px]">
                <div className="flex-grow">
                 {hasOverflow && (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2 px-2">
@@ -158,10 +157,23 @@ const SectorIntelligence = () => {
         .glow-text {
           text-shadow: 0 0 8px rgba(0, 71, 171, 0.6);
         }
-        .custom-industrial-scroll::-webkit-scrollbar { width: 4px; }
-        .custom-industrial-scroll::-webkit-scrollbar-track { background: #0f172a; }
-        .custom-industrial-scroll::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 0px; }
-        .custom-industrial-scroll::-webkit-scrollbar-thumb:hover { background: #0047AB; }
+        
+        /* ENHANCED SCROLLBAR VISIBILITY */
+        .custom-industrial-scroll::-webkit-scrollbar { 
+          width: 6px; 
+        }
+        .custom-industrial-scroll::-webkit-scrollbar-track { 
+          background: rgba(255, 255, 255, 0.03); 
+          border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .custom-industrial-scroll::-webkit-scrollbar-thumb { 
+          background: #0047AB; 
+          border-radius: 0px; 
+          box-shadow: 0 0 10px rgba(0, 71, 171, 0.4);
+        }
+        .custom-industrial-scroll::-webkit-scrollbar-thumb:hover { 
+          background: #0056D2; 
+        }
       `}</style>
     </section>
   );

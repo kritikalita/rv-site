@@ -14,11 +14,8 @@ export const capabilitiesData = [
     engineering: {
       para1: "At Raghuvamsi the role of our Engineering team is to develop processes that are efficient, repeatable, and, most importantly, capable of meeting or exceeding the quality requirements of our Customers.",
       para2: "Our team drives Continuous Improvement initiatives focused on employing “Best Practices” at all stages. We design and build our own fixtures for machining, welding and assembly, as well as most of the cutting tools that we use.",
-      subTag: "SPC_COMMITMENT",
       para3: "Our commitment to the use of Statistical Process Control on the shop floor provides an objective method to validate the capabilities of our processes."
     },
-    specs: ["CATIA / Mastercam", "3D Digital Twin", "Process Simulation", "Feasibility Analysis", "Tooling Design"],
-    infra: ["Advanced CAD Station", "Simulation Lab", "Reverse Engineering Scanners"],
     image: "src/assets/images/capEng.webp"
   },
   {
@@ -30,11 +27,11 @@ export const capabilitiesData = [
     engineering: {
       para1: "The core of our business is Precision Machining. With more than 2 decades of experience, we have developed broad capabilities across multiple disciplines including CNC Swiss Turning, Multi-Axis Mill-Turn, 5-axis Palletized Machining, EDM and Grinding.",
       para2: "From ultra-precise tiny missile guidance components to complex 5-Axis milling of jet engine brackets, we rely on our team’s skill to produce results that meet our standards for quality. We routinely work to tolerances of 0.0002” (5.0 µm) in machining and 0.0001” (2.5 µm) in grinding.",
-      subTag: "DEDICATED_CELL_LOGIC",
+      subTag: "DEDICATED CELL LOGIC",
       para3: "We leverage dedicated “part family” machining cells for process refinement and schedule flexibility. Supported by our Engineering and Quality teams, this allows for a optimized, lower-cost machining option for high-complexity products."
     },
     specs: ["0.005mm Bore", "7.5 Micron EDM", "Swiss 32mm"],
-    infra: ["Mazak Integrex", "Makino DA300"],
+    infra: ["MULTI-AXIS MACHINING CENTERS", "CNC TURNING CENTERS", "CNC SWISS", "EDM MACHINES", "MICRO DEBURRING"],
     image: "src/assets/images/capPres.webp"
   },
   {
@@ -46,11 +43,11 @@ export const capabilitiesData = [
     engineering: {
       para1: "Raghuvamsi Group has a range of electro-mechanical system capabilities. We specialise in low-volume, high-mix electronics manufacturing, providing fully integrated and high-reliability solutions.",
       para2: "We are accustomed to working with specialist complex markets and consistently meeting high-demand specifications. Our team is focused on the stringent requirements of the aerospace, defence and oil and gas industries.",
-      subTag: "SYSTEM_INTEGRATION",
+      subTag: "SYSTEM INTEGRATION",
       para3: "Raghuvamsi brings together decades of unrivalled experience in providing end-to-end electro-mechanical solutions through our specialized full systems assembly and comprehensive box build services."
     },
     specs: ["Roller Swaging", "Helium Leak Test", "Orbital Riveting"],
-    infra: ["Class 100k Clean Room", "Torque Systems"],
+    // infra: ["Class 100k Clean Room", "Torque Systems"],
     image: "src/assets/images/capEM.webp"
   },
   {
@@ -66,7 +63,7 @@ export const capabilitiesData = [
       para3: "Our high-precision manufacturing output includes mission-critical composite parts and structural components for aircraft, helicopters, UAV’s and spacecraft."
     },
     specs: ["Aerospace Autoclave", "RTM Moulding", "NDT Ultrasonic"],
-    infra: ["PLC Autoclaves", "ISO Class 8 Lab"],
+    // infra: ["PLC Autoclaves", "ISO Class 8 Lab"],
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978"
   },
 {
@@ -82,7 +79,7 @@ export const capabilitiesData = [
       para3: "From engine parts like combustion liners to cabin interiors, our concurrent engineering kitting and pre-fit assembly solutions help customers reduce installation time and part count while improving quality."
     },
     specs: ["4kW Fiber Laser", "8-Axis Bending", "Hydro Forming"],
-    infra: ["Hydro-form Units", "8-Axis Benders"],
+    // infra: ["Hydro-form Units", "8-Axis Benders"],
     image: "https://images.unsplash.com/photo-1535295972055-1c762f4483e5"
   },
 {
@@ -98,7 +95,7 @@ export const capabilitiesData = [
       para3: "By utilizing advanced finish grinding technology, we ensure that every gear set delivers the exact tooth-contact patterns and durability required for mission-critical applications."
     },
     specs: ["Max 23.5\" Dia", "AS9100 Certified", "5-200 Teeth"],
-    infra: ["Gleason Phoenix", "Finish Grinders"],
+    infra: ["Spiral Bevel Gears", "Hypoid Bevel Gears", "Zerol Bevel Gears", "Spur Gears", "Splines Internal & External", "Gears and Spline Shaft", "Helical Gears", "Internal Gears", "Right Angle/Miter Gears"],
     image: "src/assets/images/capHiPres.webp"
   },
   {
@@ -114,7 +111,7 @@ export const capabilitiesData = [
       para3: "Beyond in-house capabilities, we manage strategic partnerships with OEM-approved vendors for HVOF/Thermal spray, Brazing, and Micro-structure testing, ensuring a complete end-to-end surface solution."
     },
     specs: ["Level 3 MPI/FPI", "Anodize Type II/III", "Titanium Cleaning"],
-    infra: ["2500L Tanks", "Robotic Painting"],
+    // infra: ["2500L Tanks", "Robotic Painting"],
     image: "src/assets/images/capSurf.webp"
   },
   {
@@ -130,7 +127,7 @@ export const capabilitiesData = [
       para3: "Complying with elite aerospace standards, we serve as a primary partner for MoD establishments, Space Organizations including ISRO and BrahMos, and major private defense OEMs globally."
     },
     specs: ["M1.4 - M20 Range", "Cold Heading", "Thread Rolling"],
-    infra: ["Wire Draw Lines", "Testing Lab", "Centerless Grinders"],
+    // infra: ["Wire Draw Lines", "Testing Lab", "Centerless Grinders"],
     image: "https://images.unsplash.com/photo-1517055727180-d1a6761c54c4"
   },
 {
@@ -146,7 +143,7 @@ export const capabilitiesData = [
       para3: "Beyond manufacturing, we offer repair and overhaul of control units and flight simulator seat systems. We manage the procurement and fitting of electrical systems, delivering fully tested and certified onsite installations."
     },
     specs: ["Turbine Components", "Heli-coil® / Swaging", "Flight Sim Systems"],
-    infra: ["NADCAP Weld Cells", "Proof Load Testing", "NDT Inspection"],
+    // infra: ["NADCAP Weld Cells", "Proof Load Testing", "NDT Inspection"],
     image: "https://images.unsplash.com/photo-1504328332780-bebf217e04cd"
   },
 {
@@ -162,7 +159,7 @@ export const capabilitiesData = [
       para3: "Serving the aerospace, defense, and aircraft training sectors, our engineers maintain open communication throughout the product lifecycle—ensuring innovative technologies meet individual customer specifications every time."
     },
     specs: ["RF / Coaxial / Triaxial", "PCB (SMT & THT)", "MIL-SPEC Over-molding"],
-    infra: ["Braiding Machines", "Potting Stations", "SMT Assembly Line"],
+    // infra: ["Braiding Machines", "Potting Stations", "SMT Assembly Line"],
     image: "src/assets/images/capEwh.webp"
   },
 ];

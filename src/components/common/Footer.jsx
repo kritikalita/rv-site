@@ -53,14 +53,6 @@ const Footer = () => {
       alt="Raghu Vamsi Group Logo" 
       className="h-12 w-auto object-contain brightness-100 transition-transform duration-500 group-hover:scale-105"
     />
-    
-    {/* Optional: Technical Sub-label to reinforce the 'HUD' aesthetic */}
-    <div className="mt-2 flex items-center gap-2">
-      <div className="h-[1px] w-4 bg-brand-blue"></div>
-      <span className="text-[9px] font-mono tracking-[0.3em] text-slate-500 uppercase">
-        Precision Engineering
-      </span>
-    </div>
   </Link>
 
   <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm">
