@@ -3,6 +3,12 @@ import {
   TbWind, TbMicroscope, TbBolt, TbTractor, TbCpu, TbRocket,
   TbPlane, TbShieldCheck, TbFlame, TbActivity, TbStethoscope 
 } from "react-icons/tb";
+import capEngImg from "../assets/images/capEng.webp";
+import capPresImg from "../assets/images/capPres.webp";
+import capEMImg from "../assets/images/capEM.webp";
+import capHiPresImg from "../assets/images/capHiPres.webp";
+import capSurfImg from "../assets/images/capSurf.webp";
+import capEwhImg from "../assets/images/capEwh.webp";
 
 export const capabilitiesData = [
   {
@@ -16,7 +22,7 @@ export const capabilitiesData = [
       para2: "Our team drives Continuous Improvement initiatives focused on employing “Best Practices” at all stages. We design and build our own fixtures for machining, welding and assembly, as well as most of the cutting tools that we use.",
       para3: "Our commitment to the use of Statistical Process Control on the shop floor provides an objective method to validate the capabilities of our processes."
     },
-    image: "src/assets/images/capEng.webp"
+    image: capEngImg
   },
   {
     id: "VERT-02",
@@ -32,7 +38,7 @@ export const capabilitiesData = [
     },
     specs: ["0.005mm Bore", "7.5 Micron EDM", "Swiss 32mm"],
     infra: ["MULTI-AXIS MACHINING CENTERS", "CNC TURNING CENTERS", "CNC SWISS", "EDM MACHINES", "MICRO DEBURRING"],
-    image: "src/assets/images/capPres.webp"
+    image: capPresImg
   },
   {
     id: "VERT-03",
@@ -48,7 +54,7 @@ export const capabilitiesData = [
     },
     specs: ["Roller Swaging", "Helium Leak Test", "Orbital Riveting"],
     // infra: ["Class 100k Clean Room", "Torque Systems"],
-    image: "src/assets/images/capEM.webp"
+    image: capEMImg
   },
   {
     id: "VERT-04",
@@ -96,7 +102,7 @@ export const capabilitiesData = [
     },
     specs: ["Max 23.5\" Dia", "AS9100 Certified", "5-200 Teeth"],
     infra: ["Spiral Bevel Gears", "Hypoid Bevel Gears", "Zerol Bevel Gears", "Spur Gears", "Splines Internal & External", "Gears and Spline Shaft", "Helical Gears", "Internal Gears", "Right Angle/Miter Gears"],
-    image: "src/assets/images/capHiPres.webp"
+    image: capHiPresImg
   },
   {
     id: "VERT-07",
@@ -112,7 +118,7 @@ export const capabilitiesData = [
     },
     specs: ["Level 3 MPI/FPI", "Anodize Type II/III", "Titanium Cleaning"],
     // infra: ["2500L Tanks", "Robotic Painting"],
-    image: "src/assets/images/capSurf.webp"
+    image: capSurfImg
   },
   {
     id: "VERT-08",
@@ -160,7 +166,7 @@ export const capabilitiesData = [
     },
     specs: ["RF / Coaxial / Triaxial", "PCB (SMT & THT)", "MIL-SPEC Over-molding"],
     // infra: ["Braiding Machines", "Potting Stations", "SMT Assembly Line"],
-    image: "src/assets/images/capEwh.webp"
+    image: capEwhImg
   },
 ];
 
