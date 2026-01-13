@@ -1,1 +1,9 @@
 *.png filter=lfs diff=lfs merge=lfs -text
+# This creates/updates the .gitattributes file with the correct LFS tracking rules
+echo "src/assets/images/*.webp filter=lfs diff=lfs merge=lfs -text" > .gitattributes
+echo "src/assets/images/*.png filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+
+# Add, commit, and push the file
+git add .gitattributes
+git commit -m "fix: correctly configure gitattributes for LFS"
+git push origin main
