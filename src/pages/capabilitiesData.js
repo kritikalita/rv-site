@@ -179,12 +179,27 @@ export const sectorData = [
     description: "Advanced propulsion systems and structural components for next-generation flight.",
     products: [
       {
-        name: "Turbine Blade Assembly",
+        name: "Engine Seal",
         image: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80",
         details: "Single-crystal superalloy construction for extreme thermal environments."
       },
       { 
-        name: "Combustion Liners", 
+        name: "Bearing Housing", 
+        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
+        details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
+      },
+       { 
+        name: "Fuel nozzles", 
+        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
+        details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
+      },
+       { 
+        name: "Turbine Disc", 
+        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
+        details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
+      },
+       { 
+        name: "Nozzle", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
       },
@@ -198,47 +213,40 @@ export const sectorData = [
     description: "Advanced propulsion systems and structural components for next-generation flight.",
     products: [
       {
-        name: "Turbine Blade Assembly",
+        name: "Ball Lock Seperation System",
         image: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80",
         details: "Single-crystal superalloy construction for extreme thermal environments."
       },
       { 
-        name: "Combustion Liners", 
+        name: "Exhaust Liner", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
       },
       { 
-        name: "Combustion Liners", 
+        name: "Parachute Chasis", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
       },
       { 
-        name: "Combustion Liners", 
+        name: "Rigging Adapter Assembly", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
       },
       { 
-        name: "Combustion Liners", 
+        name: "Parachute Seperation System", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
       },
       { 
-        name: "Combustion Liners", 
+        name: "Fuel Adapter Assembly", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
-      },
-      { 
-        name: "Combustion Liners", 
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
-        details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
-      },
-      
-     
+      }
     ]
   },
   {
     id: "SEC-03",
-    title: "Defence",
+    title: "Robotics",
     mainImage: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80",
     description: "Manufacturing satellite frames and cryogenic launch vehicle hardware capable of extreme thermal cycles.",
     products: [
@@ -272,22 +280,22 @@ export const sectorData = [
     description: "Providing high-durability valves, flow control components, and ruggedized hardware for extreme environments.",
     products: [
       { 
-        name: "Combustion Liners", 
+        name: "Wireline", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
       },
       { 
-        name: "Engine Pylons", 
+        name: "Wireline", 
         image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7", 
         details: "Structural mounting systems precision-machined for narrow-body aircraft."
       },
       { 
-        name: "Combustion Liners", 
+        name: "Surface Tech", 
         image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5", 
         details: "High-temperature nickel alloy assemblies for next-gen turbine engines."
       },
       { 
-        name: "Engine Pylons", 
+        name: "Completion", 
         image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7", 
         details: "Structural mounting systems precision-machined for narrow-body aircraft."
       }

@@ -60,3 +60,27 @@ html {
   height: 100%;
 }
 
+/* Custom Industrial Scrollbar */
+.custom-industrial-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-industrial-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-industrial-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 20px;
+}
+
+.custom-industrial-scroll::-webkit-scrollbar-thumb:hover {
+  background: #0047AB; /* brand-blue */
+}
+
+/* Force Layout Lock */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}

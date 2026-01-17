@@ -5,21 +5,16 @@ import StoriesFeed from '../components/stories/StoriesFeed';
 import MonthlyJournal from '../components/stories/MonthlyJournal';
 
 const Stories = () => {
-  // Global state to track if ANY modal on this page is open
   const [isAnyModalOpen, setIsAnyModalOpen] = useState(false);
 
   useEffect(() => {
     if (isAnyModalOpen) {
-      // Add class to stop Lenis and standard scrolling
       document.documentElement.classList.add('lenis-stopped');
       document.body.style.overflow = 'hidden';
     } else {
-      // Remove class to resume scrolling
       document.documentElement.classList.remove('lenis-stopped');
       document.body.style.overflow = 'unset';
     }
-
-    // Cleanup on unmount to prevent stuck scrollbars
     return () => {
       document.documentElement.classList.remove('lenis-stopped');
       document.body.style.overflow = 'unset';
@@ -33,13 +28,15 @@ const Stories = () => {
       exit={{ opacity: 0 }}
       className="bg-white min-h-screen"
     >
-      {/* Pass the setter function to children so they can 
-          signal when they open or close a modal 
-      */}
+      {/* 1. The Hero handles the top featured story */}
       <StoriesHero onModalToggle={setIsAnyModalOpen} />
+      
+      {/* 2. THE FEED: Only call this ONCE. It handles the "Latest Transmissions" 
+          header and the dynamic grid loop */}
       <StoriesFeed onModalToggle={setIsAnyModalOpen} />
       
-      <MonthlyJournal />
+      {/* 3. The Journal handles the bottom Editorial Dossier */}
+      <MonthlyJournal onModalToggle={setIsAnyModalOpen} />
     </motion.main>
   );
 };

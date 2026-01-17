@@ -46,12 +46,18 @@ const Industries = () => {
             </h2>
           </div>
 
-          <div className="hidden lg:block border-l border-slate-200 pl-8">
-            <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest max-w-[200px] leading-relaxed">
-              Domain_Registry // Global <br />
-              <span className="text-brand-blue font-mono text-[9px]">Mission_Critical_Impact</span>
-            </p>
-          </div>
+         <div className="mt-8">
+               {/* 2. Change <button> to <Link> and add the "to" prop */}
+               <Link 
+                to="/capabilities#sector-intelligence" 
+                className="group relative flex items-center gap-6 bg-[#020617] text-white px-8 py-4 font-black uppercase tracking-[0.4em] text-[9px] hover:bg-brand-blue transition-all shadow-2xl overflow-hidden inline-flex"
+               >
+                <span className="relative z-10 flex items-center gap-3">
+                  In details <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
+                </span>
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all duration-700 shadow-[0_0_20px_white]" />
+              </Link>
+            </div>
         </div>
 
         <div className="flex flex-col lg:flex-row h-auto lg:h-[480px] gap-8">
@@ -96,19 +102,6 @@ const Industries = () => {
                   </div>
                 </div>
               ))}
-            </div>
-            
-            <div className="mt-8">
-               {/* 2. Change <button> to <Link> and add the "to" prop */}
-               <Link 
-                to="/capabilities#sector-intelligence" 
-                className="group relative flex items-center gap-6 bg-[#020617] text-white px-8 py-4 font-black uppercase tracking-[0.4em] text-[9px] hover:bg-brand-blue transition-all shadow-2xl overflow-hidden inline-flex"
-               >
-                <span className="relative z-10 flex items-center gap-3">
-                  In details <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
-                </span>
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all duration-700 shadow-[0_0_20px_white]" />
-              </Link>
             </div>
           </div>
 

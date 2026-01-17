@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'; 
 import { AnimatePresence } from 'framer-motion';
 
 // Pages
@@ -9,6 +9,8 @@ import Capabilities from './pages/Capabilities';
 import Stories from './pages/Stories';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 
 // Common Components
 import Navbar from './components/common/Navbar';
@@ -18,73 +20,82 @@ import PageTransition from './components/layout/PageTransition';
 // Hooks
 import useSmoothScroll from './hooks/useSmoothScroll';
 
-// Wrapper component to handle Hash Scrolling and Page Transitions
+const ProtectedAdmin = ({ children }) => {
+  const isAuthenticated = localStorage.getItem('rv_admin_auth') === 'true';
+  return isAuthenticated ? children : <Navigate to="/admin-login" replace />;
+};
+
 const AppContent = () => {
   const location = useLocation();
   useSmoothScroll();
 
+  // Condition to detect Admin pages
+  const isAdminPage = location.pathname.startsWith('/admin');
+
   useEffect(() => {
-    // 1. If we are moving to a new page, immediately lock to top
-    // This prevents the "falling to the bottom" during the exit animation
     if (!location.hash) {
       window.scrollTo(0, 0);
     }
 
     if (location.hash) {
       const id = location.hash.replace('#', '');
-      
       const executeCleanScroll = () => {
         const element = document.getElementById(id);
         if (element) {
-          const offset = 100; // Navbar height
+          const offset = 100;
           const bodyRect = document.body.getBoundingClientRect().top;
           const elementRect = element.getBoundingClientRect().top;
           const elementPosition = elementRect - bodyRect;
           const offsetPosition = elementPosition - offset;
 
-          // Perform the scroll
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
           });
         }
       };
-
-      // We use a slightly longer timeout (800ms) to ensure the 
-      // previous page is GONE and the new page is FIXED in height.
       const timer = setTimeout(executeCleanScroll, 800);
       return () => clearTimeout(timer);
     }
   }, [location.pathname, location.hash]);
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-        <Route path="/capabilities" element={<PageTransition><Capabilities /></PageTransition>} />
-        <Route path="/stories" element={<PageTransition><Stories /></PageTransition>} />
-        <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-      </Routes>
-    </AnimatePresence>
+    <div className="relative min-h-screen bg-brand-dark text-brand-text font-sans selection:bg-brand-blue selection:text-brand-text">
+      {/* 1. Navbar only appears on public pages */}
+      {!isAdminPage && <Navbar />}
+
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+          <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+          <Route path="/capabilities" element={<PageTransition><Capabilities /></PageTransition>} />
+          <Route path="/stories" element={<PageTransition><Stories /></PageTransition>} />
+          <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
+          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route 
+            path="/admin-control-hq" 
+            element={
+              <ProtectedAdmin>
+                <PageTransition><AdminDashboard /></PageTransition>
+              </ProtectedAdmin>
+            } 
+          />
+        </Routes>
+      </AnimatePresence>
+
+      {/* 2. Footer only appears on public pages */}
+      {!isAdminPage && <Footer />}
+    </div>
   );
 };
 
 function App() {
   return (
     <Router>
-      <div className="relative min-h-screen bg-brand-dark text-brand-text font-sans selection:bg-brand-blue selection:text-brand-text">
-        <Navbar />
-        <AppContent />
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 }
 
 export default App;
-
-
-
-
