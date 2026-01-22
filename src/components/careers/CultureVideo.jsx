@@ -14,7 +14,7 @@ const CultureVideo = () => {
 
       <div className="max-w-7xl mx-auto px-6 w-full h-full flex flex-col py-12 lg:py-16 relative z-10">
         
-        {/* 1. UNIFORM HEADER SECTION - Standardized to Stories Page scale */}
+        {/* 1. UNIFORM HEADER SECTION */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 shrink-0 gap-8">
           <div className="max-w-2xl">
             <motion.div 
@@ -28,7 +28,6 @@ const CultureVideo = () => {
                 Behind the Precision
               </span>
             </motion.div>
-            {/* Header size adjusted to 4xl/5xl to match "Latest Transmissions" exactly */}
             <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
               Witness the <span className="text-brand-blue">Human Element.</span>
             </h2>
@@ -41,14 +40,14 @@ const CultureVideo = () => {
           </div>
         </div>
 
-        {/* 2. UNIFORM VIDEO CONTAINER */}
+        {/* 2. UNIFORM VIDEO CONTAINER - Updated with New Gradient Blue */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="relative flex-grow w-full max-h-[55vh] min-h-[350px] mx-auto group cursor-pointer rounded-sm overflow-hidden border border-white/10 shadow-2xl"
           style={{
-            background: 'radial-gradient(circle at top right, #1e40af 0%, #020617 100%)'
+            background: 'linear-gradient(135deg, #022049 0%, #063677 100%)'
           }}
         >
           {/* HUD Metadata Overlay */}
@@ -71,7 +70,8 @@ const CultureVideo = () => {
             <div className="w-20 h-20 bg-brand-blue/90 text-white rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(0,71,171,0.4)] transition-all duration-500 group-hover:bg-brand-blue group-hover:scale-110 group-hover:shadow-[0_0_70px_rgba(0,71,171,0.6)]">
               <HiPlay size={40} className="ml-1" />
             </div>
-            <div className="mt-8 px-6 py-2 border border-white/20 bg-[#020617]/80 backdrop-blur-md shadow-xl transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+            {/* Updated container background to match the new dark blue theme */}
+            <div className="mt-8 px-6 py-2 border border-white/20 bg-[#022049]/80 backdrop-blur-md shadow-xl transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
               <span className="text-[10px] font-black text-white tracking-[0.5em] uppercase">Execute_Film</span>
             </div>
           </div>
@@ -81,34 +81,33 @@ const CultureVideo = () => {
           <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-brand-blue/40" />
         </motion.div>
 
-          <div className="mt-4 shrink-0 grid grid-cols-2 lg:grid-cols-4 gap-12 border-t border-slate-100 pt-6 pb-10 justify-items-center">
-  {[
-    { label: "Production_Footprint", value: "100,000", unit: "Sq.Ft" },
-    { label: "Engineering_Intelligence", value: "450", unit: "Experts" },
-    { label: "Operational_Units", value: "04", unit: "Global" },
-    { label: "Quality_Benchmark", value: "99.8", unit: "%" },
-  ].map((metric, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ 
-        duration: 0.6, 
-        delay: index * 0.1, // Staggered effect: metrics appear one by one
-        ease: "easeOut" 
-      }}
-    >
-      <VideoMetric 
-        label={metric.label} 
-        value={metric.value} 
-        unit={metric.unit} 
-      />
-    </motion.div>
-  ))}
-</div>
-        
-
+        {/* METRICS GRID */}
+        <div className="mt-4 shrink-0 grid grid-cols-2 lg:grid-cols-4 gap-12 border-t border-slate-100 pt-6 pb-10 justify-items-center">
+          {[
+            { label: "Production_Footprint", value: "100,000", unit: "Sq.Ft" },
+            { label: "Engineering_Intelligence", value: "450", unit: "Experts" },
+            { label: "Operational_Units", value: "04", unit: "Global" },
+            { label: "Quality_Benchmark", value: "99.8", unit: "%" },
+          ].map((metric, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1, 
+                ease: "easeOut" 
+              }}
+            >
+              <VideoMetric 
+                label={metric.label} 
+                value={metric.value} 
+                unit={metric.unit} 
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

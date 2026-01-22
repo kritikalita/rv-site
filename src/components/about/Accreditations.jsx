@@ -78,7 +78,7 @@ const Accreditations = () => {
           </div>
         </div>
 
-        {/* REGISTRY GRID: Using StoriesFeed Radial Gradient Backgrounds */}
+        {/* REGISTRY GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {accreditationGroups.map((group, idx) => (
             <motion.div
@@ -87,13 +87,13 @@ const Accreditations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.1 }}
-              /* COLOR CHANGE: Updated to StoriesFeed radial-gradient logic */
               className="group relative flex flex-col h-[480px] border border-white/10 rounded-sm overflow-hidden hover:shadow-[0_0_40px_rgba(0,71,171,0.3)] transition-all duration-500 cursor-default p-8"
               style={{
-                background: 'radial-gradient(circle at top right, #1e40af 0%, #020617 70%)'
+                /* NEW GRADIENT BLUE: Updated to match signature palette */
+                background: 'radial-gradient(circle at top right, #063677 0%, #022049 100%)'
               }}
             >
-              {/* Technical Glow Effect from StoriesFeed */}
+              {/* Technical Glow Effect */}
               <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/5 blur-[30px] group-hover:bg-brand-blue/20 transition-all duration-700" />
 
               <div className="flex justify-between items-start mb-8 relative z-10">
@@ -115,7 +115,7 @@ const Accreditations = () => {
                 </p>
               </div>
 
-              {/* LOGO GRID: Clean technical display within the gradient card */}
+              {/* LOGO GRID */}
               <div className="mt-auto pt-8 border-t border-white/10 relative z-10">
                 <div className="grid grid-cols-2 gap-3">
                   {group.logos.map((logo, lIdx) => (
@@ -126,7 +126,6 @@ const Accreditations = () => {
                       <img 
                         src={logo.image} 
                         alt={logo.name} 
-                        /* Brightness treatment to make logos pop on dark gradient */
                         className="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" 
                       />
                     </div>
@@ -134,7 +133,7 @@ const Accreditations = () => {
                 </div>
               </div>
 
-              {/* Corner HUD Bracket from Timeline/Ethos for consistency */}
+              {/* Corner HUD Bracket */}
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-brand-blue opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}

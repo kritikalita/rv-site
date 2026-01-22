@@ -30,7 +30,7 @@ const Testimonials = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* 2. UNIFORM HEADER: Standardized size to match Stories Page */}
+        {/* 2. UNIFORM HEADER */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <motion.div 
@@ -44,7 +44,6 @@ const Testimonials = () => {
                 Voices of Excellence
               </span>
             </motion.div>
-            {/* Standardized header scale: 4xl / 5xl */}
             <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
               Our <span className="text-brand-blue">Innovators.</span>
             </h2>
@@ -57,7 +56,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* 3. TESTIMONIAL CARDS */}
+        {/* 3. TESTIMONIAL CARDS: Updated with Signature Gradient */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {testimonials.map((item, index) => (
             <motion.div
@@ -67,14 +66,13 @@ const Testimonials = () => {
               viewport={{ once: true }}
               className="group relative border border-white/10 flex flex-col md:flex-row h-auto md:h-[380px] overflow-hidden hover:shadow-[0_0_50px_rgba(0,71,171,0.2)] transition-all duration-500 cursor-default"
               style={{
-                background: 'radial-gradient(circle at top right, #1e40af 0%, #020617 100%)'
+                background: 'linear-gradient(135deg, #022049 0%, #063677 100%)'
               }}
             >
               {/* LEFT SIDE: Portrait */}
-              <div className="w-full md:w-2/5 h-72 md:h-full relative overflow-hidden bg-brand-dark">
+              <div className="w-full md:w-2/5 h-72 md:h-full relative overflow-hidden bg-[#010816]">
                 <img 
                   src={item.image} 
-                  /* Reversed Grayscale Logic: Normal by default, Gray on Hover */
                   className="w-full h-full object-cover opacity-90 grayscale-0 group-hover:grayscale group-hover:opacity-70 group-hover:scale-105 transition-all duration-1000" 
                   alt={item.name} 
                 />
@@ -84,7 +82,8 @@ const Testimonials = () => {
                       {item.dept}
                    </span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#020617] hidden md:block" />
+                {/* Updated Portrait Gradient to blend with deep blue instead of black */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#022049] hidden md:block" />
               </div>
 
               {/* RIGHT SIDE: Technical Content Area */}
@@ -98,7 +97,7 @@ const Testimonials = () => {
                   </div>
                   
                   <h3 className="text-2xl font-bold text-white mb-1 tracking-tight">{item.name}</h3>
-                  <p className="text-slate-400 font-bold text-[10px] uppercase tracking-widest mb-8">
+                  <p className="text-blue-100/60 font-bold text-[10px] uppercase tracking-widest mb-8">
                     {item.role}
                   </p>
                   

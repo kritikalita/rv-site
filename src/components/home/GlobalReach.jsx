@@ -24,7 +24,7 @@ const GlobalReach = () => {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="h-[2px] w-12 bg-brand-blue shadow-[0_0_10px_#0047AB]" />
+            <div className="h-[2px] w-12 bg-brand-blue" />
             <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">
               International Operations
             </span>
@@ -153,7 +153,7 @@ const GlobalReach = () => {
                 <div className="absolute top-[29%] left-[51%]">
                    <div className="w-2 h-2 bg-brand-blue rounded-full shadow-[0_0_10px_#0047AB] relative z-10"></div>
                    <div className="absolute top-4 left-0 border-l border-brand-blue/40 pl-2 whitespace-nowrap">
-                      <span className="text-[8px] font-mono font-bold text-white tracking-widest uppercase">LONDON, UK</span>
+                      <span className="text-[8px] font-mono font-bold text-white tracking-widest uppercase">UK</span>
                    </div>
                 </div>
 
@@ -163,7 +163,7 @@ const GlobalReach = () => {
                    <div className="w-3 h-3 bg-brand-blue rounded-full border border-white shadow-[0_0_15px_#0047AB] relative z-10"></div>
                    <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-brand-blue px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-20">
                       <span className="text-[9px] font-black text-white uppercase tracking-[0.2em] flex items-center gap-2">
-                        <TbMapPin size={10} /> HYDERABAD
+                        <TbMapPin size={10} /> INDIA
                       </span>
                    </div>
                 </div>

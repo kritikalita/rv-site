@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiArrowRight } from 'react-icons/hi';
-import { TbTools, TbPlane, TbCpu, TbClipboardCheck, TbCircleFilled } from "react-icons/tb";
+import { TbRocket, TbComponents, TbTir, TbCircleFilled, TbSettingsAutomation} from "react-icons/tb";
 
 const services = [
   {
@@ -10,26 +10,26 @@ const services = [
     title: "Precision Machining",
     subtitle: "Micron-Level Tolerance",
     description: "State-of-the-art 5-axis CNC machining for complex aerospace components.",
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=1974&auto=format&fit=crop",
-    icon: TbTools,
+    image: "src/assets/images/capPres.webp",
+    icon: TbSettingsAutomation,
     tag: "CAPABILITY_01"
   },
   {
-    id: 2,
-    title: "Manufacturing and Infrastructure",
-    subtitle: "Structural Integration",
-    description: "Full-scale sub-system assembly and integration for commercial and defence aircraft.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
-    icon: TbPlane,
+     id: 2,
+    title: "Engineering Services",
+    subtitle: "Design to Prototype",
+    description: "End-to-end CAD/CAM design, prototyping, and process engineering solutions.",
+    image: "src/assets/images/capEng.webp",
+    icon: TbRocket,
     tag: "CAPABILITY_02"
   },
   {
     id: 3,
-    title: "Engineering Services",
-    subtitle: "Design to Prototype",
-    description: "End-to-end CAD/CAM design, prototyping, and process engineering solutions.",
-    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2070&auto=format&fit=crop",
-    icon: TbCpu,
+    title: "Electro-Mechanical Assembly",
+    subtitle: "Precision Systems Integration",
+    description: "Expert integration of complex wiring harnesses, control panels, and electronic components into mechanical housings for mission-critical applications.",
+    image: "src/assets/images/capEM.webp",
+    icon: TbComponents,
     tag: "CAPABILITY_03"
   },
   {
@@ -38,7 +38,7 @@ const services = [
     subtitle: "Zero-Defect Delivery",
     description: "AS9100D certified inspection processes ensuring zero-defect delivery.",
     image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop",
-    icon: TbClipboardCheck,
+    icon: TbTir,
     tag: "CAPABILITY_04"
   },
 ];
@@ -68,7 +68,7 @@ const ServicesPreview = () => {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-4"
             >
-              <div className="h-[2px] w-12 bg-brand-blue shadow-[0_0_10px_#0047AB]" />
+              <div className="h-[2px] w-12 bg-brand-blue"/>
               <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">Core Capabilities</span>
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
@@ -76,7 +76,7 @@ const ServicesPreview = () => {
             </h2>
           </div>
 
-          <div className="hidden lg:block border-l border-slate-200 pl-8">
+           <div className="hidden lg:block border-l border-slate-200 pl-8">
              {/* Link replaced the Button to handle redirection */}
              <Link 
               to="/capabilities#services-grid" 
@@ -103,14 +103,14 @@ const ServicesPreview = () => {
               onClick={() => setActiveId(service.id)}
               onHoverStart={() => setActiveId(service.id)} 
               className={`relative rounded-sm overflow-hidden cursor-pointer transition-all duration-700 border border-white/5 shadow-2xl
-                ${isActive ? 'flex-[4]' : 'flex-[0.6] bg-[#010816] hover:bg-[#020d1f]'}
+                ${isActive ? 'flex-[4]' : 'bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677] flex-[0.6] hover:brightness-110'}
               `}
             >
               {!isActive && (
                 <div className="absolute inset-0 flex flex-col items-center justify-between py-10">
                   <span className="text-brand-blue font-mono text-xs font-bold opacity-40">0{service.id}</span>
                   <div className="rotate-[-90deg] whitespace-nowrap">
-                    <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">
+                    <h3 className="text-[10px] font-black text-slate-200 uppercase tracking-[0.4em]">
                       {service.title}
                     </h3>
                   </div>
@@ -128,12 +128,15 @@ const ServicesPreview = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
                     className="absolute inset-0"
-                    style={{ background: 'radial-gradient(circle at top right, #1e40af 0%, #020617 100%)' }}
                   >
+                    {/* Background set to new gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677]" />
+                    
+                    {/* Image without mix-blend or heavy opacity reduction */}
                     <img 
                       src={service.image} 
                       alt={service.title} 
-                      className="w-full h-full object-cover grayscale opacity-30 mix-blend-overlay"
+                      className="w-full h-full object-cover opacity-40"
                     />
                     
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-blue/30 shadow-[0_0_15px_#0047AB] z-20 animate-scan" />
@@ -161,7 +164,7 @@ const ServicesPreview = () => {
                           {service.subtitle}
                         </p>
                         
-                        <p className="text-slate-300 text-[13px] leading-relaxed mb-8 border-l border-brand-blue/40 pl-6 italic">
+                        <p className="text-slate-200 text-[13px] leading-relaxed mb-8 border-l border-brand-blue/40 pl-6 italic">
                           "{service.description}"
                         </p>
 

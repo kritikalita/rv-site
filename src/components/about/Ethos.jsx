@@ -34,13 +34,13 @@ const Ethos = () => {
       bgIcon: <TbBulb size={160} />
     },
     {
-      title: "DNA_Structure",
+      title: "DNA Structure",
       icon: <TbDna size={24} />,
       isDna: true,
       bgIcon: <TbDna size={160} />
     },
     {
-      title: "RISE_Protocol",
+      title: "RISE Protocol",
       icon: <TbHeartHandshake size={24} />,
       isValues: true,
       bgIcon: <TbHeartHandshake size={160} />
@@ -84,7 +84,7 @@ const Ethos = () => {
           </div>
         </div>
 
-        {/* UNIFORM GRID: Alternating Duo-Tone Logic like JobBoard */}
+        {/* BOX GRID: Now utilizing the signature gradient theme */}
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -93,7 +93,7 @@ const Ethos = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {ethosData.map((item, index) => {
-            const isGradient = index % 2 !== 0; // Odd indices get the blue/black gradient
+            const isGradient = index % 2 !== 0; 
 
             return (
               <motion.div
@@ -102,11 +102,11 @@ const Ethos = () => {
                 whileHover={{ y: -5 }}
                 className={`group relative p-8 flex flex-col min-h-[380px] border border-white/10 transition-all duration-500 overflow-hidden shadow-2xl
                   ${isGradient 
-                    ? 'bg-gradient-to-br from-brand-blue via-[#003380] to-[#001a40]' 
-                    : 'bg-[#000d1a] hover:bg-brand-dark'
+                    ? 'bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677]' 
+                    : 'bg-[#010816] hover:bg-[#020d1f]'
                   }`}
               >
-                {/* Subtle Technical Glow like JobBoard */}
+                {/* Subtle Technical Glow */}
                 <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/5 blur-[30px] group-hover:bg-brand-blue/20 transition-all duration-700" />
 
                 <div className={`mb-6 p-3 w-fit rounded-sm shadow-[0_0_15px_rgba(0,71,171,0.5)] relative z-10

@@ -6,11 +6,12 @@ import { TbCircleFilled } from 'react-icons/tb';
 // Import local assets
 import vamsiImg from '../../assets/images/vamsi.png';
 import preetiImg from '../../assets/images/preeti.png';
+import manishImg from '../../assets/images/manish.webp';
 
 const leaders = [
   { name: "Vamsi Vikas", role: "Managing Director", image: vamsiImg, bio: "20+ years steering strategic growth in global aerospace sectors.", id: "01" },
   { name: "Preeti Vamsi", role: "Executive Director", image: preetiImg, bio: "Driving operational excellence and maintaining zero-defect culture.", id: "02" },
-  { name: "Manish Matta", role: "Executive Director", image: vamsiImg, bio: "Industry expert in advanced 5-axis CNC technologies and tooling.", id: "03" }
+  { name: "Manish Matta", role: "Executive Director", image: manishImg, bio: "Industry expert in advanced 5-axis CNC technologies and tooling.", id: "03" }
 ];
 
 const Leadership = () => {

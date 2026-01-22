@@ -12,7 +12,7 @@ const StatCard = ({ number, label, icon: Icon, delay, isGradient }) => (
     transition={{ duration: 0.5, delay: delay }}
     className={`relative p-6 flex flex-col justify-between overflow-hidden border border-white/5 shadow-2xl transition-all duration-500 group
       ${isGradient 
-        ? 'bg-gradient-to-br from-[#020617] via-[#010b1a] to-[#001a40]' 
+        ? 'bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677]' 
         : 'bg-[#010816] hover:bg-[#020d1f]'
       }`}
   >
@@ -51,7 +51,6 @@ const Intro = () => {
   const yStats = useTransform(scrollYProgress, [0, 1], [20, -60]);
 
   return (
-    /* REDUCED BOTTOM PADDING: py-24 -> pt-24 pb-12 */
     <section ref={ref} className="relative pt-24 pb-12 bg-white overflow-hidden border-b border-brand-border">
       
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
@@ -70,7 +69,7 @@ const Intro = () => {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="h-[2px] w-12 bg-brand-blue shadow-[0_0_10px_#0047AB]" />
+            <div className="h-[2px] w-12 bg-brand-blue" />
             <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">
               Corporate Profile
             </span>
@@ -121,10 +120,7 @@ const Intro = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT COLUMN: Visual Dossier & Ticker */}
-        {/* REDUCED CONTAINER HEIGHT: h-[600px] -> h-[520px] */}
         <div className="relative h-[520px] hidden lg:block group/intro-right">
-          
           <motion.div 
             style={{ y: yImage }} 
             className="absolute top-0 right-0 w-[85%] h-[400px] z-10 group/dossier"
@@ -144,25 +140,26 @@ const Intro = () => {
             </div>
           </motion.div>
 
-          {/* LOWERED STATS OFFSET: bottom-20 -> bottom-4 */}
           <motion.div style={{ y: yStats }} className="absolute bottom-4 left-0 w-full z-20 grid grid-cols-2 gap-4 pr-12">
             <div className="space-y-4 mt-12">
-              <StatCard number="24" label="Years Experience" icon={TbSettingsAutomation} delay={0.2} isGradient={false} />
+              {/* Set isGradient to true for both blocks here */}
+              <StatCard number="24" label="Years Experience" icon={TbSettingsAutomation} delay={0.2} isGradient={true} />
               <StatCard number="20" label="Global Partners" icon={TbWorld} delay={0.4} isGradient={true} />
             </div>
             <div className="space-y-4">
+              {/* Set isGradient to true for both blocks here */}
               <StatCard number="10k" label="Parts Delivered" icon={TbCpu} delay={0.3} isGradient={true} />
-              <StatCard number="6" label="Units" icon={TbPlaneDeparture} delay={0.5} isGradient={false} />
+              <StatCard number="6" label="Units" icon={TbPlaneDeparture} delay={0.5} isGradient={true} />
             </div>
           </motion.div>
         </div>
         
-        {/* REDUCED MARGIN FOR MOBILE: mt-12 -> mt-4 */}
         <div className="grid grid-cols-2 gap-4 lg:hidden mt-4">
-            <StatCard number="24" label="Years Exp." icon={TbSettingsAutomation} delay={0.2} isGradient={false} />
+            {/* Set isGradient to true for all blocks here for mobile view */}
+            <StatCard number="24" label="Years Exp." icon={TbSettingsAutomation} delay={0.2} isGradient={true} />
             <StatCard number="50" label="Clients" icon={TbWorld} delay={0.3} isGradient={true} />
             <StatCard number="10k" label="Parts" icon={TbCpu} delay={0.4} isGradient={true} />
-            <StatCard number="4" label="Units" icon={TbPlaneDeparture} delay={0.5} isGradient={false} />
+            <StatCard number="4" label="Units" icon={TbPlaneDeparture} delay={0.5} isGradient={true} />
         </div>
       </div>
     </section>
