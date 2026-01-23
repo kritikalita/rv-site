@@ -65,7 +65,7 @@ const Ethos = () => {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-4"
             >
-              <div className="h-[2px] w-12 bg-brand-blue shadow-[0_0_10px_#0047AB]" />
+              <div className="h-[2px] w-12 bg-brand-blue" />
               <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">
                 Our Foundation
               </span>
@@ -84,7 +84,7 @@ const Ethos = () => {
           </div>
         </div>
 
-        {/* BOX GRID: Now utilizing the signature gradient theme */}
+        {/* BOX GRID */}
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -93,7 +93,7 @@ const Ethos = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {ethosData.map((item, index) => {
-            const isGradient = index % 2 !== 0; 
+            const isSignatureGradient = index % 2 !== 0; 
 
             return (
               <motion.div
@@ -101,57 +101,63 @@ const Ethos = () => {
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
                 className={`group relative p-8 flex flex-col min-h-[380px] border border-white/10 transition-all duration-500 overflow-hidden shadow-2xl
-                  ${isGradient 
+                  ${isSignatureGradient 
                     ? 'bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677]' 
-                    : 'bg-[#010816] hover:bg-[#020d1f]'
+                    : 'bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200'
                   }`}
               >
                 {/* Subtle Technical Glow */}
                 <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/5 blur-[30px] group-hover:bg-brand-blue/20 transition-all duration-700" />
 
-                <div className={`mb-6 p-3 w-fit rounded-sm shadow-[0_0_15px_rgba(0,71,171,0.5)] relative z-10
-                   ${isGradient ? "bg-white/10 text-white" : "bg-brand-blue text-white"}`}>
+                {/* Glow shadow removed from the div below */}
+                <div className={`mb-6 p-3 w-fit rounded-sm relative z-10
+                   ${isSignatureGradient ? "bg-white/10 text-white" : "bg-brand-blue text-white"}`}>
                   {item.icon}
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-4 tracking-tight relative z-10">
+                <h3 className={`text-xl font-bold mb-4 tracking-tight relative z-10 
+                  ${isSignatureGradient ? "text-white" : "text-brand-dark"}`}>
                   {item.title}
                 </h3>
 
                 {item.desc && (
                   <p className={`leading-relaxed text-[13px] font-medium border-l pl-4 relative z-10 transition-colors
-                    ${isGradient ? "text-blue-100/80 border-white/40" : "text-slate-300 border-brand-blue"}`}>
+                    ${isSignatureGradient 
+                      ? "text-blue-100/80 border-white/40" 
+                      : "text-slate-600 border-brand-blue/40"}`}>
                     {item.desc}
                   </p>
                 )}
 
                 {item.isDna && (
                   <div className="space-y-4 flex-grow relative z-10">
-                    <DnaItem english="Learn" sanskrit="Adhyaya" isGradient={isGradient} />
-                    <DnaItem english="Grow" sanskrit="Anuruh" isGradient={isGradient} />
-                    <DnaItem english="Excel" sanskrit="Atirikta" isGradient={isGradient} />
-                    <DnaItem english="Joy" sanskrit="Anandha" isGradient={isGradient} />
+                    <DnaItem english="Learn" sanskrit="Adhyaya" isGradient={isSignatureGradient} />
+                    <DnaItem english="Grow" sanskrit="Anuruh" isGradient={isSignatureGradient} />
+                    <DnaItem english="Excel" sanskrit="Atirikta" isGradient={isSignatureGradient} />
+                    <DnaItem english="Joy" sanskrit="Anandha" isGradient={isSignatureGradient} />
                   </div>
                 )}
 
                 {item.isValues && (
                   <ul className="space-y-4 relative z-10">
-                    <ValueItem letter="R" text="eliability" isGradient={isGradient} />
-                    <ValueItem letter="I" text="ntegrity" isGradient={isGradient} />
-                    <ValueItem letter="S" text="ocial Responsibility" isGradient={isGradient} />
-                    <ValueItem letter="E" text="mpathy" isGradient={isGradient} />
+                    <ValueItem letter="R" text="eliability" isGradient={isSignatureGradient} />
+                    <ValueItem letter="I" text="ntegrity" isGradient={isSignatureGradient} />
+                    <ValueItem letter="S" text="ocial Responsibility" isGradient={isSignatureGradient} />
+                    <ValueItem letter="E" text="mpathy" isGradient={isSignatureGradient} />
                   </ul>
                 )}
 
                 {/* Background Decor Icon */}
-                <div className="absolute -bottom-10 -right-10 text-white opacity-[0.03] group-hover:opacity-10 transition-all duration-700">
+                <div className={`absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-10 transition-all duration-700
+                   ${isSignatureGradient ? "text-white" : "text-brand-blue"}`}>
                    {item.bgIcon}
                 </div>
 
                 {/* Signature HUD Brackets/Line */}
                 <div className={`absolute bottom-0 left-0 h-[2px] transition-all duration-700 w-0 group-hover:w-full
-                  ${isGradient ? "bg-white" : "bg-brand-blue"}`} />
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-white/10" />
+                  ${isSignatureGradient ? "bg-white" : "bg-brand-blue"}`} />
+                <div className={`absolute bottom-0 right-0 w-8 h-8 border-b border-r 
+                  ${isSignatureGradient ? "border-white/10" : "border-brand-blue/20"}`} />
               </motion.div>
             );
           })}
@@ -161,14 +167,13 @@ const Ethos = () => {
   );
 };
 
-/* --- Helper Components --- */
-
 const DnaItem = ({ english, sanskrit, isGradient }) => (
   <div className={`flex justify-between items-center border-b pb-2 group/item transition-colors
-    ${isGradient ? "border-white/10" : "border-white/5"}`}>
+    ${isGradient ? "border-white/10" : "border-blue-200"}`}>
     <div className="flex items-center gap-2">
       <TbCircleFilled className={`text-[4px] animate-pulse ${isGradient ? "text-blue-200" : "text-brand-blue"}`} />
-      <span className="font-bold text-xs text-white tracking-tight group-hover/item:text-brand-blue transition-colors">{english}</span>
+      <span className={`font-bold text-xs tracking-tight group-hover/item:text-brand-blue transition-colors
+        ${isGradient ? "text-white" : "text-brand-dark"}`}>{english}</span>
     </div>
     <span className={`text-[9px] font-mono uppercase tracking-widest font-black 
       ${isGradient ? "text-blue-200" : "text-brand-blue"}`}>
@@ -183,8 +188,8 @@ const ValueItem = ({ letter, text, isGradient }) => (
        ${isGradient ? "text-blue-200" : "text-brand-blue"}`}>
       {letter}
     </span>
-    <span className={`tracking-tight group-hover/item:text-white transition-colors
-      ${isGradient ? "text-blue-100/60" : "text-slate-300"}`}>
+    <span className={`tracking-tight transition-colors
+      ${isGradient ? "text-blue-100/60 group-hover/item:text-white" : "text-slate-600 group-hover/item:text-brand-dark"}`}>
       {text}
     </span>
   </li>

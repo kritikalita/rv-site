@@ -80,68 +80,75 @@ const JobManagementView = ({ jobs, applicants = [], onToggle, onSubmit }) => (
         </div>
 
         {jobs.map((job) => {
-  // CROSS-REFERENCE LOGIC: Checks both naming conventions and ensures string comparison
-  const applicantCount = applicants.filter(app => {
-    const appRef = String(app.jobId || app.job_id || "").trim();
-    const jobRef = String(job.jobId || "").trim();
-    return appRef === jobRef && appRef !== "";
-  }).length;
+          // CROSS-REFERENCE LOGIC: Checks both naming conventions and ensures string comparison
+          const applicantCount = applicants.filter((app) => {
+            const appRef = String(app.jobId || app.job_id || "").trim();
+            const jobRef = String(job.jobId || "").trim();
+            return appRef === jobRef && appRef !== "";
+          }).length;
 
           return (
             <div
-      key={job.id}
-      className="p-6 flex justify-between items-center group hover:bg-slate-50/30 transition-all"
-    >
+              key={job.id}
+              className="p-6 flex justify-between items-center group hover:bg-slate-50/30 transition-all"
+            >
               <div className="space-y-1">
-        <div className="flex items-center gap-3">
-          {/* Numeric Job ID */}
-          <span className="text-[10px] font-bold text-brand-blue uppercase tracking-widest">
-            {job.jobId}
-          </span>
+                <div className="flex items-center gap-3">
+                  {/* Numeric Job ID */}
+                  <span className="text-[10px] font-bold text-brand-blue uppercase tracking-widest">
+                    {job.jobId}
+                  </span>
 
                   {/* TOTAL APPLICANTS BADGE */}
-          <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-md transition-all ${
-            applicantCount > 0 
-              ? 'bg-brand-blue/10 text-brand-blue border border-brand-blue/20 animate-pulse' 
-              : 'bg-slate-100 text-slate-400 border border-transparent'
-          }`}>
-            <TbUserPlus size={10} />
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              {applicantCount} {applicantCount === 1 ? 'Applicant' : 'Applicants'}
-            </span>
-          </div>
+                  <div
+                    className={`flex items-center gap-1.5 px-2 py-0.5 rounded-md transition-all ${
+                      applicantCount > 0
+                        ? "bg-brand-blue/10 text-brand-blue border border-brand-blue/20 animate-pulse"
+                        : "bg-slate-100 text-slate-400 border border-transparent"
+                    }`}
+                  >
+                    <TbUserPlus size={10} />
+                    <span className="text-[9px] font-black uppercase tracking-tighter">
+                      {applicantCount}{" "}
+                      {applicantCount === 1 ? "Applicant" : "Applicants"}
+                    </span>
+                  </div>
 
                   <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-            | {job.location}
-          </span>
-        </div>
+                    | {job.location}
+                  </span>
+                </div>
 
-        <h4 className="font-bold text-slate-800 text-lg leading-tight group-hover:text-brand-blue transition-colors">
-          {job.title}
-        </h4>
-        <div className="flex items-center gap-4">
-          <p className="text-xs text-slate-500 font-medium">{job.department}</p>
-          <span className="text-slate-300">•</span>
-          <p className="text-xs text-brand-blue font-bold uppercase tracking-tighter">{job.experience}</p>
-        </div>
-      </div>
+                <h4 className="font-bold text-slate-800 text-lg leading-tight group-hover:text-brand-blue transition-colors">
+                  {job.title}
+                </h4>
+                <div className="flex items-center gap-4">
+                  <p className="text-xs text-slate-500 font-medium">
+                    {job.department}
+                  </p>
+                  <span className="text-slate-300">•</span>
+                  <p className="text-xs text-brand-blue font-bold uppercase tracking-tighter">
+                    {job.experience}
+                  </p>
+                </div>
+              </div>
 
-      <div className="flex items-center gap-3">
-        <button
-          type="button"
-          onClick={() => onToggle(job.id)}
-          className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all ${
-            job.active
-              ? "bg-slate-100 text-slate-600 hover:bg-slate-200"
-              : "bg-brand-blue text-white shadow-lg shadow-brand-blue/20 hover:bg-brand-dark"
-          }`}
-        >
-          {job.active ? "Deactivate" : "Activate"}
-        </button>
-      </div>
-    </div>
-  );
-})}
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => onToggle(job.id)}
+                  className={`px-5 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all ${
+                    job.active
+                      ? "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      : "bg-brand-blue text-white shadow-lg shadow-brand-blue/20 hover:bg-brand-dark"
+                  }`}
+                >
+                  {job.active ? "Deactivate" : "Activate"}
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   </div>

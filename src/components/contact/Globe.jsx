@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import createGlobe from 'cobe';
+import React, { useEffect, useRef } from "react";
+import createGlobe from "cobe";
 
 const Globe = () => {
   const canvasRef = useRef();
@@ -11,7 +11,7 @@ const Globe = () => {
     const onResize = () => {
       if (canvasRef.current) width = canvasRef.current.offsetWidth;
     };
-    window.addEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
     onResize();
 
     const globe = createGlobe(canvasRef.current, {
@@ -24,13 +24,13 @@ const Globe = () => {
       diffuse: 1.2,
       mapSamples: 16000,
       mapBrightness: 6,
-      baseColor: [0.0078, 0.1255, 0.2863], // #022049
-      markerColor: [1, 1, 1], // Pure White
-      glowColor: [0, 0.278, 0.671], // #0047AB
+      baseColor: [0.0078, 0.1255, 0.2863], // Corrected to match #022049
+      markerColor: [1, 1, 1], // Pure White for markers
+      glowColor: [0, 0.278, 0.671], // Brand Blue #0047AB for the atmospheric glow
       markers: [
-        { location: [17.3850, 78.4867], size: 0.12 }, // Hyderabad, India
+        { location: [17.385, 78.4867], size: 0.12 }, // Hyderabad, India
         { location: [43.0481, -100.1474], size: 0.08 }, // Syracuse, USA
-        { location: [51.5074, -0.1278], size: 0.08 },  // London, UK
+        { location: [51.5074, -0.1278], size: 0.08 }, // London, UK
       ],
       onRender: (state) => {
         state.phi = phi;
@@ -42,18 +42,23 @@ const Globe = () => {
 
     return () => {
       globe.destroy();
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
   return (
     <div className="w-full h-full flex items-center justify-center relative">
-       {/* Removed mix-blend-screen if it was making points too faint on your specific background */}
-       <canvas
-         ref={canvasRef}
-         style={{ width: '100%', height: 'auto', maxWidth: '700px', aspectRatio: '1/1' }}
-         className="opacity-100" 
-       />
+      {/* Removed mix-blend-screen if it was making points too faint on your specific background */}
+      <canvas
+        ref={canvasRef}
+        style={{
+          width: "100%",
+          height: "auto",
+          maxWidth: "700px",
+          aspectRatio: "1/1",
+        }}
+        className="opacity-100"
+      />
     </div>
   );
 };

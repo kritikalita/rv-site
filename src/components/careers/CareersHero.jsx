@@ -15,7 +15,7 @@ const CareersHero = () => {
           initial={{ scale: 1.05, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.8 }} // Increased opacity to show original colors clearly
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="src/assets/images/careers.avif" 
+          src="src/assets/images/careersHero.webp" 
           className="w-full h-full object-cover object-center"
           alt="Raghu Vamsi Engineering"
         />

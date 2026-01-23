@@ -4,17 +4,17 @@ import { TbQuote, TbAward, TbCircleCheck, TbCircleFilled } from "react-icons/tb"
 
 const testimonials = [
   {
-    name: "Dr. Anirudh Sharma",
-    role: "Chief Technical Officer",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974",
+    name: "Rakesh Rai",
+    role: "Assistant Vice President, Human Resources",
+    image: "src/assets/images/Rakesh.jpg",
     quote: "The precision engineering culture at Raghu Vamsi is unmatched. We aren't just making parts; we're defining aerospace benchmarks for the next generation of flight.",
-    dept: "R&D Propulsion",
+    dept: "Human Resources",
     id: "EMP-RV-102"
   },
   {
-    name: "Sarah Jenkins",
+    name: "Anirudh Sharma",
     role: "Senior Quality Lead",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976",
+    image: "src/assets/images/Anirudh.jpg",
     quote: "Integrity is built into every micron. Working here means being part of a team that never compromises on safety, ensuring every component meets mission-critical standards.",
     dept: "Quality AS9100",
     id: "EMP-RV-215"
@@ -39,7 +39,7 @@ const Testimonials = () => {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-4"
             >
-              <div className="h-[2px] w-12 bg-brand-blue shadow-[0_0_10px_#0047AB]" />
+              <div className="h-[2px] w-12 bg-brand-blue" />
               <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">
                 Voices of Excellence
               </span>

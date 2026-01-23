@@ -119,9 +119,6 @@ const Industries = () => {
                   alt={industries[activeTab].name}
                   className="w-full h-full object-cover opacity-60" 
                 />
-                
-                {/* Scanning Line Effect */}
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-blue/30 shadow-[0_0_15px_#0047AB] z-20 animate-scan" />
 
                 {/* Updated Gradient overlay for text legibility using new palette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#022049] via-transparent to-[#022049]/40" />

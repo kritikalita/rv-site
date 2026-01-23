@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiArrowRight, HiExternalLink } from "react-icons/hi";
+import { HiExternalLink } from "react-icons/hi";
 import {
   TbRocket,
   TbSettingsAutomation,
@@ -132,7 +132,7 @@ const DivisionsPreview = () => {
   return (
     <section className="relative py-24 bg-white overflow-hidden border-t border-brand-border">
       
-      {/* ADDED: Background Blueprint Grid Pattern */}
+      {/* Background Blueprint Grid Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(#0047AB 1px, transparent 1px), linear-gradient(90deg, #0047AB 1px, transparent 1px)', 
@@ -149,7 +149,7 @@ const DivisionsPreview = () => {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-4"
             >
-              <div className="h-[2px] w-12 bg-brand-blue shadow-[0_0_10px_#0047AB]" />
+              <div className="h-[2px] w-12 bg-brand-blue" />
               <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">
                 Group Ecosystem
               </span>
@@ -174,6 +174,8 @@ const DivisionsPreview = () => {
       <div className="max-w-7xl mx-auto px-6 h-auto min-h-[650px] flex flex-col md:flex-row gap-4 relative z-10">
         {divisions.map((div) => {
           const isActive = activeId === div.id;
+          // Theme logic for inactive state: Division 2 uses Sky Blue, others use Gradient
+          const isSkyBlueTheme = div.id === 2;
 
           return (
             <motion.div
@@ -184,20 +186,23 @@ const DivisionsPreview = () => {
                 setHoveredSub(null);
               }}
               className={`relative rounded-sm overflow-hidden cursor-pointer transition-all duration-700 border border-white/5 shadow-2xl
-                ${isActive ? "flex-[5]" : "bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677] flex-[0.5] hover:brightness-110"}
+                ${isActive ? "flex-[5]" : 
+                  isSkyBlueTheme 
+                    ? "bg-gradient-to-br from-blue-50 to-blue-100 flex-[0.5] hover:brightness-105" 
+                    : "bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677] flex-[0.5] hover:brightness-110"}
               `}
             >
               {!isActive && (
                 <div className="absolute inset-0 flex flex-col items-center justify-between py-10">
-                  <span className="text-brand-blue font-mono text-xs font-bold opacity-40">
+                  <span className={`font-mono text-xs font-bold opacity-40 ${isSkyBlueTheme ? "text-brand-dark" : "text-brand-blue"}`}>
                     0{div.id}
                   </span>
                   <div className="rotate-[-90deg] whitespace-nowrap">
-                    <h3 className="text-[10px] font-black text-white/70 uppercase tracking-[0.4em]">
+                    <h3 className={`text-[10px] font-black uppercase tracking-[0.4em] ${isSkyBlueTheme ? "text-brand-dark/70" : "text-white/70"}`}>
                       {div.title.split(" ")[0]}
                     </h3>
                   </div>
-                  <div className="text-brand-blue opacity-50">
+                  <div className={isSkyBlueTheme ? "text-brand-blue" : "text-brand-blue opacity-50"}>
                     <div.icon size={20} />
                   </div>
                 </div>
@@ -297,12 +302,10 @@ const DivisionsPreview = () => {
                       </div>
 
                      <div className="mt-12 space-y-4">
-  {/* HEADER WITH HOVER HINT */}
   <div className="flex items-center justify-between">
     <p className="text-[10px] font-black text-brand-blue uppercase tracking-[0.3em]">
       Operational Units
     </p>
-    {/* Visual cue for the user */}
     <div className="flex items-center gap-2 opacity-40 group/hint">
       <TbScan size={12} className="text-white group-hover/hint:rotate-90 transition-transform" />
       <span className="text-[8px] font-mono text-white uppercase tracking-widest">
@@ -351,11 +354,7 @@ const DivisionsPreview = () => {
                           className="w-full h-full object-cover"
                         />
                       </AnimatePresence>
-
                       <div className="absolute inset-0 bg-gradient-to-r from-[#022049] via-transparent to-transparent opacity-40" />
-
-                     
-                      
                     </div>
                   </motion.div>
                 )}

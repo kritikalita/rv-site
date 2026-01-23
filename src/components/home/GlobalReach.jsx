@@ -91,9 +91,6 @@ const GlobalReach = () => {
                  />
               </div>
 
-              {/* Scanning Line Effect */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-blue/40 shadow-[0_0_15px_#0047AB] z-20 animate-scan" />
-
               {/* Interactive Layer */}
               <div className="absolute inset-0 w-full h-full z-10">
                 

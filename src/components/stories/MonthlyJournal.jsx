@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-// FIXED: TbBook is the correct export name to prevent SyntaxErrors
 import { TbBook, TbActivity, TbArrowRight, TbDownload, TbDatabase } from "react-icons/tb";
 import FeaturedStoryModal from './FeaturedStoryModal';
 
@@ -38,7 +37,7 @@ const MonthlyJournal = ({ onModalToggle }) => {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-t border-slate-200">
+    <section className="py-24 bg-white relative overflow-hidden border-t border-brand-border">
       {/* Subtle Blueprint Grid Accent */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#0047AB 1px, transparent 1px), linear-gradient(90deg, #0047AB 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -52,11 +51,12 @@ const MonthlyJournal = ({ onModalToggle }) => {
               <div className="h-[2px] w-12 bg-brand-blue" />
               <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">Monthly Intelligence</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
               The Editorial <span className="text-brand-blue">Dossier.</span>
             </h2>
           </div>
-          <div className="max-w-xs lg:border-l-2 lg:border-brand-blue lg:pl-8">
+          {/* UPDATED: Sky Blue Accent for the quote border */}
+          <div className="max-w-xs lg:border-l-2 lg:border-brand-blue/30 lg:pl-8">
             <p className="text-slate-500 text-sm md:text-base italic leading-relaxed tracking-tight font-medium">
               "Engineering the future through human precision and uncompromised quality standards."
             </p>
@@ -72,37 +72,39 @@ const MonthlyJournal = ({ onModalToggle }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               onClick={() => handleOpen(entry)}
-              /* DESIGN: Uses the deep navy/black gradient matching Careers. 
-                Using min-h-fit and flex-col md:flex-row ensures no internal overflow.
-              */
-              className="group relative bg-[#020B18] bg-gradient-to-br from-[#020B18] via-[#04152d] to-[#020B18] border border-white/10 rounded-sm cursor-pointer hover:shadow-2xl transition-all duration-500 flex flex-col md:flex-row min-h-fit"
+              className="group relative border border-white/10 rounded-sm cursor-pointer hover:shadow-2xl transition-all duration-500 flex flex-col md:flex-row min-h-fit overflow-hidden"
+              style={{
+                /* UPDATED: Using signature Midnight to Cobalt gradient */
+                background: 'linear-gradient(135deg, #022049 0%, #042b61 50%, #063677 100%)'
+              }}
             >
-              {/* IMAGE SECTION - REVERSED GRAYSCALE (Color -> Gray on Hover) */}
+              {/* IMAGE SECTION - REVERSED GRAYSCALE */}
               <div className="md:w-1/3 relative min-h-[250px] md:min-h-full overflow-hidden">
                 <img 
                   src={entry.image} 
                   alt={entry.title} 
                   className="absolute inset-0 w-full h-full object-cover grayscale-0 group-hover:grayscale transition-all duration-1000 opacity-90 group-hover:opacity-60"
                 />
-                <div className="absolute inset-0 bg-brand-blue/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Sky blue blend on hover */}
+                <div className="absolute inset-0 bg-brand-blue/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
-              {/* CONTENT SECTION - FLEXIBLE GROWTH */}
+              {/* CONTENT SECTION */}
               <div className="md:w-2/3 p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
                 <div className="mb-8">
                   <div className="flex justify-between items-start mb-6">
                     <div className="font-mono">
-                      <p className="text-brand-blue text-[11px] font-bold tracking-[0.2em]">{entry.vol}</p>
+                      <p className="text-blue-300 text-[11px] font-bold tracking-[0.2em]">{entry.vol}</p>
                       <p className="text-white/30 text-[9px] uppercase tracking-widest">{entry.date}</p>
                     </div>
-                    <TbDownload className="text-white/20 group-hover:text-brand-blue transition-colors" size={20} />
+                    <TbDownload className="text-white/20 group-hover:text-blue-300 transition-colors" size={20} />
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight tracking-tight group-hover:text-brand-blue transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight tracking-tight group-hover:text-blue-300 transition-colors duration-300">
                     {entry.title}
                   </h3>
 
-                  <p className="text-white/50 text-base leading-relaxed italic border-l-2 border-brand-blue/30 pl-6">
+                  <p className="text-blue-100/60 text-base leading-relaxed italic border-l-2 border-brand-blue/40 pl-6">
                     {entry.preview}
                   </p>
                 </div>
@@ -110,14 +112,13 @@ const MonthlyJournal = ({ onModalToggle }) => {
                 {/* TAGS & CTA */}
                 <div className="flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-white/5">
                    <div className="flex flex-wrap gap-2">
-                      {/* SAFETY: entry.tags?. check prevents map error on undefined properties */}
                       {entry.tags?.map(tag => (
-                        <span key={tag} className="text-[9px] font-bold text-white/30 border border-white/10 px-3 py-1 rounded-sm uppercase tracking-tighter bg-white/5">
+                        <span key={tag} className="text-[9px] font-bold text-white/40 border border-white/10 px-3 py-1 rounded-sm uppercase tracking-tighter bg-white/5">
                           #{tag}
                         </span>
                       ))}
                    </div>
-                   <div className="flex items-center gap-3 text-white font-bold text-[10px] uppercase tracking-[0.4em] group-hover:text-brand-blue group-hover:gap-6 transition-all duration-300">
+                   <div className="flex items-center gap-3 text-white font-bold text-[10px] uppercase tracking-[0.4em] group-hover:text-blue-300 group-hover:gap-6 transition-all duration-300">
                       <span>Full Intelligence</span>
                       <TbArrowRight className="text-lg" />
                    </div>
