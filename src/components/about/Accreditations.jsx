@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { TbShieldCheck, TbLeaf, TbBuildingArch, TbCircleFilled } from "react-icons/tb";
 
 const accreditationGroups = [
+  /* Data remains exactly as provided */
   {
     title: "Aerospace QMS",
     description: "The highest benchmarks for aerospace manufacturing and special processes.",
@@ -19,7 +20,7 @@ const accreditationGroups = [
     icon: TbLeaf,
     tag: "ENVIRONMENTAL",
     logos: [
-      { name: "ISO 14001", image: "public/logos/iso.jpg" },
+      { name: "ISO 14001", image: "src/assets/logos/iso140.jpeg" },
       { name: "RoHS", image: "/logos/Picture 5.png" },
       { name: "REACH", image: "/logos/reach.png" },
     ]
@@ -31,7 +32,7 @@ const accreditationGroups = [
     tag: "GLOBAL STDS",
     logos: [
       { name: "ASTM", image: "/logos/Picture 2.png" },
-      { name: "SAE", image: "/logos/sae.jpg" },
+      { name: "SAE", image: "src/assets/logos/sae.jpg" },
       { name: "ANSI", image: "/logos/Picture 3.png" },
       { name: "BSI", image: "/logos/bsi.png" },
     ]
@@ -40,7 +41,7 @@ const accreditationGroups = [
 
 const Accreditations = () => {
   return (
-    <section className="relative py-24 bg-white overflow-hidden border-t border-brand-border">
+    <section className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
       
       {/* UNIFORM BACKGROUND: Blueprint Grid Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
@@ -50,11 +51,11 @@ const Accreditations = () => {
            }} 
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-6 relative z-10 w-full">
         
-        {/* UNIFORM HEADER */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
-          <div className="max-w-2xl">
+        {/* HEADER: Responsive layout */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 md:mb-16 2xl:mb-24 gap-6 md:gap-8">
+          <div className="max-w-2xl 2xl:max-w-4xl">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -62,26 +63,22 @@ const Accreditations = () => {
               className="flex items-center gap-3 mb-4"
             >
               <div className="h-[2px] w-12 bg-brand-blue" />
-              <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">Quality Assurance</span>
+              <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] 2xl:text-xs">Quality Assurance</span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
+            <h2 className="text-3xl md:text-5xl 2xl:text-7xl font-bold text-brand-dark tracking-tighter leading-tight">
               Validated by <br />
               <span className="text-brand-blue">Global Standards.</span>
             </h2>
           </div>
-
-          <div className="hidden lg:block border-l border-slate-200 pl-8">
-            <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest max-w-[200px] leading-relaxed">
-              Certifications<br />
-              <span className="text-brand-blue font-mono">Aerospace Defence Compliance</span>
-            </p>
-          </div>
         </div>
 
-        {/* REGISTRY GRID: Alternating Color Logic */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* REGISTRY GRID: 
+            Mobile: 1 Col
+            Tablet/iPad: 2 Col (sm:grid-cols-2)
+            Laptop/Big Screens: 3 Col (lg:grid-cols-3)
+        */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 2xl:gap-12">
           {accreditationGroups.map((group, idx) => {
-            // Apply the alternating logic from Ethos: Odd indices use Signature Gradient, Even use Sky Blue
             const isSignatureGradient = idx % 2 !== 0;
 
             return (
@@ -92,62 +89,60 @@ const Accreditations = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ y: -5 }}
-                className={`group relative flex flex-col h-[480px] border border-white/10 rounded-sm overflow-hidden shadow-2xl transition-all duration-500 cursor-default p-8
+                className={`group relative flex flex-col h-auto min-h-[440px] md:h-[480px] 2xl:min-h-[580px] border border-white/10 rounded-sm overflow-hidden shadow-2xl transition-all duration-500 cursor-default p-6 md:p-8 2xl:p-12
                   ${isSignatureGradient 
                     ? 'bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677]' 
                     : 'bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200'
                   }`}
               >
                 {/* Technical Glow Effect */}
-                <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/5 blur-[30px] group-hover:bg-brand-blue/20 transition-all duration-700" />
+                <div className="absolute -right-2 -top-2 w-16 h-16 2xl:w-32 2xl:h-32 bg-white/5 blur-[30px] group-hover:bg-brand-blue/20 transition-all duration-700" />
 
-                <div className="flex justify-between items-start mb-8 relative z-10">
-                  <div className={`p-3 w-fit rounded-sm shadow-[0_0_15px_rgba(0,71,171,0.5)] 
-                    ${isSignatureGradient ? "bg-white/10 text-white" : "bg-brand-blue text-white"}`}>
-                    <group.icon size={22} />
+                <div className="flex justify-between items-start mb-6 md:mb-8 2xl:mb-12 relative z-10">
+                  <div className={`p-2.5 md:p-3 2xl:p-5 w-fit rounded-sm shadow-[0_0_15px_rgba(0,71,171,0.5)] 
+                    ${isSignatureGradient ? "bg-white text-brand-blue" : "bg-brand-blue text-white"}`}>
+                    <group.icon className="w-5 h-5 md:w-[22px] md:h-[22px] 2xl:w-8 2xl:h-8" />
                   </div>
-                  <span className={`font-mono text-[9px] font-bold tracking-[0.2em] 
+                  <span className={`font-mono text-[8px] md:text-[9px] 2xl:text-xs font-bold tracking-[0.2em] 
                     ${isSignatureGradient ? "text-white/30" : "text-brand-blue/40"}`}>
                     {group.tag}
                   </span>
                 </div>
 
-                <div className="mb-8 relative z-10">
-                  <div className="flex items-center gap-2 mb-4">
-                    <TbCircleFilled className={`text-[6px] animate-pulse ${isSignatureGradient ? "text-brand-blue" : "text-brand-blue"}`} />
-                    <h3 className={`text-2xl font-bold tracking-tight 
+                <div className="mb-6 md:mb-8 2xl:mb-12 relative z-10">
+                  <div className="flex items-center gap-2 mb-3 md:mb-4">
+                    <TbCircleFilled className={`text-[5px] md:text-[6px] 2xl:text-[8px] animate-pulse ${isSignatureGradient ? "text-brand-blue" : "text-brand-blue"}`} />
+                    <h3 className={`text-xl md:text-2xl 2xl:text-3xl font-bold tracking-tight 
                       ${isSignatureGradient ? "text-white" : "text-brand-dark"}`}>
                       {group.title}
                     </h3>
                   </div>
-                  <p className={`text-[13px] leading-relaxed font-medium border-l pl-4 
+                  <p className={`text-[12px] md:text-[13px] 2xl:text-lg leading-relaxed font-medium border-l pl-4 
                     ${isSignatureGradient ? "text-slate-300 border-brand-blue/40" : "text-slate-600 border-brand-blue/40"}`}>
                     {group.description}
                   </p>
                 </div>
 
-                {/* LOGO GRID */}
-                <div className={`mt-auto pt-8 border-t relative z-10 ${isSignatureGradient ? "border-white/10" : "border-brand-blue/10"}`}>
-                  <div className="grid grid-cols-2 gap-3">
+                {/* LOGO GRID: Scaled for high-fidelity viewing */}
+                <div className={`mt-auto pt-6 md:pt-8 2xl:pt-12 border-t relative z-10 ${isSignatureGradient ? "border-white/10" : "border-brand-blue/10"}`}>
+                  <div className="grid grid-cols-2 gap-2 md:gap-3 2xl:gap-5">
                     {group.logos.map((logo, lIdx) => (
                       <div 
                         key={lIdx} 
-                        className={`p-2 h-16 flex items-center justify-center rounded-sm transition-all duration-500
-                          ${isSignatureGradient ? "bg-white/5 border border-white/10 group-hover:bg-white/10" : "bg-white border border-brand-blue/5 shadow-sm"}`}
+                        className="p-1.5 md:p-2 2xl:p-4 h-14 md:h-16 2xl:h-24 flex items-center justify-center rounded-sm transition-all duration-500 bg-white border border-brand-blue/5 shadow-sm group-hover:shadow-md"
                       >
                         <img 
                           src={logo.image} 
                           alt={logo.name} 
-                          className={`max-h-full max-w-full object-contain transition-opacity 
-                            ${isSignatureGradient ? "opacity-80 group-hover:opacity-100" : "opacity-100"}`} 
+                          className="max-h-full max-w-full object-contain" 
                         />
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Corner HUD Bracket */}
-                <div className={`absolute bottom-0 right-0 w-8 h-8 border-b border-r opacity-0 group-hover:opacity-100 transition-opacity duration-500 
+                {/* Aesthetic Corner Bracket */}
+                <div className={`hidden md:block absolute bottom-0 right-0 w-8 h-8 2xl:w-16 2xl:h-16 border-b border-r opacity-0 group-hover:opacity-100 transition-opacity duration-500 
                   ${isSignatureGradient ? "border-brand-blue" : "border-brand-blue"}`} />
               </motion.div>
             );

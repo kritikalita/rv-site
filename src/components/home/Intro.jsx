@@ -2,15 +2,15 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiArrowRight, HiCheckCircle } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
-import { TbCpu, TbWorld, TbPlaneDeparture, TbSettingsAutomation, TbCircleFilled } from "react-icons/tb";
+import { TbUsers, TbMapPin, TbChartBar, TbTrophy, TbCircleFilled } from "react-icons/tb";
 
-const StatCard = ({ number, label, icon: Icon, delay, isGradient }) => (
+const StatCard = ({ number, label, icon: Icon, delay, isGradient, suffix = "+" }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: delay }}
-    className={`relative p-6 flex flex-col justify-between overflow-hidden border border-white/5 shadow-2xl transition-all duration-500 group
+    className={`relative p-4 md:p-6 2xl:p-8 flex flex-col justify-between overflow-hidden border border-white/5 shadow-2xl transition-all duration-500 group
       ${isGradient 
         ? 'bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677]' 
         : 'bg-[#010816] hover:bg-[#020d1f]'
@@ -26,11 +26,11 @@ const StatCard = ({ number, label, icon: Icon, delay, isGradient }) => (
         <TbCircleFilled className={`text-[4px] animate-pulse ${isGradient ? "text-blue-300" : "text-brand-blue"}`} />
       </div>
 
-      <h3 className="text-3xl font-bold text-white mb-1 flex items-baseline gap-1 tabular-nums tracking-tighter">
-        {number}<span className="text-brand-blue text-xl">+</span>
+      <h3 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-white mb-1 flex items-baseline gap-1 tabular-nums tracking-tighter">
+        {number}<span className="text-brand-blue text-xl">{suffix}</span>
       </h3>
       
-      <p className={`text-[9px] font-black uppercase tracking-[0.2em] pt-3 border-t transition-colors
+      <p className={`text-[8px] md:text-[9px] 2xl:text-[10px] font-black uppercase tracking-[0.2em] pt-3 border-t transition-colors
         ${isGradient ? "text-blue-100/50 border-white/10" : "text-slate-500 border-white/5"}`}>
         {label}
       </p>
@@ -51,7 +51,7 @@ const Intro = () => {
   const yStats = useTransform(scrollYProgress, [0, 1], [20, -60]);
 
   return (
-    <section ref={ref} className="relative pt-24 pb-12 bg-white overflow-hidden border-b border-brand-border">
+    <section ref={ref} className="relative pt-16 md:pt-24 2xl:pt-32 pb-12 bg-white overflow-hidden border-b border-brand-border">
       
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ 
@@ -60,17 +60,18 @@ const Intro = () => {
            }} 
       />
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+      {/* Main Container: max-w ensures laptop alignment remains sharp */}
+      <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 2xl:gap-24 relative z-10">
         
-        <div className="relative z-20 flex flex-col justify-start">
+        <div className="relative z-20 flex flex-col justify-center lg:justify-start">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3 mb-6"
+            className="flex items-center gap-3 mb-4 md:mb-6"
           >
             <div className="h-[2px] w-12 bg-brand-blue" />
-            <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">
+            <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px] 2xl:text-xs">
               Corporate Profile
             </span>
           </motion.div>
@@ -79,10 +80,10 @@ const Intro = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-brand-dark mb-8 tracking-tighter leading-tight"
+            className="text-3xl md:text-5xl 2xl:text-7xl font-bold text-brand-dark mb-6 md:mb-8 tracking-tighter leading-tight"
           >
-            Manufacturing the <br/> 
-            <span className="text-brand-blue">Impossible.</span>
+            Engineering Trust <br/> 
+            <span className="text-brand-blue">Across Decades.</span>
           </motion.h2>
 
           <motion.p 
@@ -90,11 +91,9 @@ const Intro = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-500 text-base leading-relaxed max-w-lg border-l-2 border-slate-200 pl-8 mb-12"
+            className="text-slate-500 text-sm md:text-base 2xl:text-lg leading-relaxed max-w-lg 2xl:max-w-xl border-l-2 border-slate-200 pl-6 md:pl-8 mb-8 md:mb-12"
           >
-            Raghu Vamsi is a Tier-1 aerospace and defence manufacturer. 
-            We maintain a <span className="font-bold text-brand-dark">99.8% precision rate</span> across critical engine components 
-            and structural assemblies for global OEMs.
+            The early foundations of the business started by <span className="font-bold text-brand-dark">Mr. G. Thrimurthulu in 1992</span> in the area of Power Transmission and initiated cast iron castings and machining in 1998 led the group into gaining expertise and developing the capabilities in precision engineering.
           </motion.p>
 
           <motion.div
@@ -102,28 +101,29 @@ const Intro = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-8 items-center" 
+            className="flex flex-col sm:flex-row gap-6 md:gap-8 items-start sm:items-center" 
           >
-            <Link to="/about" className="group relative flex items-center gap-6 bg-[#020617] text-white px-8 py-4 font-black uppercase tracking-[0.4em] text-[10px] hover:bg-brand-blue transition-all shadow-2xl overflow-hidden">
+            <Link to="/about" className="group relative flex items-center justify-center gap-6 bg-[#020617] text-white px-8 py-4 2xl:px-12 2xl:py-6 font-black uppercase tracking-[0.4em] text-[10px] 2xl:text-xs hover:bg-brand-blue transition-all shadow-2xl overflow-hidden w-full sm:w-auto">
               <span className="relative z-10 flex items-center gap-3">
-                Our Legacy <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
+                Our History <HiArrowRight className="group-hover:translate-x-2 transition-transform" />
               </span>
               <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all duration-700 shadow-[0_0_20px_white]" />
             </Link>
             
-            <div className="flex items-center gap-4 border-l border-slate-200 pl-8">
-              <HiCheckCircle className="text-brand-blue text-3xl" />
-              <div className="text-[9px] font-black text-brand-dark uppercase tracking-[0.2em] leading-tight">
+            <div className="flex items-center gap-4 border-l border-slate-200 pl-6 md:pl-8">
+              <HiCheckCircle className="text-brand-blue text-2xl md:text-3xl 2xl:text-4xl" />
+              <div className="text-[8px] md:text-[9px] 2xl:text-[10px] font-black text-brand-dark uppercase tracking-[0.2em] leading-tight">
                 AS9100D <br/> Certified
               </div>
             </div>
           </motion.div>
         </div>
 
-        <div className="relative h-[520px] hidden lg:block group/intro-right">
+        {/* Desktop & Laptop Image Section */}
+        <div className="relative h-[400px] lg:h-[520px] 2xl:h-[700px] hidden lg:block group/intro-right">
           <motion.div 
             style={{ y: yImage }} 
-            className="absolute top-0 right-0 w-[85%] h-[400px] z-10 group/dossier"
+            className="absolute top-0 right-0 w-[85%] h-[300px] lg:h-[400px] 2xl:h-[550px] z-10 group/dossier"
           >
             <div 
               className="w-full h-full relative shadow-2xl border border-white/10 overflow-hidden rounded-sm transition-all duration-700 group-hover/dossier:border-brand-blue/50"
@@ -131,7 +131,7 @@ const Intro = () => {
             >
               <img 
                 src="/logos/introHome.png" 
-                alt="Aerospace Engineering" 
+                alt="Raghu Vamsi Manufacturing" 
                 className="w-full h-full object-cover grayscale-0 opacity-90 group-hover/dossier:grayscale group-hover/dossier:opacity-60 transition-all duration-1000 group-hover/dossier:scale-105"
               />
               <div className="absolute top-0 left-0 w-full h-[2px] bg-brand-blue/40 shadow-[0_0_15px_#0047AB] z-20 translate-y-[-100%] group-hover/dossier:animate-scan" />
@@ -140,26 +140,36 @@ const Intro = () => {
             </div>
           </motion.div>
 
-          <motion.div style={{ y: yStats }} className="absolute bottom-4 left-0 w-full z-20 grid grid-cols-2 gap-4 pr-12">
-            <div className="space-y-4 mt-12">
-              {/* Set isGradient to true for both blocks here */}
-              <StatCard number="24" label="Years Experience" icon={TbSettingsAutomation} delay={0.2} isGradient={true} />
-              <StatCard number="20" label="Global Partners" icon={TbWorld} delay={0.4} isGradient={true} />
+          {/* Stats overlap logic - Adjusted for laptops and 2xl */}
+          <motion.div style={{ y: yStats }} className="absolute bottom-4 left-0 w-full z-20 grid grid-cols-2 gap-4 2xl:gap-8 pr-12">
+            <div className="space-y-4 2xl:space-y-8 mt-12">
+              <StatCard number="30" label="Years Excellence" icon={TbTrophy} delay={0.2} isGradient={true} />
+              <StatCard number="50" label="Revenue (M$)" icon={TbChartBar} delay={0.4} isGradient={true} suffix="M+" />
             </div>
-            <div className="space-y-4">
-              {/* Set isGradient to true for both blocks here */}
-              <StatCard number="10k" label="Parts Delivered" icon={TbCpu} delay={0.3} isGradient={true} />
-              <StatCard number="6" label="Units" icon={TbPlaneDeparture} delay={0.5} isGradient={true} />
+            <div className="space-y-4 2xl:space-y-8">
+              <StatCard number="800" label="Total Employees" icon={TbUsers} delay={0.3} isGradient={true} />
+              <StatCard number="10" label="Global Locations" icon={TbMapPin} delay={0.5} isGradient={true} suffix="" />
             </div>
           </motion.div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4 lg:hidden mt-4">
-            {/* Set isGradient to true for all blocks here for mobile view */}
-            <StatCard number="24" label="Years Exp." icon={TbSettingsAutomation} delay={0.2} isGradient={true} />
-            <StatCard number="50" label="Clients" icon={TbWorld} delay={0.3} isGradient={true} />
-            <StatCard number="10k" label="Parts" icon={TbCpu} delay={0.4} isGradient={true} />
-            <StatCard number="4" label="Units" icon={TbPlaneDeparture} delay={0.5} isGradient={true} />
+        {/* Mobile & Tablet View Image (Centered for iPads/Mobile) */}
+        <div className="block lg:hidden w-full relative h-[250px] sm:h-[400px] md:h-[450px] mb-8">
+            <div 
+              className="w-full h-full relative shadow-xl border border-white/5 overflow-hidden rounded-sm"
+              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%)' }}
+            >
+              <img src="/logos/introHome.png" alt="Raghu Vamsi" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
+            </div>
+        </div>
+
+        {/* Mobile View Stats Grid (2 columns for phones and tablets) */}
+        <div className="grid grid-cols-2 gap-4 lg:hidden">
+            <StatCard number="30" label="Years Exp." icon={TbTrophy} delay={0.2} isGradient={true} />
+            <StatCard number="50" label="Revenue" icon={TbChartBar} delay={0.3} isGradient={true} suffix="M+" />
+            <StatCard number="800" label="Employees" icon={TbUsers} delay={0.4} isGradient={true} />
+            <StatCard number="10" label="Locations" icon={TbMapPin} delay={0.5} isGradient={true} suffix="" />
         </div>
       </div>
     </section>

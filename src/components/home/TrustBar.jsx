@@ -33,31 +33,34 @@ const TrustBar = () => {
   ];
 
   return (
-    <section className="py-12 bg-white border-b border-brand-border overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-        <p className="text-gray-400 text-xs font-bold tracking-[0.2em] uppercase">
+    /* Responsive vertical padding: py-8 (Mobile) -> md:py-12 (Laptop/Original) -> 2xl:py-20 (Big Screens) */
+    <section className="py-8 md:py-12 2xl:py-20 bg-white border-b border-brand-border overflow-hidden relative">
+      
+      {/* Container max-width expands on very large screens to maintain proportion */}
+      <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-6 mb-6 md:mb-10 2xl:mb-14 text-center">
+        <p className="text-gray-400 text-[10px] md:text-xs 2xl:text-sm font-bold tracking-[0.2em] uppercase">
           Trusted by Global Aerospace Leaders
         </p>
       </div>
 
-      <div className="relative flex overflow-x-hidden group">
-        {/* Side Gradients for fading effect */}
-        <div className="absolute top-0 left-0 w-20 md:w-40 h-full bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="absolute top-0 right-0 w-20 md:w-40 h-full bg-gradient-to-l from-white to-transparent z-10" />
+      <div className="relative flex items-center overflow-x-hidden group">
+        {/* Side Gradients: w-12 (Mobile) -> md:w-40 (Original) -> 2xl:w-64 (Big Screens) */}
+        <div className="absolute top-0 left-0 w-12 md:w-40 2xl:w-64 h-full bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-12 md:w-40 2xl:w-64 h-full bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
         {/* The Scrolling Track */}
-        {/* We map 3 times (Triple) to ensure the track is always long enough for the -50% trick */}
-        <div className="animate-marquee flex whitespace-nowrap items-center">
+        <div className="animate-marquee flex whitespace-nowrap items-center py-2">
           {[...clients, ...clients, ...clients].map((client, index) => (
             <div 
               key={index} 
-              className="mx-8 md:mx-16 w-32 h-16 flex items-center justify-center cursor-pointer transition-all duration-300 flex-shrink-0"
+              /* Spacing: mx-6 (Mobile) -> md:mx-16 (Laptop) -> 2xl:mx-24 (Big Screen)
+                 Logo Dimensions: w-24/h-10 (Mobile) -> w-32/h-16 (Laptop) -> w-48/h-24 (Big Screen) */
+              className="mx-6 md:mx-16 2xl:mx-24 w-24 md:w-32 2xl:w-48 h-10 md:h-16 2xl:h-24 flex items-center justify-center cursor-pointer transition-all duration-300 flex-shrink-0"
             >
               <img 
                 src={client.logo} 
                 alt={client.name}
-                // Removed grayscale per your previous request
-                className="max-w-full max-h-full object-contain hover:scale-110 transition-all duration-500"
+                className="max-w-full max-h-full object-contain hover:scale-110 2xl:hover:scale-125 transition-all duration-500"
               />
             </div>
           ))}

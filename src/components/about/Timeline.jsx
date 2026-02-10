@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { HiArrowRight, HiArrowLeft } from 'react-icons/hi';
-import { TbCircleFilled } from "react-icons/tb";
 
 const history = [
 
@@ -239,9 +237,9 @@ const Timeline = () => {
   const scrollContainer = useRef(null);
 
   return (
-    <section className="relative py-24 bg-white border-t border-b border-brand-border overflow-hidden">
+    <section className="relative py-12 md:py-24 bg-white border-t border-b border-brand-border overflow-hidden">
       
-      {/* UNIFORM BACKGROUND: Blueprint Grid Pattern */}
+      {/* UNIFORM BACKGROUND */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(#0047AB 1px, transparent 1px), linear-gradient(90deg, #0047AB 1px, transparent 1px)', 
@@ -249,36 +247,29 @@ const Timeline = () => {
            }} 
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full mb-16">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8">
-          <div className="max-w-2xl">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-4"
-            >
-              <div className="h-[2px] w-12 bg-brand-blue" />
-              <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[10px]">Legacy Transmission</span>
-            </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
-              Historical <span className="text-brand-blue">Milestones.</span>
-            </h2>
-          </div>
-
-          <div className="hidden lg:block border-l border-slate-200 pl-8">
-            <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest max-w-[180px] leading-relaxed">
-              Temporal Archive<br />
-              <span className="text-brand-blue font-mono">Our Evolution</span>
-            </p>
-          </div>
+      {/* Header Section */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full mb-8 md:mb-16">
+        <div className="flex flex-col justify-start items-start gap-4">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3"
+          >
+            <div className="h-[2px] w-8 md:w-12 bg-brand-blue" />
+            <span className="text-brand-blue font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-[8px] md:text-[10px]">Legacy Transmission</span>
+          </motion.div>
+          <h2 className="text-3xl md:text-5xl font-bold text-brand-dark tracking-tighter leading-tight">
+            Historical <span className="text-brand-blue">Milestones.</span>
+          </h2>
         </div>
       </div>
 
+      {/* Horizontal Scroll Container */}
       <div 
         ref={scrollContainer}
-        className="flex overflow-x-auto pb-4 gap-8 no-scrollbar relative z-10 w-full 
-                   pl-6 md:pl-[calc((100vw-80rem)/2+1.5rem)]" 
+        className="flex overflow-x-auto pb-12 gap-4 md:gap-8 no-scrollbar relative z-10 w-full 
+                   px-6 md:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] snap-x snap-mandatory" 
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {history.map((item, index) => (
@@ -286,43 +277,54 @@ const Timeline = () => {
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="shrink-0 w-[80vw] md:w-[340px] h-[420px] relative group rounded-sm overflow-hidden border border-white/10 shadow-xl transition-all duration-500"
-            /* UPDATED: Background uses new signature blue gradient */
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            className="shrink-0 w-[82vw] sm:w-[350px] md:w-[380px] h-[400px] md:h-[450px] relative group rounded-sm overflow-hidden border border-white/10 shadow-xl transition-all duration-500 snap-center"
             style={{ background: 'linear-gradient(135deg, #022049 0%, #063677 100%)' }}
           >
+            {/* Year Badge */}
             <div className="absolute top-4 left-4 z-30">
                <span className="bg-brand-blue text-white text-[9px] font-mono px-2 py-1 tracking-widest uppercase rounded-sm shadow-md">
                   {item.year}
                </span>
             </div>
 
+            {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
               <img 
                 src={item.image} 
                 alt={item.title} 
-                className="w-full h-full object-cover grayscale-0 group-hover:grayscale transition-all duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-30" 
+                className="w-full h-full object-cover grayscale-0 group-hover:grayscale transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-30" 
               />
-              {/* UPDATED: Gradient overlay updated to blend with deep blue instead of black */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#022049] via-transparent to-transparent opacity-90 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#022049] via-[#022049]/40 to-transparent opacity-90 z-10" />
             </div>
 
-            <div className="absolute bottom-0 left-0 p-8 z-30 w-full">
-              <h3 className="text-xl font-bold text-white mb-3 leading-tight transition-all duration-300 group-hover:[text-shadow:0_0_10px_rgba(255,255,255,0.8)]">
+            {/* Content */}
+            <div className="absolute bottom-0 left-0 p-6 md:p-8 z-30 w-full">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-4 leading-tight transition-all duration-300 group-hover:[text-shadow:0_0_10px_rgba(255,255,255,0.8)]">
                 {item.title}
               </h3>
               
-              <p className="text-blue-100/70 text-xs leading-relaxed border-l-2 border-brand-blue/40 pl-4 group-hover:text-white transition-colors italic">
+              <p className="text-blue-100/80 text-[12px] md:text-sm leading-relaxed border-l-2 border-brand-blue/60 pl-4 group-hover:text-white transition-colors italic line-clamp-4 md:line-clamp-none">
                 "{item.desc}"
               </p>
             </div>
 
+            {/* Accent Border */}
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-brand-blue opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
           </motion.div>
         ))}
-        <div className="min-w-[50px] md:min-w-[calc((100vw-80rem)/2+1.5rem)] shrink-0" />
+        
+        {/* Extra spacer to ensure the last card can be centered/padded correctly on mobile */}
+        <div className="min-w-[1px] md:min-w-[20px] shrink-0" />
       </div>
+
+      {/* Optional: Add custom CSS for no-scrollbar if not already in your tailwind config */}
+      <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };

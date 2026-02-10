@@ -13,12 +13,15 @@ import {
   TbTreadmill,
   TbVectorBezier,
 } from "react-icons/tb";
-import capEngImg from "../assets/images/capEng.webp";
-import capPresImg from "../assets/images/capPres.webp";
-import capEMImg from "../assets/images/capEM.webp";
-import capHiPresImg from "../assets/images/capHiPres.webp";
-import capSurfImg from "../assets/images/capSurf.webp";
-import capEwhImg from "../assets/images/capEwh.webp";
+import capEngImg from "../assets/images/capEng.jpg";
+import capPresImg from "../assets/images/capPres.jpg";
+import capEMImg from "../assets/images/capEM.jpg";
+import capGearsImg from "../assets/images/capGears.jpg";
+import capSurfImg from "../assets/images/capSurf.jpg";
+import capEwhImg from "../assets/images/capElec.jpg";
+import capAsImg from "../assets/images/capAssemWeld.jpg";
+import capFastImg from "../assets/images/capFast.jpg";
+import capSheetImg from "../assets/images/capSheet.jpg";
 
 export const capabilitiesData = [
   {
@@ -102,25 +105,6 @@ export const capabilitiesData = [
   },
   {
     id: "VERT-04",
-    title: "Composites",
-    icon: TbLayersIntersect,
-    tag: "COMP_X2",
-    desc: "Advanced structural carbon/glass fiber parts with Autoclave curing.",
-    engineering: {
-      para1:
-        "Raghuvamsi offers build-to-print manufacture and repair of composite and metal-bonded parts, subassemblies, and assemblies in a wide variety of common aerospace materials.",
-      para2:
-        "We manufacture advanced composite structural parts and assemblies for aerospace and defense applications using carbon and glass fiber materials and autoclave curing technology.",
-      subTag: "AEROSPACE_COMPOSITES",
-      para3:
-        "Our high-precision manufacturing output includes mission-critical composite parts and structural components for aircraft, helicopters, UAV’s and spacecraft.",
-    },
-    specs: ["Aerospace Autoclave", "RTM Moulding", "NDT Ultrasonic"],
-    // infra: ["PLC Autoclaves", "ISO Class 8 Lab"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978",
-  },
-  {
-    id: "VERT-05",
     title: "Sheet Metal Fabrication",
     icon: TbScissors,
     tag: "FAB_A7",
@@ -136,10 +120,10 @@ export const capabilitiesData = [
     },
     specs: ["4kW Fiber Laser", "8-Axis Bending", "Hydro Forming"],
     // infra: ["Hydro-form Units", "8-Axis Benders"],
-    image: "https://images.unsplash.com/photo-1535295972055-1c762f4483e5",
+    image: capSheetImg,
   },
   {
-    id: "VERT-06",
+    id: "VERT-05",
     title: "High Precision Gears",
     icon: TbSettings,
     tag: "GEAR_G1",
@@ -243,10 +227,10 @@ export const capabilitiesData = [
         note: "Right Angle / Miter Gears Size Capacity",
       },
     ],
-    image: capHiPresImg,
+    image: capGearsImg,
   },
   {
-    id: "VERT-07",
+    id: "VERT-06",
     title: "Surface Treatment",
     icon: TbFlask,
     tag: "SURF_CP",
@@ -265,7 +249,7 @@ export const capabilitiesData = [
     image: capSurfImg,
   },
   {
-    id: "VERT-08",
+    id: "VERT-07",
     title: "Fasteners",
     icon: TbBolt,
     tag: "FAST_F1",
@@ -281,10 +265,10 @@ export const capabilitiesData = [
     },
     specs: ["M1.4 - M20 Range", "Cold Heading", "Thread Rolling"],
     // infra: ["Wire Draw Lines", "Testing Lab", "Centerless Grinders"],
-    image: "https://images.unsplash.com/photo-1517055727180-d1a6761c54c4",
+    image: capFastImg,
   },
   {
-    id: "VERT-09",
+    id: "VERT-08",
     title: "Assembly & Weld",
     icon: TbTir,
     tag: "WELD_W1",
@@ -300,10 +284,10 @@ export const capabilitiesData = [
     },
     specs: ["Turbine Components", "Heli-coil® / Swaging", "Flight Sim Systems"],
     // infra: ["NADCAP Weld Cells", "Proof Load Testing", "NDT Inspection"],
-    image: "https://images.unsplash.com/photo-1504328332780-bebf217e04cd",
+    image: capAsImg,
   },
   {
-    id: "VERT-10",
+    id: "VERT-09",
     title: "Electronics & Wire Harnesses",
     icon: TbCpu,
     tag: "ELECT_E1",
@@ -331,143 +315,119 @@ export const sectorData = [
   {
     id: "Sec-01",
     title: "Aerospace",
-    // Use a string for the image path, not a component
     mainImage:
-      "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070&auto=format&fit=crop",
     description:
       "Advanced propulsion systems and structural components for next-generation flight.",
     products: [
-      {
-        name: "Engine Seal",
-        image:
-          "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80",
-        details:
-          "Single-crystal superalloy construction for extreme thermal environments.",
-      },
-      {
-        name: "Bearing Housing",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Fuel nozzles",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Turbine Disc",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Nozzle",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-    ],
+  {
+    name: "Divergent",
+    image: "src/assets/images/Divergent.jpeg",
+    details: "Precision-engineered exhaust nozzle components designed to manage supersonic gas expansion and directional thrust stability.",
+  },
+  {
+    name: "Mechanical Assembly",
+    image: "src/assets/images/Mechanical Assembly.jpeg",
+    details: "Complex multi-component integration featuring high-tolerance hardware for mission-critical aerospace structural systems.",
+  },
+  {
+    name: "Sheet Metal Part",
+    image: "src/assets/images/Sheet Metal Part.jpeg",
+    details: "Advanced alloy forming utilizing fiber laser cutting and precision bending for lightweight aerodynamic housing and liners.",
+  },
+  {
+    name: "Shear Pin Adapter",
+    image: "src/assets/images/Spur Gears.jpeg", // Note: Ensure this path matches the component name
+    details: "High-integrity safety component engineered to provide calibrated failure points for protecting critical drivetrain torque loads.",
+  },
+  {
+    name: "Seeker Housing",
+    image: "src/assets/images/Seeker Housing.jpeg",
+    details: "Ultra-precise enclosure for missile guidance systems, machined from specialized alloys to ensure thermal and EMI protection.",
+  },
+  {
+    name: "Shear Pin Adapter",
+    image: "src/assets/images/Shear Pin Adapter.jpeg",
+    details: "Load-bearing adapter specifically machined for rapid installation and removal in high-vibration aerospace environments.",
+  },
+  {
+    name: "Turbine Wheel",
+    image: "src/assets/images/Turbine Wheel.jpeg",
+    details: "High-RPM propulsion component manufactured from single-crystal superalloys to withstand extreme thermal and centrifugal stress.",
+  },
+]
   },
   {
     id: "SEC-02",
     title: "Oil & Gas",
     mainImage:
-      "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80",
+      "src/assets/images/oil.jpeg",
     description:
       "Providing high-durability valves, flow control components, and ruggedized hardware for extreme environments.",
     products: [
-      {
-        name: "Wireline",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Wireline",
-        image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7",
-        details:
-          "Structural mounting systems precision-machined for narrow-body aircraft.",
-      },
-      {
-        name: "Surface Tech",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Completion",
-        image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7",
-        details:
-          "Structural mounting systems precision-machined for narrow-body aircraft.",
-      },
-    ],
+  {
+    name: "Artificial Lift",
+    image: "src/assets/images/Artificial lift.jpeg",
+    details: "High-precision internal components for ESP and rod lift systems, engineered to enhance reservoir production in high-viscosity environments.",
+  },
+  {
+    name: "Completions Products",
+    image: "src/assets/images/Completions Products.jpeg",
+    details: "Critical downhole hardware including packers and liners, precision-machined to ensure wellbore integrity under extreme pressure and temperature.",
+  },
+  {
+    name: "Drilling Products",
+    image: "src/assets/images/Drilling Products.jpeg",
+    details: "Ruggedized motor components and drill string stabilizers manufactured from specialized alloys to withstand high-torque rotational stress.",
+  },
+  {
+    name: "Surface Technology",
+    image: "src/assets/images/Surface Technology.jpeg",
+    details: "Advanced flow control solutions and valve manifold components designed for high-reliability performance in surface production facilities.",
+  },
+  {
+    name: "Wireline Product",
+    image: "src/assets/images/Wireline Product.jpeg",
+    details: "Precision-machined logging tool housings and intervention hardware, featuring tight tolerances for sensitive electronic sensor protection.",
+  },
+],
   },
   {
     id: "SEC-03",
     title: "Power",
-    mainImage: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122",
+    mainImage: "src/assets/images/power.jpeg",
     description:
       "Precision components for sustainable energy grids, turbine blades, and high-voltage distribution hardware.",
-    products: [
-      {
-        name: "Combustion Liners",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Engine Pylons",
-        image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7",
-        details:
-          "Structural mounting systems precision-machined for narrow-body aircraft.",
-      },
-      {
-        name: "Combustion Liners",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Engine Pylons",
-        image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7",
-        details:
-          "Structural mounting systems precision-machined for narrow-body aircraft.",
-      },
-    ],
+   products: [
+  {
+    name: "Fuel Nozzle Assembly",
+    image: "src/assets/images/Fuel Nozzle Assembly.jpeg",
+    details: "High-precision delivery systems engineered for optimal fuel atomization and combustion efficiency in industrial gas turbines.",
+  },
+  {
+    name: "Lock Plates",
+    image: "src/assets/images/Lock Plates.jpeg",
+    details: "Critical fastening hardware machined from high-strength alloys to ensure component retention in high-vibration power generation environments.",
+  },
+  {
+    name: "TP Bull Horns",
+    image: "src/assets/images/TP Bull Horns.jpeg",
+    details: "Specialized structural supports for transition pieces, designed to withstand extreme thermal expansion and aerodynamic stress.",
+  },
+  {
+    name: "Transition Piece Hardware",
+    image: "src/assets/images/Transition piece hardware.jpeg",
+    details: "High-critical assembly hardware required for managing hot gas pathways between the combustor and turbine stages.",
+  },
+],
   },
   {
     id: "SEC-04",
     title: "Medical",
-    mainImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118",
+    mainImage: "src/assets/images/Medical.jpeg",
     description:
       "Manufacturing of titanium implants and high-precision surgical instrumentation for the healthcare sector.",
     products: [
-      {
-        name: "Combustion Liners",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Engine Pylons",
-        image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7",
-        details:
-          "Structural mounting systems precision-machined for narrow-body aircraft.",
-      },
-      {
-        name: "Combustion Liners",
-        image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5",
-        details:
-          "High-temperature nickel alloy assemblies for next-gen turbine engines.",
-      },
-      {
-        name: "Engine Pylons",
-        image: "https://images.unsplash.com/photo-1559297434-2d8a1e929ff7",
-        details:
-          "Structural mounting systems precision-machined for narrow-body aircraft.",
-      },
     ],
   },
 ];

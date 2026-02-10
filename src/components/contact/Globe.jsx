@@ -5,12 +5,16 @@ const Globe = () => {
   const canvasRef = useRef();
 
   useEffect(() => {
-    let phi = 4.5; // START POSITION: Adjusted to make USA/UK visible on load
+    let phi = 4.5;
     let width = 0;
 
     const onResize = () => {
-      if (canvasRef.current) width = canvasRef.current.offsetWidth;
+      if (canvasRef.current) {
+        // Use offsetWidth but fallback to a reasonable mobile size if 0
+        width = canvasRef.current.offsetWidth || window.innerWidth;
+      }
     };
+    
     window.addEventListener("resize", onResize);
     onResize();
 
@@ -19,18 +23,18 @@ const Globe = () => {
       width: width * 2,
       height: width * 2,
       phi: 4.5,
-      theta: 0.4, // TILT: Increased slightly to bring USA/UK down from the top edge
+      theta: 0.4,
       dark: 1,
       diffuse: 1.2,
       mapSamples: 16000,
       mapBrightness: 6,
-      baseColor: [0.0078, 0.1255, 0.2863], // Corrected to match #022049
-      markerColor: [1, 1, 1], // Pure White for markers
-      glowColor: [0, 0.278, 0.671], // Brand Blue #0047AB for the atmospheric glow
+      baseColor: [0.0078, 0.1255, 0.2863],
+      markerColor: [1, 1, 1],
+      glowColor: [0, 0.278, 0.671],
       markers: [
-        { location: [17.385, 78.4867], size: 0.12 }, // Hyderabad, India
-        { location: [43.0481, -100.1474], size: 0.08 }, // Syracuse, USA
-        { location: [51.5074, -0.1278], size: 0.08 }, // London, UK
+        { location: [17.385, 78.4867], size: 0.12 },
+        { location: [43.0481, -100.1474], size: 0.08 },
+        { location: [51.5074, -0.1278], size: 0.08 },
       ],
       onRender: (state) => {
         state.phi = phi;
@@ -40,24 +44,29 @@ const Globe = () => {
       },
     });
 
-    return () => {
-      globe.destroy();
-      window.removeEventListener("resize", onResize);
+    // Fade in effect
+    setTimeout(() => {
+      if(canvasRef.current) canvasRef.current.style.opacity = "1";
+    }, 100);
+
+    return () => { 
+      globe.destroy(); 
+      window.removeEventListener("resize", onResize); 
     };
   }, []);
 
   return (
-    <div className="w-full h-full flex items-center justify-center relative">
-      {/* Removed mix-blend-screen if it was making points too faint on your specific background */}
+    <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
       <canvas
         ref={canvasRef}
         style={{
           width: "100%",
           height: "auto",
-          maxWidth: "700px",
+          maxWidth: "800px",
           aspectRatio: "1/1",
+          opacity: 0,
+          transition: "opacity 1s ease",
         }}
-        className="opacity-100"
       />
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'; 
 import { AnimatePresence } from 'framer-motion';
 
+
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
@@ -11,6 +12,7 @@ import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import JobSearchResults from './pages/JobSearchResults'; 
 
 // Common Components
 import Navbar from './components/common/Navbar';
@@ -71,6 +73,7 @@ const AppContent = () => {
           <Route path="/capabilities" element={<PageTransition><Capabilities /></PageTransition>} />
           <Route path="/stories" element={<PageTransition><Stories /></PageTransition>} />
           <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
+          <Route path="/careers/search" element={<PageTransition><JobSearchResults /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route 

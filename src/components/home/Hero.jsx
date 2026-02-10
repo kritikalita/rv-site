@@ -1,47 +1,58 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiArrowNarrowDown, HiArrowRight } from 'react-icons/hi';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-white">
+    <section className="relative h-screen w-full overflow-hidden bg-black">
       
-      {/* 1. Background Image with "Light-Tech" Overlay */}
+      {/* 1. Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/logos/homeHero.png" 
-          alt="Advanced Manufacturing" 
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
-        {/* The Overlay: Dark at bottom for text contrast, but light/clean feel overall */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/40 to-transparent" />
+        >
+          <source src="src/assets/images/homeHero.mp4" type="video/mp4" />
+          <img src="src/assets/images/homeHero.png" alt="Advanced Manufacturing Fallback" />
+        </video>
+        
+        {/* Responsive Gradient: Vertical on mobile (b), Horizontal on desktop (r) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90 md:bg-gradient-to-r md:from-black/90 md:via-black/40 md:to-transparent z-10" />
       </div>
 
-      {/* 2. Content */}
-      <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center">
-        <div className="max-w-3xl">
+      {/* 2. Content Container */}
+      {/* max-w-[1440px] for standard laptops, 2xl:max-w-[1800px] for big screens */}
+      <div className="relative z-20 h-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16 lg:px-20 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        <div className="max-w-full md:max-w-3xl lg:max-w-4xl 2xl:max-w-6xl">
           
           {/* Animated Label */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex items-center gap-3 mb-6"
+            className="flex items-center gap-3 mb-4 md:mb-6"
           >
-            <div className="w-12 h-[2px] bg-brand-blue" />
-            
+            {/* You can add a small line/badge here if needed later */}
           </motion.div>
 
           {/* Main Title */}
+          {/* text-4xl: Mobile
+            sm:text-5xl: Tablet
+            md:text-7xl: iPad Pro / Laptop
+            lg:text-8xl: Large Desktop
+            2xl:text-9xl: Ultrawide / Big Screens
+          */}
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.1] mb-8"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-[10rem] font-bold text-white tracking-tight leading-[1.05] mb-6 md:mb-8"
           >
-            Creating value<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-white">
-              with precision.
+            Creating value<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-white/80">
+              {" "}with precision.
             </span>
           </motion.h1>
 
@@ -49,36 +60,21 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-gray-300 text-lg md:text-xl max-w-xl leading-relaxed mb-10 border-l-2 border-brand-blue pl-6"
+            className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl max-w-xl lg:max-w-2xl 2xl:max-w-4xl leading-relaxed mb-8 md:mb-10 border-l-2 border-brand-blue pl-4 md:pl-6 mx-auto md:mx-0"
           >
-            Raghu Vamsi manufactures the critical components that power global aerospace and defence. We engineer trust into every micron.
+           {/* Text content injected here */}
           </motion.p>
 
-          {/* Buttons */}
+          {/* Buttons Container */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 w-full sm:w-auto"
           >
-            <button className="px-8 py-4 bg-brand-blue text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-blue transition-all duration-300 flex items-center gap-2 group">
-              Explore Capabilities
-              <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 border border-white/30 text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-dark transition-all duration-300 backdrop-blur-sm">
-              Get a Quote
-            </button>
+            {/* Buttons go here */}
           </motion.div>
 
-        </div>
-      </div>
-
-      {/* 3. Tech Decor Elements */}
-      <div className="absolute bottom-0 right-0 p-10 hidden md:block">
-        <div className="grid grid-cols-3 gap-2 opacity-50">
-           {[...Array(9)].map((_, i) => (
-             <div key={i} className="w-2 h-2 bg-white rounded-full" />
-           ))}
         </div>
       </div>
 
