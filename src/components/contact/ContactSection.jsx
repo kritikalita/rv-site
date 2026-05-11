@@ -162,8 +162,8 @@ const ContactSection = () => {
             <TbMail className="text-blue-400 mb-4 md:mb-6 w-6 h-6 md:w-8 md:h-8 2xl:w-12 2xl:h-12" />
             <h4 className="text-white font-black text-[10px] md:text-xs 2xl:text-base uppercase tracking-[0.3em] md:tracking-[0.4em] mb-2 md:mb-4">Contact Details</h4>
             <div className="flex flex-col gap-1 md:gap-2">
-              <a href="mailto:info@raghuvamsiaerospace.com" className="text-white text-xs md:text-sm 2xl:text-xl leading-relaxed font-black tracking-tight hover:text-brand-blue transition-colors">info@raghuvamsiaerospace.com</a>
-              <a href="tel:+914012345678" className="text-blue-100/60 text-xs md:text-sm 2xl:text-xl font-medium hover:text-white transition-colors">+91 40 1234 5678</a>
+              <a href="mailto:info@raghuvamsi.com" className="text-white text-xs md:text-sm 2xl:text-xl leading-relaxed font-black tracking-tight hover:text-brand-blue transition-colors">info@raghuvamsi.com</a>
+              <a href="tel:+914012345678" className="text-blue-100/60 text-xs md:text-sm 2xl:text-xl font-medium hover:text-white transition-colors">+91 9866 225 483</a>
             </div>
           </div>
         </div>

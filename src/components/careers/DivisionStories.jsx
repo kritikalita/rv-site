@@ -1,17 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
+import autSys from "../../assets/images/car6.png";
+import missSys from "../../assets/images/carDiv2.png";
 
 const divisions = [
   {
     title: "Autonomous Systems",
     desc: "Developing the future of autonomous ground and air systems for the modern manufacturing landscape.",
-    image: "src/assets/images/car6.png",
+    image: autSys,
     link: "https://arrobot.co" // Updated to external link
   },
   {
     title: "Mission Systems",
     desc: "Engineering the propulsion systems that power next-generation defense platforms.",
-    image: "src/assets/images/carDiv2.png",
+    image: missSys,
     link: "https://comprotechengineering.com/" // Updated to external link
   }
 ];

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TbSearch, TbMapPin, TbArrowRight } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
+import careerHeroImg from '../../assets/images/car4.png';
 
 const jobCategories = [
   { name: "Engineering", count: 124 },
@@ -45,7 +46,7 @@ const handleSearch = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }} 
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="src/assets/images/car4.png" 
+          src={careerHeroImg} 
           className="w-full h-full object-cover object-center brightness-110 saturate-[0.9]"
           alt="Raghu Vamsi Team Collaboration"
         />

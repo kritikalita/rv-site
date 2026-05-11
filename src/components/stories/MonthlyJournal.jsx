@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TbArrowRight } from "react-icons/tb";
+import art1 from "../../assets/images/ravi.jpg";
+
 
 const MonthlyJournal = () => {
   const journals = [
@@ -15,7 +17,7 @@ const MonthlyJournal = () => {
         role: "Co-Founder & CEO, Arrobot",
       },
       preview: "An exploration of situational awareness in robotics and why rule-based systems struggle with real-world factory variability.",
-      image: "src/assets/images/ravi.jpg",
+      image: art1,
       tags: ["DeepTech", "Industrial AI", "Arrobot"],
       // Use this link for the external redirection
       externalLink: "https://neosciencehub.com/intelligence-means-reducing-fragility-replacing-humans-is-not-the-goal/"

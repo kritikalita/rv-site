@@ -443,6 +443,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TbArrowRight, TbCalendar, TbTag } from "react-icons/tb";
 import FeaturedStoryModal from './FeaturedStoryModal';
+import news2 from "../../assets/images/news2.jpeg";
+import news3 from "../../assets/images/news3.jpeg";
+import news4 from "../../assets/images/news4.jpeg";
+import news5 from "../../assets/images/news5.jpeg";
+import news6 from "../../assets/images/news6.jpg";
+
 
 const categories = ["ALL", "TECHNOLOGY", "MANUFACTURING", "PRESS RELEASES"];
 
@@ -454,7 +460,7 @@ const blogPosts = [
     date: "22 JAN 2026", 
     readingTime: "3 Min Read",
     title: "Diplomatic Strategic Review: Israeli Embassy Delegation Visits Raghu Vamsi Deep-Tech Hub", 
-    image: "src/assets/images/news2.jpeg",
+    image: news2,
     fullDescription: "A high-level engagement focused on strategic alignment, evaluating the convergence of indigenous system-level engineering and production readiness for global defense requirements.",
     content: [
       "We had the privilege of hosting a senior delegation from the Embassy of Israel at Raghu Vamsi Aerospace Group, marking a significant milestone in our international strategic engagement.",
@@ -470,7 +476,7 @@ const blogPosts = [
     date: "27 SEPT 2026", 
     readingTime: "4 Min Briefing",
     title: "Industrial Commissioning: Raghu Vamsi Unveils NADCAP-Certified Special Processes Facility", 
-    image: "src/assets/images/news3.jpeg",
+    image: news3,
     fullDescription: "A strategic expansion of onsite chemical processing and non-destructive testing capabilities, establishing a vertically integrated 'one-stop shop' for high-critical aerospace assemblies.",
     content: [
       "We are proud to announce the formal inauguration of Raghu Vamsi’s Special Processes Facility at Hardware Park, Hyderabad. This milestone marks a significant leap in our commitment to precision and global quality standards in aerospace manufacturing.",
@@ -486,7 +492,7 @@ const blogPosts = [
     date: "13 NOV 2025", 
     readingTime: "2 Min Briefing",
     title: "Performance Excellence: Raghu Vamsi Receives Outstanding Supplier Award from RTX", 
-    image: "src/assets/images/news4.jpeg",
+    image: news4,
     fullDescription: "A prestigious recognition of business excellence and uncompromising quality, awarded during the RTX Supplier Conference featuring global leaders Collins Aerospace, Pratt & Whitney, and Raytheon.",
     content: [
       "We are honored to announce that Raghu Vamsi has been awarded the 'Outstanding Supplier Performance Award' at the prestigious RTX Supplier Conference held at The Taj, Bangalore. This accolade is a testament to our ongoing commitment to business excellence and uncompromising quality.",
@@ -502,7 +508,7 @@ const blogPosts = [
     date: "19 JUN 2025", 
     readingTime: "5 Min Briefing",
     title: "Strategic Defense Integration: Indigenous Propulsion Launch & Global Acquisition", 
-    image: "src/assets/images/news5.jpeg",
+    image: news5,
     fullDescription: "Multi-tier advancements in defense autonomy featuring the test-firing of an in-house 40 Kgf turbojet engine, first flight of a jet-powered Kamikaze UAV, and the strategic acquisition of WMT Precision LLC (USA).",
     content: [
       "At the Paris Air Show, Raghu Vamsi Group announced groundbreaking developments set to transform the indigenous defense landscape. Highlighting our propulsion roadmap, we successfully test-fired our fully in-house developed 40 Kgf turbojet engine at our Hardware Park Facility. This high-performance system is optimized for UAVs, target drones, and cruise missiles.",
@@ -518,7 +524,7 @@ const blogPosts = [
     date: "13 NOV 2024", 
     readingTime: "4 Min Briefing",
     title: "Global Portfolio Expansion: Raghu Vamsi Group Completes 100% Acquisition of UK-based PMC Group", 
-    image: "src/assets/images/news6.jpg",
+    image: news6,
     fullDescription: "A highly strategic cross-border milestone marking the group's entry into the European Oil & Gas markets through the acquisition of a renowned British precision manufacturing firm with a century-long legacy.",
     content: [
       "Hyderabad-based Raghu Vamsi Group has successfully completed the 100% acquisition of PMC Group, a leading UK-based precision machining specialist for the Oil & Gas industry. This move significantly enhances our global footprint and moves the group further up the value chain in providing high-precision solutions for critical global industries.",

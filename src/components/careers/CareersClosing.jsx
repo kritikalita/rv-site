@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TbArrowUpRight, TbCircleFilled } from "react-icons/tb";
-// Replace with your actual image path (e.g., a high-precision lab or team photo)
+import closeImg from "../../assets/images/careerClose.png";
 
 
 const CareersClosing = () => {
@@ -19,7 +19,7 @@ const CareersClosing = () => {
           >
             <div className="relative overflow-hidden aspect-[16/10] lg:aspect-[4/3] rounded-sm bg-slate-100 shadow-2xl">
               <img 
-                src="src/assets/images/careerClose.png"
+                src={closeImg}
                 alt="Raghu Vamsi Engineering Excellence" 
                 className="w-full h-full object-cover"
               />

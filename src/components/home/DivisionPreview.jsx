@@ -14,13 +14,28 @@ import {
 } from "react-icons/tb";
 
 // Subsidiary Logos (Imports kept as is)
+
 import logoAdvanced from "../../assets/logos/advancedSys.png";
-import logoEngines from "../../assets/logos/engines.png";
-import logoComprotech from "../../assets/logos/comprotech.png";
+import logoEngines from "../../assets/logos/enginesLogo.png";
+import logoComprotech from "../../assets/logos/comprotechLogo.png";
 import logoMachineTools from "../../assets/logos/RVMT.png";
-import logoPMC from "../../assets/logos/PMC.png";
-import logoWMT from "../../assets/logos/WMT.png";
-import logoArrobot from "../../assets/logos/Arrobot.png";
+import logoPMC from "../../assets/logos/PMClogo.png";
+import logoWMT from "../../assets/logos/WMTlogo.png";
+import logoArrobot from "../../assets/logos/ArrobotLogo.png";
+
+// ADD THESE NEW IMPORTS FOR THE DIVISION BACKGROUNDS
+import precisionOemImg from "../../assets/images/precision-oem.jpg";
+import missionSystemsImg from "../../assets/images/mission-systems.jpg";
+import impact2Img from "../../assets/images/impact2.png";
+
+// ADD THESE FOR SUBSIDIARY IMAGES
+import machineToolsImg from "../../assets/images/machineTools.webp";
+import pmcImg from "../../assets/images/PMC.jpg";
+import wmtImg from "../../assets/images/WMT.jpg";
+import advancedSystemsImg from "../../assets/images/advancedSystems.jpg";
+import enginesImg from "../../assets/images/engines.jpg";
+import comprotechImg from "../../assets/images/comprotech.jpg";
+import arrobotSubImg from "../../assets/images/Arrobot.jpg";
 
 const divisions = [
   /* Data remains exactly as provided */
@@ -29,12 +44,12 @@ const divisions = [
     title: "Precision OEM Manufacturing",
     icon: TbSettingsAutomation,
     tag: "DIVISION_BETA",
-    defaultImage: "src/assets/images/precision oem.jpg",
+    defaultImage: precisionOemImg,
     description: "Delivering high-precision components and assemblies for aerospace and industrial applications with cutting-edge manufacturing technologies.",
     subsidiaries: [
-      { name: "Raghu Vamsi Machine Tools", logo: logoMachineTools, website: "https://raghuvamsi.com", location: "Hardware Park, Hyderabad", employees: "> 800", area: "100,000 Sq. ft", capabilities: ["Machining", "Sheet Metal", "Special Processes", "Fasteners"], industries: ["Aerospace", "Oil & Gas", "Power", "Medical", "Defence"], image: "src/assets/images/machineTools.webp" },
-      { name: "PMC Group (UK)", logo: logoPMC, website: "https://pmcgroup.co.uk", location: "United Kingdom", employees: "90", area: "60,000 Sq. ft", capabilities: ["Machining", "Oil & Gas Products", "Tungsten Carbide", "Fitting", "Grinding"], industries: ["Oil & Gas"], image: "src/assets/images/PMC.jpg" },
-      { name: "WMT Precision LLC (USA)", logo: logoWMT, website: "https://wmtprecision.com/", location: "United States of America", employees: "20", area: "20,000 Sq. ft", capabilities: ["Special Processes", "Welding", "Vacuum Brazing", "Heat Treatment"], industries: ["Aerospace"], image: "src/assets/images/WMT.jpg" },
+      { name: "Raghu Vamsi Machine Tools", logo: logoMachineTools, website: "https://raghuvamsi.com", location: "Hardware Park, Hyderabad", employees: "> 800", area: "100,000 Sq. ft", capabilities: ["Machining", "Sheet Metal", "Special Processes", "Fasteners"], industries: ["Aerospace", "Oil & Gas", "Power", "Medical", "Defence"], image: machineToolsImg },
+      { name: "PMC Group (UK)", logo: logoPMC, website: "https://pmcgroup.co.uk", location: "United Kingdom", employees: "90", area: "60,000 Sq. ft", capabilities: ["Machining", "Oil & Gas Products", "Tungsten Carbide", "Fitting", "Grinding"], industries: ["Oil & Gas"], image: pmcImg },
+      { name: "WMT Precision LLC (USA)", logo: logoWMT, website: "https://wmtprecision.com/", location: "United States of America", employees: "25", area: "20,000 Sq. ft", capabilities: ["Special Processes", "Welding", "Vacuum Brazing", "Heat Treatment"], industries: ["Aerospace"], image: wmtImg },
     ],
   },
   {
@@ -42,12 +57,12 @@ const divisions = [
     title: "Mission Systems & Propulsion",
     icon: TbRocket,
     tag: "DIVISION_ALPHA",
-    defaultImage: "src/assets/images/mission systems .jpg",
-    description: "Developing advanced micro turbojet engines and high-precision hydraulic pumps for aerospace and defense missions.",
+    defaultImage: missionSystemsImg,
+    description: "Developing advanced micro turbojet engines, high-precision hydraulic pumps and missile subsytems for aerospace and defense missions.",
     subsidiaries: [
-      { name: "Raghu Vamsi Advanced Systems", logo: logoAdvanced, website: "https://raghuvamsi.com", location: "Hardware Park, Hyderabad", employees: "10", area: "5,000 Sq. ft", capabilities: ["Hydraulic Pump"], industries: ["Aerospace", "Defence"], image: "src/assets/images/advancedSystems.jpg" },
-      { name: "Raghu Vamsi Engines", logo: logoEngines, website: "https://raghuvamsi.com", location: "Hardware Park, Hyderabad", employees: "> 800", area: "100,000 Sq. ft", capabilities: ["Micro Turbojet Engines"], industries: ["Aerospace", "Defence"], image: "src/assets/images/engines.jpg" },
-      { name: "Comprotech", logo: logoComprotech, website: "https://comprotechengineering.com/", location: "Hardware Park, Hyderabad", employees: "> 150", area: "20,000 Sq. ft", capabilities: ["Machining", "Composite Moulding", "Welding", "Missile systems"], industries: ["Defence"], image: "src/assets/images/comprotech.jpg" },
+      { name: "Raghu Vamsi Advanced Systems", logo: logoAdvanced, website: "https://raghuvamsi.com", location: "Hardware Park, Hyderabad", employees: "10", area: "5,000 Sq. ft", capabilities: ["Hydraulic Pump"], industries: ["Aerospace", "Defence"], image: advancedSystemsImg },
+      { name: "Raghu Vamsi Engines", logo: logoEngines, website: "https://raghuvamsi.com", location: "Hardware Park, Hyderabad", employees: "> 800", area: "100,000 Sq. ft", capabilities: ["Micro Turbojet Engines"], industries: ["Aerospace", "Defence"], image: enginesImg },
+      { name: "Comprotech", logo: logoComprotech, website: "https://comprotechengineering.com/", location: "Hardware Park, Hyderabad", employees: "200", area: "20,000 Sq. ft", capabilities: ["Machining", "Composite Moulding", "Welding", "Missile systems"], industries: ["Defence"], image: comprotechImg },
     ],
   },
   {
@@ -55,10 +70,10 @@ const divisions = [
     title: "DeepTech & Autonomous Products",
     icon: TbCpu,
     tag: "DIVISION_GAMMA",
-    defaultImage: "src/assets/images/impact2.png",
+    defaultImage: impact2Img,
     description: "Engineering the future of autonomy with AI-driven robotics and unmanned systems for modern defense.",
     subsidiaries: [
-      { name: "ARROBOT", logo: logoArrobot, website: "https://www.arrobot.co/", location: "Hardware Park, Hyderabad", employees: "> 25", area: "12,500 Sq. ft", capabilities: ["Unmanned Air & Ground Systems", "Robotics & Automation"], industries: ["Defence", "Industrial Automation"], image: "src/assets/images/Arrobot.jpg" },
+      { name: "ARROBOT", logo: logoArrobot, website: "https://www.arrobot.co/", location: "Hardware Park, Hyderabad", employees: "> 25", area: "12,500 Sq. ft", capabilities: ["Unmanned Air & Ground Systems", "Robotics & Automation"], industries: ["Defence", "Industrial Automation"], image: arrobotSubImg },
     ],
   },
 ];

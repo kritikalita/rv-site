@@ -1,27 +1,31 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
+import makeImp from "../../assets/images/carLast.png";
+import autFront from "../../assets/images/impact1.png";
+import propMast from "../../assets/images/imp.png";
+import globEnergy from "../../assets/images/impact6.png";
 
 const impactMissions = [
   {
     title: "MAKE AN IMPACT",
     description: "At Raghu Vamsi, our team solves high-stakes engineering challenges that define the future of national defense and global aviation. From manufacturing flight-critical engine components for global OEMs to indigenizing high-precision aerospace hardware, our work empowers the next era of flight.",
-    image: "src/assets/images/carLast.png" 
+    image: makeImp 
   },
   {
     title: "AUTONOMOUS FRONTIER",
     description: "Through ARROBOT, we are engineering the future of autonomy. We develop indigenous Unmanned Ground Vehicles (UGVs) and AI-driven robotic solutions designed to redefine industrial efficiency and enhance strategic defense capabilities on the modern battlefield.",
-    image: "src/assets/images/impact1.png" 
+    image: autFront 
   },
   {
     title: "PROPULSION MASTERY",
     description: "Our propulsion division is pushing the boundaries of indigenous technology with the development of high-thrust micro turbojet engines. Engineered for high-performance UAVs and target drones, these systems represent a major leap in Indian aerospace self-reliance.",
-    image: "src/assets/images/imp.png"
+    image: propMast
   },
   {
     title: "GLOBAL ENERGY SOLUTIONS",
     description: "With our acquisition of the UK-based PMC Group, we provide high-precision surface and subsea flow control components for the world's leading oil and gas partners. Our exotic alloy machining ensures reliability in the most extreme environments on Earth.",
-    image: "src/assets/images/impact6.png"
+    image: globEnergy
   }
 ];
 

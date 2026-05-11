@@ -53,11 +53,11 @@ const CapabilitiesGrid = () => {
             >
               <div className="h-[2px] w-12 bg-brand-blue" />
               <span className="text-brand-blue font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] 2xl:text-xs">
-                Manufacturing Audit
+                Manufacturing Competencies
               </span>
             </motion.div>
             <h2 className="text-3xl md:text-5xl 2xl:text-7xl font-bold text-brand-dark tracking-tighter leading-tight">
-              Core <span className="text-brand-blue">Verticals.</span>
+              Core <span className="text-brand-blue">Capabilities</span>
             </h2>
           </div>
         </div>

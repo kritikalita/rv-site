@@ -7,6 +7,27 @@ import { FaLinkedinIn } from "react-icons/fa";
 import vamsiImg from "../../assets/images/vamsi.png";
 import preetiImg from "../../assets/images/preeti.png";
 import manishImg from "../../assets/images/manish.webp";
+import abhinayImg from "../../assets/images/abhinay.jpg";
+import deepakImg from "../../assets/images/deepak.jpg";
+import vinodImg from "../../assets/images/vinod.jpg";
+import ankemImg from "../../assets/images/ankem.jpg";
+import raoImg from "../../assets/images/rao.jpg";
+import harshaImg from "../../assets/images/harsha.jpg";
+import maniImg from "../../assets/images/mani.png";
+import mohGImg from "../../assets/images/mohG.png";
+import abhishekImg from "../../assets/images/abhishek.jpg";
+import ramaswamyImg from "../../assets/images/ramaswamy.jpg";
+import mohanImg from "../../assets/images/mohan.jpg";
+import prabhakaranImg from "../../assets/images/prabhaa.png";
+import yadgiriImg from "../../assets/images/yadgiri.jpg";
+import rakeshImg from "../../assets/images/Rakesh.jpg";
+import venkataImg from "../../assets/images/venkata.jpg";
+import shaunImg from "../../assets/images/shaun.jpeg";
+import markImg from "../../assets/images/mark.jpeg";
+import naiduImg from "../../assets/images/naidu.jpg";
+import raviImg from "../../assets/images/ravi.jpg";
+import giridharImg from "../../assets/images/giridhar.png";
+
 
 const Leadership = () => {
   const coreLeadership = {
@@ -14,38 +35,40 @@ const Leadership = () => {
       { name: "Vamsi Vikas", role: "Chairman & MD", image: vamsiImg, id: "GROUP", linkedin: "https://www.linkedin.com/in/vamsi-vikas-ganesula-0150b72/" },
       { name: "Preet Vikas", role: "CEO & ED", image: preetiImg, id: "GROUP", linkedin: "https://www.linkedin.com/in/preeti-pallepati-05bb701/" },
       { name: "Manish Matta", role: "ED", image: manishImg, id: "GROUP", linkedin: "https://www.linkedin.com/in/manishmatta1979/" },
+      { name: "Ravindra Naidu", role: "CEO Comprotech", image: naiduImg, id: "GROUP", linkedin: "https://www.linkedin.com/in/ravindra-b-naidu-9671a421/" },
+      { name: "Ravi", role: "Co-Founder & CEO Arrobot", image: raviImg, id: "GROUP", linkedin: "https://www.linkedin.com/in/ravi-achanta-30730621/" },
+
     ],
     precisionOEMManufacturing: [
       { name: "Preeti Vikas", role: "CEO & ED", image: preetiImg, id: "OEM", linkedin: "https://www.linkedin.com/in/preeti-pallepati-05bb701/" },
-      { name: "Giridhar", role: "COO", image: "src/assets/images/giridhar.png", id: "OEM", linkedin: "https://www.linkedin.com/in/giridhar-reddy-s-17510816/" },
-      { name: "Shaun", role: "UK Head", image: "src/assets/images/shaun.jpeg", id: "UK", linkedin: "https://www.linkedin.com/in/shaun-newby-a5508768/" },
-      { name: "Mark", role: "USA Head", image: "src/assets/images/mark.jpeg", id: "USA", linkedin: "https://www.linkedin.com/in/markingianni/" },
+      { name: "Giridhar", role: "COO", image: giridharImg, id: "OEM", linkedin: "https://www.linkedin.com/in/giridhar-reddy-s-17510816/" },
+      { name: "Shaun", role: "UK Head", image: shaunImg, id: "UK", linkedin: "https://www.linkedin.com/in/shaun-newby-a5508768/" },
+      { name: "Mark", role: "USA Head", image: markImg, id: "USA", linkedin: "https://www.linkedin.com/in/markingianni/" },
     ],
     missionSystemsAndPropulsion: [
-      { name: "Ravindra Naidu", role: "CEO", image: "src/assets/images/naidu.jpg", id: "MISSION", linkedin: "https://www.linkedin.com/in/ravindra-b-naidu-9671a421/" },
-      { name: "Jagdish", role: "Head Engines", image: "src/assets/images/jagdish.jpg", id: "MISSION", linkedin: "#" },
-      { name: "Anirudh", role: "Head Composites", image: "src/assets/images/Anirudh.jpg", id: "MISSION", linkedin: "#" },
+      { name: "Ravindra Naidu", role: "CEO", image: naiduImg, id: "MISSION", linkedin: "https://www.linkedin.com/in/ravindra-b-naidu-9671a421/" },
     ],
     deepTechAndAutonomousProducts: [
-      { name: "Ravi", role: "Co-Founder & CEO", image: "src/assets/images/ravi.jpg", id: "TECH", linkedin: "https://www.linkedin.com/in/ravi-achanta-30730621/" },
-      { name: "Abhinay", role: "CTO", image: "src/assets/images/abhinay.jpg", id: "TECH", linkedin: "#" },
-      { name: "Deepak", role: "Head BD", image: "src/assets/images/deepak.jpg", id: "TECH", linkedin: "#" },
+      { name: "Ravi", role: "Co-Founder & CEO", image: raviImg, id: "TECH", linkedin: "https://www.linkedin.com/in/ravi-achanta-30730621/" },
+      { name: "Abhinay", role: "CTO", image: abhinayImg, id: "TECH", linkedin: "#" },
+      { name: "Deepak", role: "Head BD", image: deepakImg, id: "TECH", linkedin: "#" },
     ]
   };
 
   const functionalVPs = [
-    { name: "Vinod Desai", role: "VP - Supply Chain", image: "src/assets/images/vinod.jpg", linkedin: "https://www.linkedin.com/in/vinodddesai/" },
-    { name: "Ankem Sriprasad", role: "VP - Finance", image: "src/assets/images/ankem.jpg", linkedin: "https://www.linkedin.com/in/ankemsriprasadmohan/" },
-    { name: "D Srinivasa Rao", role: "VP - Aerospace", image: "src/assets/images/rao.jpg", linkedin: "https://www.linkedin.com/in/srinivasa-rao-dangeti-dsr-8b89a9175/" },
-    { name: "Harsha Vardhan J", role: "VP - Industrial", image: "src/assets/images/harsha.jpg", linkedin: "#" },
-    { name: "Mani PRS", role: "VP - Compliance", image: "src/assets/images/mani.png", linkedin: "https://www.linkedin.com/in/mani-padagalingam-48009213/" },
-    { name: "Mohith Garg", role: "VP - Engineering", image: "src/assets/images/mohith.png", linkedin: "#" },
-    { name: "Ramaswamy D", role: "VP - Value Engineering", image: "src/assets/images/ramaswamy.jpg", linkedin: "https://www.linkedin.com/in/ramaswamy-dorairajan-aa937aaa/" },
-    { name: "Mohan", role: "VP - Power & BD", image: "src/assets/images/mohan.jpg", linkedin: "#" },
-    { name: "Yadagiri G", role: "AVP - Production", image: "src/assets/images/yadgiri.jpg", linkedin: "https://www.linkedin.com/in/yadagiri-gaddam-27b70b57/" },
-    { name: "Rakesh Rai", role: "AVP - HR", image: "src/assets/images/Rakesh.jpg", linkedin: "https://www.linkedin.com/in/rakesh-rai-79b91843/" },
-    { name: "Venkat Prasad", role: "AVP - Industrialization", image: "src/assets/images/venkata.jpg", linkedin: "https://www.linkedin.com/in/venkata-prasad-k-71b36511a/" },
-    { name: "Prabhakaran", role: "AVP - Quality Assurance", image: "src/assets/images/prabhaa.png", linkedin: "#" },
+    { name: "Vinod Desai", role: "VP - Supply Chain", image: vinodImg, linkedin: "https://www.linkedin.com/in/vinodddesai/" },
+    { name: "Ankem Sriprasad", role: "VP - Finance", image: ankemImg, linkedin: "https://www.linkedin.com/in/ankem-sri-02704512/" },
+    { name: "D Srinivasa Rao", role: "VP - Aerospace", image: raoImg, linkedin: "https://www.linkedin.com/in/srinivasa-rao-dangeti-dsr-8b89a9175/" },
+    { name: "Harsha Vardhan J", role: "VP - Industrial", image: harshaImg, linkedin: "#" },
+    { name: "Mani PRS", role: "VP - Quality Assurance", image: maniImg, linkedin: "https://www.linkedin.com/in/mani-padagalingam-48009213/" },
+    { name: "Mohith Garg", role: "VP - Engineering", image: mohGImg, linkedin: "https://www.linkedin.com/in/mohit-garg" },
+    { name: "Abhishek Garg", role: "VP - Strategy & Branding", image: abhishekImg, linkedin: "https://www.linkedin.com/in/abhgarg/" }, 
+    { name: "Ramaswamy D", role: "VP - Value Engineering", image: ramaswamyImg, linkedin: "https://www.linkedin.com/in/ramaswamy-dorairajan-aa937aaa/" },
+    { name: "Mohan", role: "VP - BD & Power", image: mohanImg, linkedin: "#" },
+    { name: "Prabhakaran", role: "VP - Compliance", image: prabhakaranImg, linkedin: "#" },
+    { name: "Yadagiri G", role: "AVP - Production", image: yadgiriImg, linkedin: "https://www.linkedin.com/in/yadagiri-gaddam-27b70b57/" },
+    { name: "Rakesh Rai", role: "AVP - HR", image: rakeshImg, linkedin: "https://www.linkedin.com/in/rakesh-rai-79b91843/" },
+    { name: "Venkat Prasad", role: "AVP - Industrialization", image: venkataImg, linkedin: "https://www.linkedin.com/in/venkata-prasad-k-71b36511a/" },
   ];
 
   const ProfileCard = ({ leader, size = "md" }) => {

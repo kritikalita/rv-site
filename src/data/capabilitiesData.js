@@ -2,7 +2,6 @@ import {
   TbRocket,
   TbSettingsAutomation,
   TbComponents,
-  TbLayersIntersect,
   TbScissors,
   TbSettings,
   TbFlask,
@@ -10,8 +9,6 @@ import {
   TbTir,
   TbCpu,
   TbAsset,
-  TbTreadmill,
-  TbVectorBezier,
 } from "react-icons/tb";
 import capEngImg from "../assets/images/capEng.jpg";
 import capPresImg from "../assets/images/capPres.jpg";
@@ -22,26 +19,24 @@ import capEwhImg from "../assets/images/capElec.jpg";
 import capAsImg from "../assets/images/capAssemWeld.jpg";
 import capFastImg from "../assets/images/capFast.jpg";
 import capSheetImg from "../assets/images/capSheet.jpg";
+import capTreadImg from "../assets/images/testing.png";
+import divergent from "../assets/images/Divergent.jpeg";
+import mechAssy from "../assets/images/Mechanical Assembly.jpeg";
+import sheetMetal from "../assets/images/Sheet Metal Part.jpeg";
+import spurGears from "../assets/images/Spur Gears.jpeg";
+import seekerHousing from "../assets/images/Seeker Housing.jpeg";
+import shearPin from "../assets/images/Shear Pin Adapter.jpeg";
+import turbineWheel from "../assets/images/Turbine Wheel.jpeg";
+import oil from "../assets/images/oil.jpeg";
+import artLift from "../assets/images/Artificial lift.jpeg";
+import compleProd from "../assets/images/Completions Products.jpeg";
+import drilProd from "../assets/images/Drilling Products.jpeg";
+import surfTech from "../assets/images/Surface Technology.jpeg";
+import wireProd from "../assets/images/Wireline Product.jpeg";
 
 export const capabilitiesData = [
   {
     id: "VERT-01",
-    title: "Engineering",
-    icon: TbRocket,
-    tag: "ENG_PRO",
-    desc: "Design-to-prototype support utilizing advanced CAD/CAM and process simulation.",
-    engineering: {
-      para1:
-        "At Raghuvamsi the role of our Engineering team is to develop processes that are efficient, repeatable, and, most importantly, capable of meeting or exceeding the quality requirements of our Customers.",
-      para2:
-        "Our team drives Continuous Improvement initiatives focused on employing “Best Practices” at all stages. We design and build our own fixtures for machining, welding and assembly, as well as most of the cutting tools that we use.",
-      para3:
-        "Our commitment to the use of Statistical Process Control on the shop floor provides an objective method to validate the capabilities of our processes.",
-    },
-    image: capEngImg,
-  },
-  {
-    id: "VERT-02",
     title: "Precision Machining",
     icon: TbSettingsAutomation,
     tag: "CNC_V5",
@@ -85,26 +80,23 @@ export const capabilitiesData = [
     image: capPresImg,
   },
   {
-    id: "VERT-03",
-    title: "Electro Mechanical Assembly",
-    icon: TbComponents,
-    tag: "ASSY_H1",
-    desc: "Turnkey sub-system integration and box-build for aerospace defense.",
+    id: "VERT-02",
+    title: "Engineering",
+    icon: TbRocket,
+    tag: "ENG_PRO",
+    desc: "Design-to-prototype support utilizing advanced CAD/CAM and process simulation.",
     engineering: {
       para1:
-        "Raghuvamsi Group has a range of electro-mechanical system capabilities. We specialise in low-volume, high-mix electronics manufacturing, providing fully integrated and high-reliability solutions.",
+        "At Raghuvamsi the role of our Engineering team is to develop processes that are efficient, repeatable, and, most importantly, capable of meeting or exceeding the quality requirements of our Customers.",
       para2:
-        "We are accustomed to working with specialist complex markets and consistently meeting high-demand specifications. Our team is focused on the stringent requirements of the aerospace, defence and oil and gas industries.",
-      subTag: "SYSTEM INTEGRATION",
+        "Our team drives Continuous Improvement initiatives focused on employing “Best Practices” at all stages. We design and build our own fixtures for machining, welding and assembly, as well as most of the cutting tools that we use.",
       para3:
-        "Raghuvamsi brings together decades of unrivalled experience in providing end-to-end electro-mechanical solutions through our specialized full systems assembly and comprehensive box build services.",
+        "Our commitment to the use of Statistical Process Control on the shop floor provides an objective method to validate the capabilities of our processes.",
     },
-    specs: ["Roller Swaging", "Helium Leak Test", "Orbital Riveting"],
-    // infra: ["Class 100k Clean Room", "Torque Systems"],
-    image: capEMImg,
+    image: capEngImg,
   },
   {
-    id: "VERT-04",
+    id: "VERT-03",
     title: "Sheet Metal Fabrication",
     icon: TbScissors,
     tag: "FAB_A7",
@@ -122,8 +114,9 @@ export const capabilitiesData = [
     // infra: ["Hydro-form Units", "8-Axis Benders"],
     image: capSheetImg,
   },
+
   {
-    id: "VERT-05",
+    id: "VERT-04",
     title: "High Precision Gears",
     icon: TbSettings,
     tag: "GEAR_G1",
@@ -229,6 +222,27 @@ export const capabilitiesData = [
     ],
     image: capGearsImg,
   },
+
+  {
+    id: "VERT-05",
+    title: "Fasteners",
+    icon: TbBolt,
+    tag: "FAST_F1",
+    desc: "High-integrity hardware installation and spherical bearing swaging.",
+    engineering: {
+      para1:
+        "Raghuvamsi operates a full-fledged fastener manufacturing facility with end-to-end in-house equipment, ranging from initial wire draw to specialized heat treatment and surface coatings.",
+      para2:
+        "Our facility specializes in cold heading, thread rolling, and centerless grinding for products ranging from M1.4 to M20 (up to 200mm length). Every component is validated in our hi-tech quality testing laboratory.",
+      subTag: "STRATEGIC_DEFENSE_SUPPLY",
+      para3:
+        "Complying with elite aerospace standards, we serve as a primary partner for MoD establishments, Space Organizations including ISRO and BrahMos, and major private defense OEMs globally.",
+    },
+    specs: ["M1.4 - M20 Range", "Cold Heading", "Thread Rolling"],
+    // infra: ["Wire Draw Lines", "Testing Lab", "Centerless Grinders"],
+    image: capFastImg,
+  },
+
   {
     id: "VERT-06",
     title: "Surface Treatment",
@@ -248,27 +262,9 @@ export const capabilitiesData = [
     // infra: ["2500L Tanks", "Robotic Painting"],
     image: capSurfImg,
   },
+
   {
     id: "VERT-07",
-    title: "Fasteners",
-    icon: TbBolt,
-    tag: "FAST_F1",
-    desc: "High-integrity hardware installation and spherical bearing swaging.",
-    engineering: {
-      para1:
-        "Raghuvamsi operates a full-fledged fastener manufacturing facility with end-to-end in-house equipment, ranging from initial wire draw to specialized heat treatment and surface coatings.",
-      para2:
-        "Our facility specializes in cold heading, thread rolling, and centerless grinding for products ranging from M1.4 to M20 (up to 200mm length). Every component is validated in our hi-tech quality testing laboratory.",
-      subTag: "STRATEGIC_DEFENSE_SUPPLY",
-      para3:
-        "Complying with elite aerospace standards, we serve as a primary partner for MoD establishments, Space Organizations including ISRO and BrahMos, and major private defense OEMs globally.",
-    },
-    specs: ["M1.4 - M20 Range", "Cold Heading", "Thread Rolling"],
-    // infra: ["Wire Draw Lines", "Testing Lab", "Centerless Grinders"],
-    image: capFastImg,
-  },
-  {
-    id: "VERT-08",
     title: "Assembly & Weld",
     icon: TbTir,
     tag: "WELD_W1",
@@ -286,6 +282,27 @@ export const capabilitiesData = [
     // infra: ["NADCAP Weld Cells", "Proof Load Testing", "NDT Inspection"],
     image: capAsImg,
   },
+
+  {
+    id: "VERT-08",
+    title: "Electro Mechanical Assembly",
+    icon: TbComponents,
+    tag: "ASSY_H1",
+    desc: "Turnkey sub-system integration and box-build for aerospace defense.",
+    engineering: {
+      para1:
+        "Raghuvamsi Group has a range of electro-mechanical system capabilities. We specialise in low-volume, high-mix electronics manufacturing, providing fully integrated and high-reliability solutions.",
+      para2:
+        "We are accustomed to working with specialist complex markets and consistently meeting high-demand specifications. Our team is focused on the stringent requirements of the aerospace, defence and oil and gas industries.",
+      subTag: "SYSTEM INTEGRATION",
+      para3:
+        "Raghuvamsi brings together decades of unrivalled experience in providing end-to-end electro-mechanical solutions through our specialized full systems assembly and comprehensive box build services.",
+    },
+    specs: ["Roller Swaging", "Helium Leak Test", "Orbital Riveting"],
+    // infra: ["Class 100k Clean Room", "Torque Systems"],
+    image: capEMImg,
+  },
+
   {
     id: "VERT-09",
     title: "Electronics & Wire Harnesses",
@@ -309,6 +326,26 @@ export const capabilitiesData = [
     // infra: ["Braiding Machines", "Potting Stations", "SMT Assembly Line"],
     image: capEwhImg,
   },
+
+  {
+    id: "VERT-10",
+    title: "Testing",
+    icon: TbAsset,
+    tag: "TEST_T1",
+    desc: "Comprehensive metrology and functional testing for aerospace components.",
+    engineering: {
+      para1:
+        "Raghuvamsi’s testing capabilities encompass a wide range of metrology and functional testing services, ensuring that every component meets the highest standards of quality and performance.",
+      para2:
+        "Our state-of-the-art metrology lab is equipped with CMMs, optical comparators, and surface roughness testers, allowing us to perform precise dimensional inspections. We also offer functional testing for mechanical assemblies, including torque testing, vibration analysis, and thermal cycling.",
+      subTag: "QUALITY_ASSURANCE_LOGIC",
+      para3:
+        "Our commitment to quality is reflected in our rigorous testing protocols, which are designed to validate the integrity and reliability of our products in real-world conditions. We work closely with our customers to develop customized testing solutions that meet their specific requirements.",
+    },
+    specs: ["CMM Inspection", "Torque Testing", "Vibration Analysis"],
+    // infra: ["Metrology Lab", "Functional Test Cells"],
+    image: capTreadImg,
+  }
 ];
 
 export const sectorData = [
@@ -322,37 +359,37 @@ export const sectorData = [
     products: [
   {
     name: "Divergent",
-    image: "src/assets/images/Divergent.jpeg",
+    image: divergent,
     details: "Precision-engineered exhaust nozzle components designed to manage supersonic gas expansion and directional thrust stability.",
   },
   {
     name: "Mechanical Assembly",
-    image: "src/assets/images/Mechanical Assembly.jpeg",
+    image: mechAssy,
     details: "Complex multi-component integration featuring high-tolerance hardware for mission-critical aerospace structural systems.",
   },
   {
     name: "Sheet Metal Part",
-    image: "src/assets/images/Sheet Metal Part.jpeg",
+    image: sheetMetal,
     details: "Advanced alloy forming utilizing fiber laser cutting and precision bending for lightweight aerodynamic housing and liners.",
   },
   {
     name: "Shear Pin Adapter",
-    image: "src/assets/images/Spur Gears.jpeg", // Note: Ensure this path matches the component name
+    image: spurGears, // Note: Ensure this path matches the component name
     details: "High-integrity safety component engineered to provide calibrated failure points for protecting critical drivetrain torque loads.",
   },
   {
     name: "Seeker Housing",
-    image: "src/assets/images/Seeker Housing.jpeg",
+    image: seekerHousing,
     details: "Ultra-precise enclosure for missile guidance systems, machined from specialized alloys to ensure thermal and EMI protection.",
   },
   {
     name: "Shear Pin Adapter",
-    image: "src/assets/images/Shear Pin Adapter.jpeg",
+    image: shearPin,
     details: "Load-bearing adapter specifically machined for rapid installation and removal in high-vibration aerospace environments.",
   },
   {
     name: "Turbine Wheel",
-    image: "src/assets/images/Turbine Wheel.jpeg",
+    image: turbineWheel,
     details: "High-RPM propulsion component manufactured from single-crystal superalloys to withstand extreme thermal and centrifugal stress.",
   },
 ]
@@ -361,33 +398,33 @@ export const sectorData = [
     id: "SEC-02",
     title: "Oil & Gas",
     mainImage:
-      "src/assets/images/oil.jpeg",
+      oil,
     description:
       "Providing high-durability valves, flow control components, and ruggedized hardware for extreme environments.",
     products: [
   {
     name: "Artificial Lift",
-    image: "src/assets/images/Artificial lift.jpeg",
+    image: artLift,
     details: "High-precision internal components for ESP and rod lift systems, engineered to enhance reservoir production in high-viscosity environments.",
   },
   {
     name: "Completions Products",
-    image: "src/assets/images/Completions Products.jpeg",
+    image: compleProd,
     details: "Critical downhole hardware including packers and liners, precision-machined to ensure wellbore integrity under extreme pressure and temperature.",
   },
   {
     name: "Drilling Products",
-    image: "src/assets/images/Drilling Products.jpeg",
+    image: drilProd,
     details: "Ruggedized motor components and drill string stabilizers manufactured from specialized alloys to withstand high-torque rotational stress.",
   },
   {
     name: "Surface Technology",
-    image: "src/assets/images/Surface Technology.jpeg",
+    image: surfTech,
     details: "Advanced flow control solutions and valve manifold components designed for high-reliability performance in surface production facilities.",
   },
   {
     name: "Wireline Product",
-    image: "src/assets/images/Wireline Product.jpeg",
+    image: wireProd,
     details: "Precision-machined logging tool housings and intervention hardware, featuring tight tolerances for sensitive electronic sensor protection.",
   },
 ],
@@ -396,38 +433,148 @@ export const sectorData = [
     id: "SEC-03",
     title: "Power",
     mainImage: "src/assets/images/power.jpeg",
-    description:
-      "Precision components for sustainable energy grids, turbine blades, and high-voltage distribution hardware.",
-   products: [
-  {
-    name: "Fuel Nozzle Assembly",
-    image: "src/assets/images/Fuel Nozzle Assembly.jpeg",
-    details: "High-precision delivery systems engineered for optimal fuel atomization and combustion efficiency in industrial gas turbines.",
-  },
-  {
-    name: "Lock Plates",
-    image: "src/assets/images/Lock Plates.jpeg",
-    details: "Critical fastening hardware machined from high-strength alloys to ensure component retention in high-vibration power generation environments.",
-  },
-  {
-    name: "TP Bull Horns",
-    image: "src/assets/images/TP Bull Horns.jpeg",
-    details: "Specialized structural supports for transition pieces, designed to withstand extreme thermal expansion and aerodynamic stress.",
-  },
-  {
-    name: "Transition Piece Hardware",
-    image: "src/assets/images/Transition piece hardware.jpeg",
-    details: "High-critical assembly hardware required for managing hot gas pathways between the combustor and turbine stages.",
-  },
-],
-  },
-  {
-    id: "SEC-04",
-    title: "Medical",
-    mainImage: "src/assets/images/Medical.jpeg",
-    description:
-      "Manufacturing of titanium implants and high-precision surgical instrumentation for the healthcare sector.",
-    products: [
-    ],
-  },
+    description: "Precision components for sustainable energy grids, turbine blades, and hot gas path hardware.",
+    subGroups: [
+      {
+        name: "Hot Gas Path",
+        products: [
+          { 
+            name: "Bucket twist locks", 
+            image: "src/assets/images/Bucket Twist Locks.png", 
+            details: "Material: SS410 | Dim Range: 50 – 200 mm | Machinery: CNC T, CNC M, Wire Cut" 
+          },
+          { 
+            name: "Fuel Nozzle Hardware", 
+            image: "src/assets/images/Fuel Nozzle Hardware.png", 
+            details: "Material: Inconel, HS188, Haste X | Dim Range: Ø 20 – 250 mm | Machinery: CNC T, EDM Drill, EDM Spark | Special Process: HVOF Coating" 
+          },
+          { 
+            name: "Shims, Spacers", 
+            image: "src/assets/images/Shims.png", 
+            details: "Material: IS 2062, SS & RINGS | Dim Range: Ø 20 – 500 mm | Machinery: CNC M, EDM Drill" 
+          },
+          { 
+            name: "Cloth Seals", 
+            image: "src/assets/images/Cloth Seals.png", 
+            details: "Material: L605 Wire Mesh, HAST X, Inconel 625 | Dim Range: 30 – 500 mm | Machinery: Laser Cut, Hydraulic Press, SPOT Weld, Press Brake, TIG Weld" 
+          },
+          { 
+            name: "Lock Plates", 
+            image: "src/assets/images/Lock Plates.png", 
+            details: "Material: SS304 | Dim Range: 100 – 300 mm | Machinery: Laser Cut, Press Brake" 
+          },
+          { 
+            name: "Spark Plug Hardware", 
+            image: "src/assets/images/SparkPlug.png", 
+            details: "Material: L605, HAST X, Inconel 625 | Dim Range: 30 – 500 mm | Machinery: Laser Cut, Hydraulic Press, SPOT Weld, Press Brake, TIG Weld, CNC Wire Bending – Spring Manufacturing" 
+          },
+          { 
+            name: "Shroud Sets", 
+            image: "src/assets/images/Shroud Sets.png", 
+            details: "Material: SS Forgings, Honeycomb Mesh | Dim Range: 2 – 200 Kgs | Machinery: CNC M, CNC 5 Axis, EDM, Wire Cut | Special Process: Brazing" 
+          },
+          { 
+            name: "Bracket Risers", 
+            image: "src/assets/images/BracketRisers.png", 
+            details: "Material: HAST X | Dim Range: 100 – 300 mm | Machinery: CNC M, CNC 5 Axis, Wire Cut | Special Process: Vacuum Heat Treatment" 
+          },
+          { 
+            name: "TP Aft Frame Picture Frames", 
+            image: "src/assets/images/AftFrame.png", 
+            details: "Material: NIMONIC Casting | Dim Range: 2 Kg to 200 Kg | Machinery: CNC 5 Axis, EDM Spark, EDM Drill" 
+          }
+        ]
+      },
+      {
+        name: "Combustion Systems",
+        products: [
+          { 
+            name: "Retainer Blocks", 
+            image: "src/assets/images/RetainerBlocks.png", 
+            details: "Material: SS304L | Dim Range: 100 – 500 mm | Machinery: CNC M, Wire Cut" 
+          },
+          { 
+            name: "X Fire Tube Retainers", 
+            image: "src/assets/images/FireTubeRetainers.png", 
+            details: "Material: Inconel, SS | Dim Range: Wire Rod Ø 3–12 mm, Sheet 0.25–8 mm | Machinery: CNC M, Wire Bending, Laser Cut, Hydraulic Press | Special Process: HVOF" 
+          },
+          { 
+            name: "Plug Borescopes", 
+            image: "src/assets/images/Borescopes.png", 
+            details: "Material: SS316, Inconel | Dim Range: Ø 20 – 250 mm | Machinery: CNC T, CNC wire Bending (Spring), TIG Weld" 
+          },
+          { 
+            name: "Combustion Cans", 
+            image: "src/assets/images/CombustionCans.png", 
+            details: "Material: NIMONIC Plate | Dim Range: 12 x 200 x 500 mm | Machinery: Rolling, TIG Weld, CNC 5 Axis, CNC T | Special Process: Heat Treatment" 
+          },
+          { 
+            name: "TP Seals", 
+            image: "src/assets/images/TPSeals.png", 
+            details: "Material: L605 Wire Mesh, HAST X, Inconel | Dim Range: 0.8 x 50 x 400 mm to 1.8 x 75 x 1200 mm | Machinery: Hydraulic Press, TIG & Spot Weld, Press Brake | Special Process: Heat Treatment, HVOF" 
+          },
+          { 
+            name: "Bull Horns", 
+            image: "src/assets/images/BullHorns.png", 
+            details: "Material: SS304 | Dim Range: 8 x 200 x 500 to 12 x 300 x 800 mm | Machinery: Rolling, Hydraulic Press, TIG Weld, CNC M, CNC 5 Axis | Special Process: Heat Treatment" 
+          }
+        ]
+      },
+      {
+        name: "Bearings & Seals",
+        products: [
+          { 
+            name: "Shims & Oil Deflectors", 
+            image: "src/assets/images/OilDeflectors.png", 
+            details: "Material: AL 6061 Rings | Dim Range: Ø OD 100 – 800 mm, Ø ID 80 – 750 mm | Machinery: CNC T, CNC M, Wire Cut" 
+          },
+          { 
+            name: "Retractable Seals", 
+            image: "src/assets/images/RetractableSeals.png", 
+            details: "Material: SS Forgings | Dim Range: Ø OD 100 – 800 mm, Ø ID 80 – 750 mm | Machinery: CNC T, CNC M, Wire Cut" 
+          },
+          { 
+            name: "Packing Ring", 
+            image: "src/assets/images/PackingRing.png", 
+            details: "Material: SS Forgings | Dim Range: Ø OD 100 – 800 mm, Ø ID 80 – 750 mm | Machinery: CNC T, CNC M, Wire Cut" 
+          }
+        ]
+      },
+      {
+        name: "Compression Systems",
+        products: [
+          { 
+            name: "Rotor Blades", 
+            image: "src/assets/images/RotorBlades.png", 
+            details: "Material: Ti Alloy Forging | Dim Range: 100 to 1500 mm | Machinery: CNC 5 Axis, EDM Drill" 
+          },
+          { 
+            name: "Tie Rods or Shafts", 
+            image: "src/assets/images/Shafts.png", 
+            details: "Material: Inconel 718 | Dim Range: Up to 5 m | Machinery: CNC Turning" 
+          },
+          { 
+            name: "Gear Racks", 
+            image: "src/assets/images/GearRacks.png", 
+            details: "Material: 20 CrMnTi Rings | Dim Range: Up to 1500 mm | Machinery: CNC 5 Axis, Hobbing" 
+          }
+        ]
+      },
+      {
+        name: "C-Class Items",
+        products: [
+          { 
+            name: "C Class – Fasteners", 
+            image: "src/assets/images/CFasteners.png", 
+            details: "Material: Inconel 718, SS 304, 316 | Dim Range: Dia 2 mm to 12.7 mm, Length 5 mm to 110 mm | Machinery: 4 Head Cold/Hot Forging machine, Thread Rolling | Special Process: Heat Treatment, Passivation, Anodising, Coating" 
+          },
+          { 
+            name: "C Class – Kitting", 
+            image: "src/assets/images/Kitting.png", 
+            details: "Outsource Springs, Nuts & Hardware | Incoming Inspection | BOM Preparation | Traceability & Documentation Control | Standard Packing & Labeling" 
+          }
+        ]
+      }
+    ]
+  }
 ];

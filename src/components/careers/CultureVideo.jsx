@@ -101,8 +101,8 @@ const CultureVideo = () => {
         <div className="mt-8 md:mt-12 shrink-0 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 lg:gap-12 border-t border-slate-100 pt-8 md:pt-10 2xl:pt-16 items-center justify-items-center">
           {[
             { label: "Founding Year", value: "2002", unit: "EST.", icon: TbCalendarEvent },
-            { label: "Group Revenue", value: "50", unit: "M$+", icon: TbChartBar },
-            { label: "Workforce Strength", value: "800", unit: "Staff+", icon: TbUsers },
+            { label: "Group Revenue", value: "60", unit: "M$+", icon: TbChartBar },
+            { label: "Workforce Strength", value: "1000", unit: "Staff+", icon: TbUsers },
             { label: "Strategic Locations", value: "10", unit: "Units", icon: TbBuildingFactory2 },
           ].map((metric, index) => (
             <VideoMetric key={index} {...metric} index={index} />

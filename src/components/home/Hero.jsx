@@ -3,78 +3,64 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
+    <section className="relative h-screen w-full overflow-hidden bg-[#010816]">
       
-      {/* 1. Background Video with Overlay */}
+      {/* 1. THE ATMOSPHERE LAYER (Premium Secret) 
+          A subtle film grain/noise overlay that makes the background video feel high-end.
+      */}
+      <div className="absolute inset-0 z-[5] pointer-events-none opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+      {/* 2. CINEMATIC BACKGROUND */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-[1.05]" // Subtle zoom for immersion
         >
-          <source src="src/assets/images/homeHero.mp4" type="video/mp4" />
-          <img src="src/assets/images/homeHero.png" alt="Advanced Manufacturing Fallback" />
+          <source src="/homeHero.mp4" type="video/mp4" />
+          <img src="/homeHero.png" alt="Aerospace Manufacturing" className="w-full h-full object-cover opacity-50" />
         </video>
         
-        {/* Responsive Gradient: Vertical on mobile (b), Horizontal on desktop (r) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90 md:bg-gradient-to-r md:from-black/90 md:via-black/40 md:to-transparent z-10" />
+        {/* THE MASK: Deep contrast for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#010816]/80 via-transparent to-[#010816] md:bg-gradient-to-r md:from-[#010816] md:via-[#010816]/20 md:to-transparent z-10" />
       </div>
 
-      {/* 2. Content Container */}
-      {/* max-w-[1440px] for standard laptops, 2xl:max-w-[1800px] for big screens */}
-      <div className="relative z-20 h-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16 lg:px-20 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-        <div className="max-w-full md:max-w-3xl lg:max-w-4xl 2xl:max-w-6xl">
+      {/* 3. MAIN CONTENT AREA */}
+      <div className="relative z-20 h-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        
+        <div className="max-w-full md:max-w-4xl lg:max-w-5xl 2xl:max-w-full">
           
-          {/* Animated Label */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-3 mb-4 md:mb-6"
-          >
-            {/* You can add a small line/badge here if needed later */}
-          </motion.div>
-
-          {/* Main Title */}
-          {/* text-4xl: Mobile
-            sm:text-5xl: Tablet
-            md:text-7xl: iPad Pro / Laptop
-            lg:text-8xl: Large Desktop
-            2xl:text-9xl: Ultrawide / Big Screens
+          {/* MAIN TYPOGRAPHY - SpaceX/RTX Grade 
+              Using 'tracking-tighter' for that ultra-compressed professional look.
           */}
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-[10rem] font-bold text-white tracking-tight leading-[1.05] mb-6 md:mb-8"
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="text-5xl sm:text-7xl md:text-8xl 2xl:text-[12rem] font-black text-white tracking-[-0.05em] leading-[0.85] uppercase"
           >
-            Creating value<br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-white/80">
-              {" "}with precision.
-            </span>
+            Creating value <br />
+            <motion.span 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.5 }}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-blue-400 to-white pr-4"
+            >
+              with precision.
+            </motion.span>
           </motion.h1>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl max-w-xl lg:max-w-2xl 2xl:max-w-4xl leading-relaxed mb-8 md:mb-10 border-l-2 border-brand-blue pl-4 md:pl-6 mx-auto md:mx-0"
+          {/* SUBTLE SUBTEXT (Optional but adds 'scale') */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="mt-6 text-white font-mono text-[9px] md:text-[11px] uppercase tracking-[0.6em] max-w-xl"
           >
-           {/* Text content injected here */}
+            Manufacturing and Engineering Solutions
           </motion.p>
-
-          {/* Buttons Container */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 w-full sm:w-auto"
-          >
-            {/* Buttons go here */}
-          </motion.div>
-
         </div>
       </div>
 

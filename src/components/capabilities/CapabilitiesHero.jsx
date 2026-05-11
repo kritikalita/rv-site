@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TbTarget, TbSettingsAutomation, TbArrowRight, TbAccessPoint, TbMicroscope } from "react-icons/tb";
+import capHero from "../../assets/logos/cap-hero.png";
 
 const CapabilitiesHero = () => {
   return (
@@ -9,7 +10,7 @@ const CapabilitiesHero = () => {
       {/* 1. CINEMATIC BACKGROUND LAYER */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="src/assets/logos/cap-hero.png" 
+          src={capHero} 
           alt="Advanced Manufacturing" 
           className="w-full h-full object-cover opacity-40 scale-105"
         />

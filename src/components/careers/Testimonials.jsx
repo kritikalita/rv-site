@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TbQuote, TbCircleFilled } from "react-icons/tb";
+import test1 from "../../assets/images/testimon1.jpg";
+import test2 from "../../assets/images/testimon2.png";
 
 const testimonials = [
   /* Data remains exactly as provided */
   {
     "name": "Udayasree Gandla",
     "role": "Senior Methods Engineer",
-    "image": "src/assets/images/testimon2.png",
+    "image": test2,
     "quote": "Optimizing complex workflows requires a meticulous balance of logic and innovation. At Raghu Vamsi, we don't just engineer processes; we build the reliability required for flight-critical hardware.",
     "dept": "Engineering",
     "id": "EMP-RV-215"
@@ -15,7 +17,7 @@ const testimonials = [
   {
     name: "Nihal Judge",
     role: "Executive Assistant Intern, MD Office",
-    image: "src/assets/images/testimon1.jpg",
+    image: test1,
     "quote": "Supporting leadership at the intersection of strategy and manufacturing has shown me that precision isn't just an engineering standard—it's the group’s core philosophy for global scale.",
     dept: "Office of MD",
     id: "EMP-RV-102"

@@ -30,7 +30,7 @@ const Ethos = () => {
     {
       title: "Mission",
       icon: <TbBulb className="w-6 h-6 2xl:w-10 2xl:h-10" />,
-      desc: "To manufacture high technology products efficiently by practising operational excellence with high-performance culture and team.",
+      desc: "To manufacture high technology products efficiently by practising operational excellence with high-performance culture and team, adhering to our core principles and quality systems, generating value for our customers, employees, and all our stakeholders.",
       bgIcon: <TbBulb className="w-32 h-32 md:w-40 md:h-40 2xl:w-64 2xl:h-64" />
     },
     {

@@ -400,6 +400,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { TbArrowRight, TbActivity } from "react-icons/tb";
 import FeaturedStoryModal from "./FeaturedStoryModal";
+import newsImage from "../../assets/images/news1.jpg";
 
 const StoriesHero = ({ onModalToggle }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -411,7 +412,7 @@ const StoriesHero = ({ onModalToggle }) => {
   readingTime: "4 Min Briefing", // Calculated for technical depth
   title: "Unveiling the Citadel: Raghu Vamsi Launches ₹100 Cr DeepTech Facility & Arrobot Brand",
   fullDescription: "A landmark expansion into autonomous systems, marking the formal inauguration of our 25,000 sq. ft. design-to-assembly hub and the unveiling of six indigenous UAV platforms.",
-  image: "src/assets/images/news1.jpg",
+  image: newsImage,
   content: [
     "We are proud to share that the Raghu Vamsi Aerospace Group has formally inaugurated our ₹100 crore DeepTech facility at the Citadel Campus in Hardware Park, conveniently located near Hyderabad International Airport. This 25,000 sq. ft. state-of-the-art campus is purpose-built to support our end-to-end design, production, and systems integration operations, with a primary focus on advancing UAV platforms and next-generation propulsion technologies.",
     "In coordination with this landmark launch, we unveiled six fully indigenous autonomous defense products developed entirely in India under our new subsidiary and DeepTech brand, Arrobot. Unveiled in the presence of distinguished senior military and scientific leaders, our new portfolio features jet-powered loitering munitions, air-based missile launchers, and tethered surveillance drones. These systems, which also include micro turbojet engines, are engineered for high-performance missions with operational ranges exceeding 300 km and speeds reaching up to 650 kmph.",

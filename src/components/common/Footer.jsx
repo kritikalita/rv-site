@@ -21,15 +21,25 @@ const Footer = () => {
       { name: "Careers", path: "/careers" },
     ],
     Capabilities: [
-      { name: "Engineering", path: "/capabilities" },
       { name: "Machining", path: "/capabilities" },
-      { name: "Sector Intelligence", path: "/capabilities#sector-intelligence" },
+      { name: "Engineering", path: "/capabilities" },
+      { name: "Fabrication", path: "/capabilities" },
+      { name: "Gears", path: "/capabilities#sector-intelligence" },
+      { name: "Fasteners", path: "/capabilities#sector-intelligence" },
+      { name: "Surface Treatment", path: "/capabilities#sector-intelligence" },
+      { name: "Assembly & Weld", path: "/capabilities#sector-intelligence" },
+      { name: "Electro Assembly", path: "/capabilities#sector-intelligence" },
+      { name: "Wire Harness", path: "/capabilities#sector-intelligence" },
+      { name: "Testing", path: "/capabilities#sector-intelligence" },
     ],
     // ADDED SUBSIDIARIES SECTION
     Subsidiaries: [
       { name: "Arrobot", path: "https://www.arrobot.co/", isExternal: true },
       { name: "Comprotech", path: "https://comprotechengineering.com/", isExternal: true },
       { name: "WMT Precision", path: "https://wmtprecision.com/", isExternal: true },
+      { name: "PMC Group", path: "https://pmcgroup.co.uk", isExternal: true },
+      { name: "Advanced Systems", path: "https://raghuvamsi.com/advanced-systems", isExternal: true },
+      { name: "Engines", path: "https://raghuvamsi.com/engines", isExternal: true },
     ],
     Resources: [
       { name: "Latest News", path: "/stories" },
@@ -130,7 +140,7 @@ const Footer = () => {
               <div className="flex flex-col md:flex-row gap-3 md:gap-4 items-center">
                 <TbMail className="text-blue-400 shrink-0" size={20} />
                 <p className="text-white/70 text-[11px] md:text-[12px] 2xl:text-lg font-medium underline underline-offset-4 decoration-white/10">
-                  info@raghuvamsiaerospace.com
+                  info@raghuvamsi.com
                 </p>
               </div>
               <div className="pt-4 md:pt-2 w-full sm:w-auto">
