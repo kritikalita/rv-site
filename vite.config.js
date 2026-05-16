@@ -4,8 +4,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './', 
+  // Change './' to '/' for proper absolute pathing on GoDaddy
+  base: '/', 
   build: {
+    outDir: 'dist', // Ensure you are uploading the contents of this folder
     rollupOptions: {
       output: {
         manualChunks(id) {

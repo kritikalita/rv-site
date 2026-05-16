@@ -80,7 +80,7 @@ const Industries = () => {
           >
             <Link to="/capabilities" className="group relative flex items-center justify-center gap-4 bg-[#010816] text-white px-8 py-4 2xl:px-16 2xl:py-8 font-black uppercase tracking-[0.3em] text-[10px] 2xl:text-base hover:bg-brand-blue transition-all shadow-xl w-full sm:w-auto">
               <span className="relative z-10 flex items-center gap-2">
-                View Detailed Specs <TbArrowUpRight className="group-hover:rotate-45 transition-transform" />
+                View More Details <TbArrowUpRight className="group-hover:rotate-45 transition-transform" />
               </span>
             </Link>
           </motion.div>

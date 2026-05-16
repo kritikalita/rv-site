@@ -222,7 +222,7 @@ const Intro = () => {
               }}
             >
               <img
-                src="/logos/introHome.png"
+                src="/logos/introHome.webp"
                 alt="Raghu Vamsi Manufacturing"
                 className="w-full h-full object-cover grayscale-0 opacity-95 group-hover/dossier:scale-105 transition-all duration-[2000ms]"
               />

@@ -20,7 +20,7 @@ const accreditationGroups = [
     icon: TbLeaf,
     tag: "ENVIRONMENTAL",
     logos: [
-      { name: "ISO 14001", image: "src/assets/logos/iso140.jpeg" },
+      { name: "ISO 14001", image: "/logos/iso140.jpeg" },
       { name: "RoHS", image: "/logos/Picture 5.png" },
       { name: "REACH", image: "/logos/reach.png" },
     ]
@@ -32,7 +32,7 @@ const accreditationGroups = [
     tag: "GLOBAL STDS",
     logos: [
       { name: "ASTM", image: "/logos/Picture 2.png" },
-      { name: "SAE", image: "src/assets/logos/sae.jpg" },
+      { name: "SAE", image: "/logos/sae.jpg" },
       { name: "ANSI", image: "/logos/Picture 3.png" },
       { name: "BSI", image: "/logos/bsi.png" },
     ]

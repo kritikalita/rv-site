@@ -20,7 +20,7 @@ const Hero = () => {
           className="w-full h-full object-cover scale-[1.05]" // Subtle zoom for immersion
         >
           <source src="/homeHero.mp4" type="video/mp4" />
-          <img src="/homeHero.png" alt="Aerospace Manufacturing" className="w-full h-full object-cover opacity-50" />
+          <img src="/homeHero.webp" alt="Aerospace Manufacturing" className="w-full h-full object-cover opacity-50" />
         </video>
         
         {/* THE MASK: Deep contrast for readability */}

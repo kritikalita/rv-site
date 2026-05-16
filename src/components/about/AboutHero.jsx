@@ -10,7 +10,7 @@ const AboutHero = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          src="/logos/introHome.png"
+          src="/logos/introHome.webp"
           /* Responsive brightness: Dimmer on mobile for text contrast */
           className="w-full h-full object-cover brightness-[0.7] md:brightness-[0.9]"
           alt="Aerospace Manufacturing"

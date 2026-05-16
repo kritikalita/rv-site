@@ -13,6 +13,8 @@ import Contact from './pages/Contact';
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import JobSearchResults from './pages/JobSearchResults'; 
+import Disclosures from './pages/Disclosures';
+
 
 // Common Components
 import Navbar from './components/common/Navbar';
@@ -75,7 +77,7 @@ const AppContent = () => {
           <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
           <Route path="/careers/search" element={<PageTransition><JobSearchResults /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/disclosures" element={<Disclosures />} />
           <Route 
             path="/admin-control-hq" 
             element={

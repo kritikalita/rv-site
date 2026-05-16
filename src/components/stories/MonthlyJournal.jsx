@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TbArrowRight } from "react-icons/tb";
-import art1 from "../../assets/images/ravi.jpg";
+import art1 from "../../assets/images/ravi.webp";
 
 
 const MonthlyJournal = () => {

@@ -11,7 +11,7 @@ const Navbar = () => {
   const lastScrollY = useRef(0);
   const location = useLocation();
 
-  const isLightPage = ["/stories", "/contact"].includes(location.pathname);
+  const isLightPage = ["/stories", "/contact", "/disclosures"].includes(location.pathname);
 
   useEffect(() => {
     const controlNavbar = () => {

@@ -8,6 +8,9 @@ import tataLogo from "../../assets/logos/tata.png";
 import halLogo from "../../assets/logos/hal.png";
 import collinsLogo from "../../assets/logos/collins.webp";
 
+// Import your background image here
+import awardsBg from "../../assets/images/awards.png"; 
+
 const awardData = [
   { issuer: "Honeywell", logo: honeywellLogo, title: "Best Supplier", category: "Faster Execution & Delivery", year: "2023" },
   { issuer: "Collins", logo: collinsLogo, title: "Best Supplier", category: "Quality", year: "2023" },
@@ -21,11 +24,24 @@ const Awards = () => {
   return (
     <section className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-slate-100">
       
+      {/* 1. GRID BACKGROUND */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(#0047AB 1px, transparent 1px), linear-gradient(90deg, #0047AB 1px, transparent 1px)', 
              backgroundSize: '40px 40px' 
            }} 
+      />
+
+      {/* 2. TRANSPARENT BACKGROUND IMAGE (YOUR VISION) */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.25] pointer-events-none"
+        style={{
+          backgroundImage: `url(${awardsBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'grayscale(100%)' // Keeps it professional and consistent with the white theme
+        }}
       />
 
       <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent pointer-events-none" />
@@ -34,7 +50,6 @@ const Awards = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 2xl:gap-24 items-center">
           
-          {/* Changed md:col-span-7 to md:col-span-12 to use full width */}
           <div className="md:col-span-12 order-2 md:order-1 flex flex-col items-center md:items-start">
             
             <motion.div 
@@ -54,13 +69,12 @@ const Awards = () => {
               </h2>
             </div>
 
-            {/* Grid for the boxes remains 3 columns, but now stretches across the 12-column parent */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 2xl:gap-6 w-full">
               {awardData.map((award, idx) => (
                 <motion.div
                   key={idx}
                   whileHover={{ y: -5 }}
-                  className="p-4 md:p-8 2xl:p-12 bg-white border border-slate-100 shadow-sm rounded-sm flex flex-col items-center text-center group transition-all hover:shadow-md hover:border-brand-blue/20 w-full"
+                  className="p-4 md:p-8 2xl:p-12 bg-white/90 backdrop-blur-sm border border-slate-100 shadow-sm rounded-sm flex flex-col items-center text-center group transition-all hover:shadow-md hover:border-brand-blue/20 w-full"
                 >
                   <img 
                     src={award.logo} 

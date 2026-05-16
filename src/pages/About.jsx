@@ -5,6 +5,7 @@ import Timeline from '../components/about/Timeline';
 import Accreditations from '../components/about/Accreditations'; // Import New Section
 import Awards from '../components/about/Awards';
 import Leadership from '../components/about/Leadership';
+import GovernanceTrust from '../components/about/GovernanceTrust';
 
 const About = () => {
   return (
@@ -12,8 +13,9 @@ const About = () => {
       <AboutHero />
       <Ethos />
       <Timeline />
-      <Accreditations /> {/* Added here: Clean White Section */}
-      <Awards />         {/* Followed by: Dark Premium Section */}
+      <Accreditations />
+      <GovernanceTrust /> 
+      <Awards />        
       <Leadership />
     </main>
   );

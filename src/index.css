@@ -84,3 +84,16 @@ html, body, #root {
   margin: 0;
   overflow: hidden;
 }
+
+
+/* Prevent scroll jump in horizontal containers */
+.no-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shift during image load */
+.no-scrollbar img {
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+}

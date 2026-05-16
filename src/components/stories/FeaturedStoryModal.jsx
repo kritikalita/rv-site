@@ -45,7 +45,7 @@ const FeaturedStoryModal = ({ isOpen, onClose, storyData }) => {
                     size={14}
                   />
                   <span className="text-brand-blue font-mono text-[8px] md:text-[10px] font-bold tracking-widest uppercase">
-                    Transmission Detail
+                    Read Full Story
                   </span>
                 </div>
               </div>
@@ -122,7 +122,7 @@ const FeaturedStoryModal = ({ isOpen, onClose, storyData }) => {
                     })
                   ) : (
                     <p className="opacity-60">
-                      Technical documentation for this transmission is pending synchronization.
+                      Technical documentation for this story is pending synchronization.
                     </p>
                   )}
                 </div>
@@ -193,7 +193,7 @@ const FeaturedStoryModal = ({ isOpen, onClose, storyData }) => {
             <div className="py-20 px-8 flex flex-col items-center bg-gradient-to-b from-[#022049] to-[#010816]">
               <div className="h-px w-24 bg-brand-blue/30 mb-8" />
               <p className="text-blue-300/40 font-mono text-[10px] 2xl:text-sm tracking-[0.5em] uppercase text-center">
-                End of Transmission - Raghu Vamsi Group
+                End of Story - Raghu Vamsi Group
               </p>
             </div>
           </motion.div>

@@ -8,6 +8,8 @@ import {
   TbBrandYoutube,
   TbMinus,
   TbShieldCheck,
+  TbFileCertificate,
+  TbExternalLink,
 } from "react-icons/tb";
 
 const Footer = () => {
@@ -32,7 +34,6 @@ const Footer = () => {
       { name: "Wire Harness", path: "/capabilities#sector-intelligence" },
       { name: "Testing", path: "/capabilities#sector-intelligence" },
     ],
-    // ADDED SUBSIDIARIES SECTION
     Subsidiaries: [
       { name: "Arrobot", path: "https://www.arrobot.co/", isExternal: true },
       { name: "Comprotech", path: "https://comprotechengineering.com/", isExternal: true },
@@ -44,12 +45,13 @@ const Footer = () => {
     Resources: [
       { name: "Latest News", path: "/stories" },
       { name: "Accreditations", path: "/about#accreditations" },
+      { name: "Disclosures", path: "/disclosures" }, // Link to new Statutory Page
       { name: "Contact", path: "/contact" },
     ],
   };
 
   return (
-    <footer className="relative pt-16 md:pt-24 2xl:pt-32 pb-10 overflow-hidden">
+    <footer className="relative pt-16 md:pt-24 2xl:pt-32 pb-6 overflow-hidden">
       {/* BACKGROUND GRADIENT */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#022049] via-[#042b61] to-[#063677] z-0" />
 
@@ -85,9 +87,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 2. SITEMAP SECTION 
-              Grid adjusted to grid-cols-2 (mobile) and grid-cols-4 (desktop) to fit the new column
-          */}
+          {/* 2. SITEMAP SECTION */}
           <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-4 w-full">
             {Object.entries(footerLinks).map(([category, links]) => (
               <div key={category} className="flex flex-col items-center md:items-start">
@@ -154,6 +154,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+
+
+        
 
         {/* BOTTOM BAR: Legal and Compliance */}
         <div className="pt-8 md:pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">

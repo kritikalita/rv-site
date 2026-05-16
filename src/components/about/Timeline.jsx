@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import img1992 from "../../assets/images/1992.webp";
 import img2002 from "../../assets/images/2002.webp";
@@ -21,239 +21,134 @@ import img2022 from "../../assets/images/2022.png";
 import img2023 from "../../assets/images/2023.png";
 
 const history = [
-
-{
-
-year: "1992",
-
-title: "Founder: Mr. G. Thrimurthulu",
-
-desc: "After starting 'Subha Industries' in 1984, the founder’s vision for precision engineering culminated in 1992. Hailing from humble agricultural roots, he transformed a career that began as a supervisor into a precision manufacturing legacy in Hyderabad.",
-
-image: img1992
-
-},
-
-{
-
-year: "2002",
-
-title: "A Dream Starts - Raghu Vamsi",
-
-desc: "Driven by a vision to establish a global aerospace presence, the founder initiated the 'Raghu Vamsi' journey at IDA Gandhi Nagar. Leveraging modest savings and bank support, he began building the facility while initiating strategic technical discussions with HAL.",
-
-image: img2002
-
-},
-
-{
-
-year: "2004",
-
-title: "A Legacy Continued",
-
-desc: "Following the untimely passing of the founder, Mr. G. Vamsi Vikas took the helm at age 22. Pausing his Executive MBA at IIM-C, he stepped in to fulfill his father's vision, incorporating Raghu Vamsi Machine Tools and beginning a new chapter of global ambition.",
-
-image: img2004
-
-},
-
-{
-
-year: "2005",
-
-title: "Process-Driven Evolution",
-
-desc: "To achieve global excellence, the group transformed into a process-driven organization, preparing for ISO 9001 Certification. This rigorous focus on quality systems and controls enabled the commencement of manufacturing critical components for HAL, Bangalore.",
-
-image: img2005
-
-},
-
-{
-
-year: "2006",
-
-title: "National Recognition",
-
-desc: "Recognized as a rapidly growing MSME, the Managing Director was honored with the prestigious 'Bharat Gourav Award' by the Government of India in Delhi. This award celebrated visionary leadership and excellence in the burgeoning defense manufacturing sector.",
-
-image: img2006
-
-},
-
-{
-
-year: "2007",
-
-title: "Global Footprint Expansion",
-
-desc: "Raghu Vamsi entered the international arena, commencing exports to the USA and Germany. This global journey began by supplying mission-critical Oil & Gas components to Halliburton (USA) and high-precision gauge instrumentation to WIKA (Germany).",
-
-image: img2007
-
-},
-
-{
-
-year: "2008",
-
-title: "Aerospace Gold Standard",
-
-desc: "Achieving AS 9100 Certification marked a pivotal leap, making Raghu Vamsi a pioneer in the region. This aerospace-specific quality management system established the stringent controls required to supply critical flight components to the world's leading aviation OEMs.",
-
-image: img2008
-
-},
-
-{
-
-year: "2010",
-
-title: "Excellence in Performance",
-
-desc: "Raghu Vamsi reached new heights in operational reliability, earning the 'Best Vendor Award' from HAL. This period of excellence was further recognized by the Government of India with the Bharat Vikas Ratan Award, honoring the group's contribution to national manufacturing.",
-
-image: img2010
-
-},
-
-{
-
-year: "2011",
-
-title: "Aero Engine Joint Venture",
-
-desc: "Raghu Vamsi was selected as the strategic Indian partner for ITP Aero (a Rolls-Royce subsidiary) for their Tubes and Ducts Value Stream. This landmark JV was built on a proven track record of quality, bolstered by our new NADCAP Certification in Special Processes.",
-
-image: img2011
-
-},
-
-{
-
-year: "2012",
-
-title: "Global Tier-1 Integration",
-
-desc: "Leveraging our JV expertise, Raghu Vamsi achieved Tier-1 supplier status with global giants. This began with approval from Rockwell Collins (USA) and rapidly expanded to strategic partnerships with GE Aviation and UTC Aerospace, solidifying our presence in the international arena.",
-
-image: img2012
-
-},
-
-{
-
-year: "2014",
-
-title: "Systems & Defense Innovation",
-
-desc: "Raghu Vamsi transitioned into complex systems integration by partnering with DRDO to indigenously develop 'Critical Thrust Vector Control' sub-systems. This successful project marked our evolution from a component manufacturer to a provider of mission-critical defense sub-assemblies.",
-
-image: img2014
-
-},
-
-{
-
-year: "2015",
-
-title: "GE Aviation Best Vendor Award",
-
-desc: "Raghu Vamsi’s commitment to a 'Zero Error' culture was globally validated when the team received the Best Vendor Award from GE Aviation. This prestigious recognition from a world-leading OEM served as a catalyst for our next phase of large-scale infrastructure expansion.",
-
-image: img2015
-
-},
-
-{
-
-year: "2016",
-
-title: "Sheet Metal Facility Inception",
-
-desc: "Responding to customer demand for engine brackets, we launched our specialized Sheet Metal facility. In its inaugural year, the plant achieved AS and NADCAP certifications, successfully delivering over 100 critical components to global giants like Rolls-Royce and Pratt & Whitney.",
-
-image: img2016
-
-},
-
-{
-
-year: "2018",
-
-title: "Advanced Composites & Comprotech",
-
-desc: "Raghu Vamsi diversified into advanced materials through the acquisition of a neighboring specialist firm, leading to the birth of 'Comprotech.' This strategic move added carbon and glass fiber manufacturing to our portfolio, expanding our reach into lightweight structural aerospace parts.",
-
-image: img2018
-
-},
-
-{
-
-year: "2019",
-
-title: "Global Acquisition: WMT USA",
-
-desc: "Raghu Vamsi expanded its global footprint by acquiring WMT in Syracuse, USA. By reviving the facility, we established a strategic hub for high-end aero-engine fuel nozzles, utilizing advanced Vacuum Brazing and EDM technologies for partners like Collins Aerospace and Parker.",
-
-image: img2019
-
-},
-
-{
-
-year: "2020",
-
-title: "TISA Aerospace & UAV Innovation",
-
-desc: "Born from pandemic resilience, Raghu Vamsi partnered with IIT-Kanpur to launch TISA Aerospace. This move into indigenous defense technology led to the successful development of Kamikaze drones with a 60km range, marking our entry into the future of autonomous military solutions.",
-
-image: img2020
-
-},
-
-{
-
-year: "2021",
-
-title: "Precision Aerospace Fasteners",
-
-desc: "At the request of Boeing, Raghu Vamsi launched a dedicated Aerospace Fasteners division. This expansion addressed the critical global demand for high-strength hardware, establishing a specialized facility for the manufacturing of flight-critical fasteners to international standards.",
-
-image: img2021
-
-},
-
-{
-
-year: "2022",
-
-title: "Skanda: High-Precision Gear JV",
-
-desc: "Raghu Vamsi partnered with US-based Rave Gears to form 'Skanda,' a specialized venture for high-end aerospace gearing. This collaboration combines US technical expertise with our execution excellence to produce flight-critical Spiral Bevel, Helical, and Curvic coupling gears.",
-
-image: img2022
-
-},
-
-{
-
-year: "2023",
-
-title: "ARROBOT: Robotics & AI Division",
-
-desc: "Raghu Vamsi launched ARROBOT, a cutting-edge startup dedicated to AI-driven automation and robotics. Combining engineering expertise with innovation, ARROBOT focuses on redefining industrial efficiency and sustainability through autonomous ground vehicles and intelligent robotic solutions.",
-
-image: img2023
-
-},
-
+  {
+    year: "1992",
+    title: "Founder: Mr. G. Thrimurthulu",
+    desc: "After starting 'Subha Industries' in 1984, the founder's vision for precision engineering culminated in 1992. Hailing from humble agricultural roots, he transformed a career that began as a supervisor into a precision manufacturing legacy in Hyderabad.",
+    image: img1992
+  },
+  {
+    year: "2002",
+    title: "A Dream Starts - Raghu Vamsi",
+    desc: "Driven by a vision to establish a global aerospace presence, the founder initiated the 'Raghu Vamsi' journey at IDA Gandhi Nagar. Leveraging modest savings and bank support, he began building the facility while initiating strategic technical discussions with HAL.",
+    image: img2002
+  },
+  {
+    year: "2004",
+    title: "A Legacy Continued",
+    desc: "Following the untimely passing of the founder, Mr. G. Vamsi Vikas took the helm at age 22. Pausing his Executive MBA at IIM-C, he stepped in to fulfill his father's vision, incorporating Raghu Vamsi Machine Tools and beginning a new chapter of global ambition.",
+    image: img2004
+  },
+  {
+    year: "2005",
+    title: "Process-Driven Evolution",
+    desc: "To achieve global excellence, the group transformed into a process-driven organization, preparing for ISO 9001 Certification. This rigorous focus on quality systems and controls enabled the commencement of manufacturing critical components for HAL, Bangalore.",
+    image: img2005
+  },
+  {
+    year: "2006",
+    title: "National Recognition",
+    desc: "Recognized as a rapidly growing MSME, the Managing Director was honored with the prestigious 'Bharat Gourav Award' by the Government of India in Delhi. This award celebrated visionary leadership and excellence in the burgeoning defense manufacturing sector.",
+    image: img2006
+  },
+  {
+    year: "2007",
+    title: "Global Footprint Expansion",
+    desc: "Raghu Vamsi entered the international arena, commencing exports to the USA and Germany. This global journey began by supplying mission-critical Oil & Gas components to Halliburton (USA) and high-precision gauge instrumentation to WIKA (Germany).",
+    image: img2007
+  },
+  {
+    year: "2008",
+    title: "Aerospace Gold Standard",
+    desc: "Achieving AS 9100 Certification marked a pivotal leap, making Raghu Vamsi a pioneer in the region. This aerospace-specific quality management system established the stringent controls required to supply critical flight components to the world's leading aviation OEMs.",
+    image: img2008
+  },
+  {
+    year: "2010",
+    title: "Excellence in Performance",
+    desc: "Raghu Vamsi reached new heights in operational reliability, earning the 'Best Vendor Award' from HAL. This period of excellence was further recognized by the Government of India with the Bharat Vikas Ratan Award, honoring the group's contribution to national manufacturing.",
+    image: img2010
+  },
+  {
+    year: "2011",
+    title: "Aero Engine Joint Venture",
+    desc: "Raghu Vamsi was selected as the strategic Indian partner for ITP Aero (a Rolls-Royce subsidiary) for their Tubes and Ducts Value Stream. This landmark JV was built on a proven track record of quality, bolstered by our new NADCAP Certification in Special Processes.",
+    image: img2011
+  },
+  {
+    year: "2012",
+    title: "Global Tier-1 Integration",
+    desc: "Leveraging our JV expertise, Raghu Vamsi achieved Tier-1 supplier status with global giants. This began with approval from Rockwell Collins (USA) and rapidly expanded to strategic partnerships with GE Aviation and UTC Aerospace, solidifying our presence in the international arena.",
+    image: img2012
+  },
+  {
+    year: "2014",
+    title: "Systems & Defense Innovation",
+    desc: "Raghu Vamsi transitioned into complex systems integration by partnering with DRDO to indigenously develop 'Critical Thrust Vector Control' sub-systems. This successful project marked our evolution from a component manufacturer to a provider of mission-critical defense sub-assemblies.",
+    image: img2014
+  },
+  {
+    year: "2015",
+    title: "GE Aviation Best Vendor Award",
+    desc: "Raghu Vamsi's commitment to a 'Zero Error' culture was globally validated when the team received the Best Vendor Award from GE Aviation. This prestigious recognition from a world-leading OEM served as a catalyst for our next phase of large-scale infrastructure expansion.",
+    image: img2015
+  },
+  {
+    year: "2016",
+    title: "Sheet Metal Facility Inception",
+    desc: "Responding to customer demand for engine brackets, we launched our specialized Sheet Metal facility. In its inaugural year, the plant achieved AS and NADCAP certifications, successfully delivering over 100 critical components to global giants like Rolls-Royce and Pratt & Whitney.",
+    image: img2016
+  },
+  {
+    year: "2018",
+    title: "Advanced Composites & Comprotech",
+    desc: "Raghu Vamsi diversified into advanced materials through the acquisition of a neighboring specialist firm, leading to the birth of 'Comprotech.' This strategic move added carbon and glass fiber manufacturing to our portfolio, expanding our reach into lightweight structural aerospace parts.",
+    image: img2018
+  },
+  {
+    year: "2019",
+    title: "Global Acquisition: WMT USA",
+    desc: "Raghu Vamsi expanded its global footprint by acquiring WMT in Syracuse, USA. By reviving the facility, we established a strategic hub for high-end aero-engine fuel nozzles, utilizing advanced Vacuum Brazing and EDM technologies for partners like Collins Aerospace and Parker.",
+    image: img2019
+  },
+  {
+    year: "2020",
+    title: "TISA Aerospace & UAV Innovation",
+    desc: "Born from pandemic resilience, Raghu Vamsi partnered with IIT-Kanpur to launch TISA Aerospace. This move into indigenous defense technology led to the successful development of Kamikaze drones with a 60km range, marking our entry into the future of autonomous military solutions.",
+    image: img2020
+  },
+  {
+    year: "2021",
+    title: "Precision Aerospace Fasteners",
+    desc: "At the request of Boeing, Raghu Vamsi launched a dedicated Aerospace Fasteners division. This expansion addressed the critical global demand for high-strength hardware, establishing a specialized facility for the manufacturing of flight-critical fasteners to international standards.",
+    image: img2021
+  },
+  {
+    year: "2022",
+    title: "Skanda: High-Precision Gear JV",
+    desc: "Raghu Vamsi partnered with US-based Rave Gears to form 'Skanda,' a specialized venture for high-end aerospace gearing. This collaboration combines US technical expertise with our execution excellence to produce flight-critical Spiral Bevel, Helical, and Curvic coupling gears.",
+    image: img2022
+  },
+  {
+    year: "2023",
+    title: "ARROBOT: Robotics & AI Division",
+    desc: "Raghu Vamsi launched ARROBOT, a cutting-edge startup dedicated to AI-driven automation and robotics. Combining engineering expertise with innovation, ARROBOT focuses on redefining industrial efficiency and sustainability through autonomous ground vehicles and intelligent robotic solutions.",
+    image: img2023
+  },
 ];
 
 const Timeline = () => {
   const scrollContainer = useRef(null);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  useEffect(() => {
+    // Mark as loaded after a short delay
+    const timer = setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="relative py-12 md:py-24 bg-white border-t border-b border-brand-border overflow-hidden">
@@ -287,17 +182,16 @@ const Timeline = () => {
       {/* Horizontal Scroll Container */}
       <div 
         ref={scrollContainer}
-        className="flex overflow-x-auto pb-12 gap-4 md:gap-8 no-scrollbar relative z-10 w-full 
-                   px-6 md:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] snap-x snap-mandatory" 
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="flex overflow-x-scroll pb-12 gap-4 md:gap-8 relative z-10 w-full 
+                   px-6 md:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] snap-x snap-mandatory
+                   scrollbar-hide"
+        style={{ 
+          scrollBehavior: 'smooth',
+        }}
       >
         {history.map((item, index) => (
-          <motion.div 
+          <div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20px" }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
             className="shrink-0 w-[82vw] sm:w-[350px] md:w-[380px] h-[400px] md:h-[450px] relative group rounded-sm overflow-hidden border border-white/10 shadow-xl transition-all duration-500 snap-center"
             style={{ background: 'linear-gradient(135deg, #022049 0%, #063677 100%)' }}
           >
@@ -310,10 +204,17 @@ const Timeline = () => {
 
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
-              <img 
-                src={item.image} 
-                alt={item.title} 
-                className="w-full h-full object-cover grayscale-0 group-hover:grayscale transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-30" 
+              <div 
+                style={{
+                  backgroundImage: `url(${item.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  width: '100%',
+                  height: '100%',
+                  opacity: 0.6,
+                  willChange: 'transform',
+                }}
+                className="grayscale-0 group-hover:grayscale group-hover:scale-110 group-hover:opacity-30 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#022049] via-[#022049]/40 to-transparent opacity-90 z-10" />
             </div>
@@ -331,17 +232,19 @@ const Timeline = () => {
 
             {/* Accent Border */}
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-brand-blue opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
-          </motion.div>
+          </div>
         ))}
         
-        {/* Extra spacer to ensure the last card can be centered/padded correctly on mobile */}
         <div className="min-w-[1px] md:min-w-[20px] shrink-0" />
       </div>
 
-      {/* Optional: Add custom CSS for no-scrollbar if not already in your tailwind config */}
       <style jsx>{`
-        .no-scrollbar::-webkit-scrollbar {
+        .scrollbar-hide::-webkit-scrollbar {
           display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </section>

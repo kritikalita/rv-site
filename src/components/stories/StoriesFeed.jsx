@@ -665,7 +665,7 @@ const StoriesFeed = ({ onModalToggle }) => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue"></span>
                   </div>
-                  <span className="text-[10px] 2xl:text-sm font-black uppercase tracking-[0.4em] text-white">Load More Transmissions</span>
+                  <span className="text-[10px] 2xl:text-sm font-black uppercase tracking-[0.4em] text-white">Load More Stories</span>
                 </div>
                 <div className="h-[1px] w-24 bg-brand-blue/30 group-hover:bg-brand-blue group-hover:w-32 transition-all" />
               </button>
@@ -682,7 +682,7 @@ const StoriesFeed = ({ onModalToggle }) => {
             )}
           </div>
           <p className="mt-6 font-mono text-[8px] 2xl:text-xs text-brand-dark/40 uppercase tracking-widest font-bold">
-            {isExpanded ? "Visualizing Full Archive" : `Showing ${visibleCount} of ${filteredPosts.length} transmissions`}
+            {isExpanded ? "Visualizing Full Archive" : `Showing ${visibleCount} of ${filteredPosts.length} stories...`}
           </p>
         </div>
       </div>
