@@ -10,29 +10,29 @@ import {
   TbCpu,
   TbAsset,
 } from "react-icons/tb";
-import capEngImg from "../assets/images/capEng.jpg";
-import capPresImg from "../assets/images/capPres.jpg";
-import capEMImg from "../assets/images/capEM.jpg";
-import capGearsImg from "../assets/images/capGears.jpg";
-import capSurfImg from "../assets/images/capSurf.jpg";
-import capEwhImg from "../assets/images/capElec.jpg";
-import capAsImg from "../assets/images/capAssemWeld.jpg";
-import capFastImg from "../assets/images/capFast.jpg";
-import capSheetImg from "../assets/images/capSheet.jpg";
-import capTreadImg from "../assets/images/testing.png";
-import divergent from "../assets/images/Divergent.jpeg";
-import mechAssy from "../assets/images/Mechanical Assembly.jpeg";
-import sheetMetal from "../assets/images/Sheet Metal Part.jpeg";
-import spurGears from "../assets/images/Spur Gears.jpeg";
-import seekerHousing from "../assets/images/Seeker Housing.jpeg";
-import shearPin from "../assets/images/Shear Pin Adapter.jpeg";
-import turbineWheel from "../assets/images/Turbine Wheel.jpeg";
-import oil from "../assets/images/oil.jpeg";
-import artLift from "../assets/images/Artificial lift.jpeg";
-import compleProd from "../assets/images/Completions Products.jpeg";
-import drilProd from "../assets/images/Drilling Products.jpeg";
-import surfTech from "../assets/images/Surface Technology.jpeg";
-import wireProd from "../assets/images/Wireline Product.jpeg";
+import capEngImg from "../assets/images/capEng.webp";
+import capPresImg from "../assets/images/capPres.webp";
+import capEMImg from "../assets/images/capEM.webp";
+import capGearsImg from "../assets/images/capGears.webp";
+import capSurfImg from "../assets/images/capSurf.webp";
+import capEwhImg from "../assets/images/capElec.webp";
+import capAsImg from "../assets/images/capAssemWeld.webp";
+import capFastImg from "../assets/images/capFast.webp";
+import capSheetImg from "../assets/images/capSheet.webp";
+import capTreadImg from "../assets/images/capTest.webp";
+import divergent from "../assets/images/Divergent.webp";
+import mechAssy from "../assets/images/Mechanical_Assembly.webp";
+import sheetMetal from "../assets/images/Sheet_Metal_Part.webp";
+import spurGears from "../assets/images/Spur_Gears.webp";
+import seekerHousing from "../assets/images/Seeker_Housing.webp";
+import shearPin from "../assets/images/Shear_Pin_Adapter.webp";
+import turbineWheel from "../assets/images/Turbine_Wheel.webp";
+import oil from "../assets/images/oil.webp";
+import artLift from "../assets/images/ArtLift.webp";
+import compleProd from "../assets/images/CompProd.webp";
+import drilProd from "../assets/images/DrillProd.webp";
+import surfTech from "../assets/images/Surface_Technology.webp";
+import wireProd from "../assets/images/Wireline_Product.webp";
 
 export const capabilitiesData = [
   {
@@ -432,7 +432,7 @@ export const sectorData = [
   {
     id: "SEC-03",
     title: "Power",
-    mainImage: "src/assets/images/power.jpeg",
+    mainImage: "src/assets/images/power.webp",
     description: "Precision components for sustainable energy grids, turbine blades, and hot gas path hardware.",
     subGroups: [
       {
@@ -460,7 +460,7 @@ export const sectorData = [
           },
           { 
             name: "Lock Plates", 
-            image: "src/assets/images/Lock Plates.png", 
+            image: "src/assets/images/Lock_Plates.webp", 
             details: "Material: SS304 | Dim Range: 100 – 300 mm | Machinery: Laser Cut, Press Brake" 
           },
           { 

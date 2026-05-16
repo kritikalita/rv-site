@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiArrowRight } from 'react-icons/hi';
 import { TbPlane, TbActivity, TbFlame, TbArrowUpRight } from "react-icons/tb";
-import oilImg from '../../assets/images/oil.jpeg';
-import powerImg from '../../assets/images/power.jpeg';
+import oilImg from '../../assets/images/oil.webp';
+import powerImg from '../../assets/images/power.webp';
 
 const industries = [
   { 

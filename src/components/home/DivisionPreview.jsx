@@ -24,18 +24,18 @@ import logoWMT from "../../assets/logos/WMTlogo.png";
 import logoArrobot from "../../assets/logos/ArrobotLogo.png";
 
 // ADD THESE NEW IMPORTS FOR THE DIVISION BACKGROUNDS
-import precisionOemImg from "../../assets/images/precision-oem.jpg";
-import missionSystemsImg from "../../assets/images/mission-systems.jpg";
-import impact2Img from "../../assets/images/impact2.png";
+import precisionOemImg from "../../assets/images/precision-oem.webp";
+import missionSystemsImg from "../../assets/images/mission-systems.webp";
+import impact2Img from "../../assets/images/div3main.webp";
 
 // ADD THESE FOR SUBSIDIARY IMAGES
 import machineToolsImg from "../../assets/images/machineTools.webp";
-import pmcImg from "../../assets/images/PMC.jpg";
-import wmtImg from "../../assets/images/WMT.jpg";
+import pmcImg from "../../assets/images/PMC.webp";
+import wmtImg from "../../assets/images/WMT.webp";
 import advancedSystemsImg from "../../assets/images/advancedSystems.jpg";
-import enginesImg from "../../assets/images/engines.jpg";
-import comprotechImg from "../../assets/images/comprotech.jpg";
-import arrobotSubImg from "../../assets/images/Arrobot.jpg";
+import enginesImg from "../../assets/images/engines.webp";
+import comprotechImg from "../../assets/images/comprotech.webp";
+import arrobotSubImg from "../../assets/images/Arrobot.webp";
 
 const divisions = [
   /* Data remains exactly as provided */

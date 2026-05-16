@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TbSearch, TbMapPin, TbArrowRight } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
-import careerHeroImg from '../../assets/images/car4.png';
+import careerHeroImg from '../../assets/images/careerHero.webp';
 
 const jobCategories = [
   { name: "Engineering", count: 124 },

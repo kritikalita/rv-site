@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TbQuote, TbCircleFilled } from "react-icons/tb";
-import test1 from "../../assets/images/testimon1.jpg";
-import test2 from "../../assets/images/testimon2.png";
+import test1 from "../../assets/images/testimon1.webp";
+import test2 from "../../assets/images/testimon2.webp";
 
 const testimonials = [
   /* Data remains exactly as provided */

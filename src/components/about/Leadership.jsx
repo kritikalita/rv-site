@@ -47,22 +47,22 @@ const Leadership = () => {
     ],
     missionSystemsAndPropulsion: [
       { name: "Ravindra Naidu", role: "CEO", image: naiduImg, id: "MISSION", linkedin: "https://www.linkedin.com/in/ravindra-b-naidu-9671a421/" },
-      { name: "Jagdish", role: "Head Engines", image: jagdishImg, id: "MISSION", linkedin: "https://www.linkedin.com/in/ravindra-b-naidu-9671a421/" },
+      { name: "Jagdish", role: "Head Engines", image: jagdishImg, id: "MISSION", linkedin: "#" },
     ],
     deepTechAndAutonomousProducts: [
       { name: "Ravi", role: "Co-Founder & CEO", image: raviImg, id: "TECH", linkedin: "https://www.linkedin.com/in/ravi-achanta-30730621/" },
-      { name: "Abhinay", role: "CTO", image: abhinayImg, id: "TECH", linkedin: "#" },
+      { name: "Abhinay", role: "CTO", image: abhinayImg, id: "TECH", linkedin: "https://www.linkedin.com/in/abhinay-bollam/" },
       { name: "Deepak", role: "Head BD", image: deepakImg, id: "TECH", linkedin: "https://www.linkedin.com/in/deepak-jagnani/" },
     ]
   };
 
   const functionalVPs = [
     { name: "Vinod Desai", role: "VP - Supply Chain", image: vinodImg, linkedin: "https://www.linkedin.com/in/vinodddesai/" },
-    { name: "Praveen", role: "VP - Finance", image: praveenImg, linkedin: "https://www.linkedin.com/in/ankem-sri-02704512/" },
+    { name: "Praveen", role: "VP - Finance", image: praveenImg, linkedin: "#" },
     { name: "D Srinivasa Rao", role: "VP - Aerospace", image: raoImg, linkedin: "https://www.linkedin.com/in/srinivasa-rao-dangeti-dsr-8b89a9175/" },
-    { name: "Harsha Vardhan J", role: "VP - Industrial", image: harshaImg, linkedin: "#" },
+    { name: "Harsha Vardhan J", role: "VP - Industrial", image: harshaImg, linkedin: "https://www.linkedin.com/in/harshavardhan-reddy-8bb0b7165/" },
     { name: "Mani PRS", role: "VP - Compliance", image: maniImg, linkedin: "https://www.linkedin.com/in/mani-padagalingam-48009213/" },
-    { name: "Mohith Garg", role: "VP - Engineering", image: mohGImg, linkedin: "https://www.linkedin.com/in/mohit-garg" },
+    { name: "Mohith Garg", role: "VP - Engineering", image: mohGImg, linkedin: "https://www.linkedin.com/in/mohit-garg-71188757/" },
     { name: "Abhishek Garg", role: "VP - Strategy & Branding", image: abhishekImg, linkedin: "https://www.linkedin.com/in/abhgarg/" }, 
     { name: "Ramaswamy D", role: "VP - Value Engineering", image: ramaswamyImg, linkedin: "https://www.linkedin.com/in/ramaswamy-dorairajan-aa937aaa/" },
     { name: "Mohan", role: "VP - BD & Power", image: mohanImg, linkedin: "#" },

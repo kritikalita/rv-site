@@ -5,7 +5,7 @@ import boeing from '../../assets/logos/boeing.png';
 import honeywell from '../../assets/logos/honeywell.png';
 import rollsroyce from '../../assets/logos/rolls-royce.png';
 import isro from '../../assets/logos/isro.png';
-import drdo from '../../assets/logos/drdo.png';
+import drdo from '../../assets/logos/drdo.webp';
 import GE_HealthCare from '../../assets/logos/GE_HealthCare.png';
 import safran from '../../assets/logos/safran.png';
 import defence from '../../assets/logos/defence.svg'; 
@@ -14,7 +14,7 @@ import geAerospace from '../../assets/logos/geAerospace.png';
 import collins from '../../assets/logos/collins.webp';
 import slb from '../../assets/logos/slb.png';
 import pT from '../../assets/logos/pT.png';
-import baker from '../../assets/logos/baker.png';
+import baker from '../../assets/logos/baker.webp';
 
 const TrustBar = () => {
   const clients = [

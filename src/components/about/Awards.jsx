@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import honeywellLogo from "../../assets/logos/honeywell.png";
 import geLogo from "../../assets/logos/ge.png";
 import tataLogo from "../../assets/logos/tata.png";
-import halLogo from "../../assets/logos/hal.png";
+import halLogo from "../../assets/logos/hal.webp";
 import collinsLogo from "../../assets/logos/collins.webp";
 
 // Import your background image here

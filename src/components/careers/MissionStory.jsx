@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
-import makeImp from "../../assets/images/carLast.png";
-import autFront from "../../assets/images/impact1.png";
-import propMast from "../../assets/images/imp.png";
-import globEnergy from "../../assets/images/impact6.png";
+import makeImp from "../../assets/images/impact1.webp";
+import autFront from "../../assets/images/impact2.webp";
+import propMast from "../../assets/images/impact3.webp";
+import globEnergy from "../../assets/images/impact4.webp";
 
 const impactMissions = [
   {

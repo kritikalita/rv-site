@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TbArrowUpRight, TbCircleFilled } from "react-icons/tb";
-import closeImg from "../../assets/images/careerClose.png";
+import closeImg from "../../assets/images/careerClose.webp";
 
 
 const CareersClosing = () => {

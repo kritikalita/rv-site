@@ -444,7 +444,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { TbArrowRight, TbCalendar, TbTag } from "react-icons/tb";
 import FeaturedStoryModal from './FeaturedStoryModal';
 import news2 from "../../assets/images/news2.jpeg";
-import news3 from "../../assets/images/news3.jpeg";
+import news3 from "../../assets/images/news3.webp";
 import news4 from "../../assets/images/news4.jpeg";
 import news5 from "../../assets/images/news5.jpeg";
 import news6 from "../../assets/images/news6.jpg";

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import autSys from "../../assets/images/car6.png";
-import missSys from "../../assets/images/carDiv2.png";
+import autSys from "../../assets/images/car6.webp";
+import missSys from "../../assets/images/carDiv2.webp";
 
 const divisions = [
   {
