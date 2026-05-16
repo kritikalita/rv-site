@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TbTarget, TbSettingsAutomation, TbArrowRight, TbAccessPoint, TbMicroscope } from "react-icons/tb";
-import capHero from "../../assets/logos/cap-hero.webp";
+import capHero from "../../assets/images/cap-hero.webp";
 
 const CapabilitiesHero = () => {
   return (
