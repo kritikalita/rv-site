@@ -33,6 +33,27 @@ import compleProd from "../assets/images/CompProd.webp";
 import drilProd from "../assets/images/DrillProd.webp";
 import surfTech from "../assets/images/Surface_Technology.webp";
 import wireProd from "../assets/images/Wireline_Product.webp";
+import power from "../assets/images/power.webp";
+import bucketTwistLocks from "../assets/images/Bucket_Twist_Locks.png";
+import xFireTube from "../assets/images/X-Fire_Tube_Retainers.png";
+import plugBorescope from "../assets/images/Plug_Borescope.png";
+import tpSeals from "../assets/images/TP_Seal.png";
+import bullHorns from "../assets/images/Bull_Horns.png";
+import compressorBlades from "../assets/images/Compressor_Blades.png";
+import tieRodsShafts from "../assets/images/Tie_Rods_Shafts.png";
+import gearRack from "../assets/images/Gear_Rack.png";
+import fuelNozzleHardware from "../assets/images/Fuel_Nozzle_Assembly.png";
+import shimsSpacers from "../assets/images/Shims_Spacer.png";
+import clothSeals from "../assets/images/Cloth_Seals.png";
+import lockPlates from "../assets/images/Lock_Plates.png";
+import sparkPlugHardware from "../assets/images/Spark_Plug_Hardware.png";
+import shroudSets from "../assets/images/Shroud_Set.png";
+import bracketRisers from "../assets/images/Bracket_Risers.png";
+import aftPictureFrame from "../assets/images/Aft_Picture_Frame.png";
+import retracableSeals from "../assets/images/Retractable_Seals.png";
+import packingRings from "../assets/images/Packing_Rings.png";
+import shimsOilDeflectors from "../assets/images/Shims_Oil_Deflectors.png";
+import xFireLock from "../assets/images/X-Fire_Colar_Lock Plate.png";
 
 export const capabilitiesData = [
   {
@@ -373,7 +394,7 @@ export const sectorData = [
     details: "Advanced alloy forming utilizing fiber laser cutting and precision bending for lightweight aerodynamic housing and liners.",
   },
   {
-    name: "Shear Pin Adapter",
+    name: "Ground Lead Screw",
     image: spurGears, // Note: Ensure this path matches the component name
     details: "High-integrity safety component engineered to provide calibrated failure points for protecting critical drivetrain torque loads.",
   },
@@ -432,7 +453,7 @@ export const sectorData = [
   {
     id: "SEC-03",
     title: "Power",
-    mainImage: "src/assets/images/power.webp",
+    mainImage: power,
     description: "Precision components for sustainable energy grids, turbine blades, and hot gas path hardware.",
     subGroups: [
       {
@@ -440,47 +461,47 @@ export const sectorData = [
         products: [
           { 
             name: "Bucket twist locks", 
-            image: "src/assets/images/Bucket Twist Locks.png", 
+            image: bucketTwistLocks, 
             details: "Material: SS410 | Dim Range: 50 – 200 mm | Machinery: CNC T, CNC M, Wire Cut" 
           },
           { 
             name: "Fuel Nozzle Hardware", 
-            image: "src/assets/images/Fuel Nozzle Hardware.png", 
+            image: fuelNozzleHardware, 
             details: "Material: Inconel, HS188, Haste X | Dim Range: Ø 20 – 250 mm | Machinery: CNC T, EDM Drill, EDM Spark | Special Process: HVOF Coating" 
           },
           { 
             name: "Shims, Spacers", 
-            image: "src/assets/images/Shims.png", 
+            image: shimsSpacers, 
             details: "Material: IS 2062, SS & RINGS | Dim Range: Ø 20 – 500 mm | Machinery: CNC M, EDM Drill" 
           },
           { 
             name: "Cloth Seals", 
-            image: "src/assets/images/Cloth Seals.png", 
+            image: clothSeals, 
             details: "Material: L605 Wire Mesh, HAST X, Inconel 625 | Dim Range: 30 – 500 mm | Machinery: Laser Cut, Hydraulic Press, SPOT Weld, Press Brake, TIG Weld" 
           },
           { 
             name: "Lock Plates", 
-            image: "src/assets/images/Lock_Plates.webp", 
+            image: lockPlates, 
             details: "Material: SS304 | Dim Range: 100 – 300 mm | Machinery: Laser Cut, Press Brake" 
           },
           { 
             name: "Spark Plug Hardware", 
-            image: "src/assets/images/SparkPlug.png", 
+            image: sparkPlugHardware, 
             details: "Material: L605, HAST X, Inconel 625 | Dim Range: 30 – 500 mm | Machinery: Laser Cut, Hydraulic Press, SPOT Weld, Press Brake, TIG Weld, CNC Wire Bending – Spring Manufacturing" 
           },
           { 
             name: "Shroud Sets", 
-            image: "src/assets/images/Shroud Sets.png", 
+            image: shroudSets, 
             details: "Material: SS Forgings, Honeycomb Mesh | Dim Range: 2 – 200 Kgs | Machinery: CNC M, CNC 5 Axis, EDM, Wire Cut | Special Process: Brazing" 
           },
           { 
             name: "Bracket Risers", 
-            image: "src/assets/images/BracketRisers.png", 
+            image: bracketRisers, 
             details: "Material: HAST X | Dim Range: 100 – 300 mm | Machinery: CNC M, CNC 5 Axis, Wire Cut | Special Process: Vacuum Heat Treatment" 
           },
           { 
             name: "TP Aft Frame Picture Frames", 
-            image: "src/assets/images/AftFrame.png", 
+            image: aftPictureFrame, 
             details: "Material: NIMONIC Casting | Dim Range: 2 Kg to 200 Kg | Machinery: CNC 5 Axis, EDM Spark, EDM Drill" 
           }
         ]
@@ -489,33 +510,28 @@ export const sectorData = [
         name: "Combustion Systems",
         products: [
           { 
-            name: "Retainer Blocks", 
-            image: "src/assets/images/RetainerBlocks.png", 
-            details: "Material: SS304L | Dim Range: 100 – 500 mm | Machinery: CNC M, Wire Cut" 
+            name: "X Fire Collar & Lock Plate", 
+            image: xFireLock, 
+            details: "Material: Hast X & SS304 | Dim Range: Wire Rod Ø 3–12 mm, Sheet 0.25–8 mm | Machinery: Laser Cut, Milling, Wire Cut, Hydraulic Press, Press Brake | Special Process: NA" 
           },
           { 
             name: "X Fire Tube Retainers", 
-            image: "src/assets/images/FireTubeRetainers.png", 
-            details: "Material: Inconel, SS | Dim Range: Wire Rod Ø 3–12 mm, Sheet 0.25–8 mm | Machinery: CNC M, Wire Bending, Laser Cut, Hydraulic Press | Special Process: HVOF" 
+            image: xFireTube, 
+            details: "Material: Inc X 750 & SS304, INC X 750 | Dim Range: Wire Rod Ø 3–12 mm, Sheet 0.25–8 mm | Machinery: Laser Cut, Milling, Wire Cut, Hydraulic Press | Special Process: TIG Weld" 
           },
           { 
             name: "Plug Borescopes", 
-            image: "src/assets/images/Borescopes.png", 
+            image: plugBorescope, 
             details: "Material: SS316, Inconel | Dim Range: Ø 20 – 250 mm | Machinery: CNC T, CNC wire Bending (Spring), TIG Weld" 
           },
           { 
-            name: "Combustion Cans", 
-            image: "src/assets/images/CombustionCans.png", 
-            details: "Material: NIMONIC Plate | Dim Range: 12 x 200 x 500 mm | Machinery: Rolling, TIG Weld, CNC 5 Axis, CNC T | Special Process: Heat Treatment" 
-          },
-          { 
             name: "TP Seals", 
-            image: "src/assets/images/TPSeals.png", 
+            image: tpSeals, 
             details: "Material: L605 Wire Mesh, HAST X, Inconel | Dim Range: 0.8 x 50 x 400 mm to 1.8 x 75 x 1200 mm | Machinery: Hydraulic Press, TIG & Spot Weld, Press Brake | Special Process: Heat Treatment, HVOF" 
           },
           { 
             name: "Bull Horns", 
-            image: "src/assets/images/BullHorns.png", 
+            image: bullHorns, 
             details: "Material: SS304 | Dim Range: 8 x 200 x 500 to 12 x 300 x 800 mm | Machinery: Rolling, Hydraulic Press, TIG Weld, CNC M, CNC 5 Axis | Special Process: Heat Treatment" 
           }
         ]
@@ -525,17 +541,17 @@ export const sectorData = [
         products: [
           { 
             name: "Shims & Oil Deflectors", 
-            image: "src/assets/images/OilDeflectors.png", 
+            image: shimsOilDeflectors, 
             details: "Material: AL 6061 Rings | Dim Range: Ø OD 100 – 800 mm, Ø ID 80 – 750 mm | Machinery: CNC T, CNC M, Wire Cut" 
           },
           { 
             name: "Retractable Seals", 
-            image: "src/assets/images/RetractableSeals.png", 
+            image: retracableSeals, 
             details: "Material: SS Forgings | Dim Range: Ø OD 100 – 800 mm, Ø ID 80 – 750 mm | Machinery: CNC T, CNC M, Wire Cut" 
           },
           { 
             name: "Packing Ring", 
-            image: "src/assets/images/PackingRing.png", 
+            image: packingRings, 
             details: "Material: SS Forgings | Dim Range: Ø OD 100 – 800 mm, Ø ID 80 – 750 mm | Machinery: CNC T, CNC M, Wire Cut" 
           }
         ]
@@ -545,33 +561,18 @@ export const sectorData = [
         products: [
           { 
             name: "Rotor Blades", 
-            image: "src/assets/images/RotorBlades.png", 
+            image: compressorBlades, 
             details: "Material: Ti Alloy Forging | Dim Range: 100 to 1500 mm | Machinery: CNC 5 Axis, EDM Drill" 
           },
           { 
-            name: "Tie Rods or Shafts", 
-            image: "src/assets/images/Shafts.png", 
+            name: "Tie Rods and Shafts", 
+            image: tieRodsShafts, 
             details: "Material: Inconel 718 | Dim Range: Up to 5 m | Machinery: CNC Turning" 
           },
           { 
             name: "Gear Racks", 
-            image: "src/assets/images/GearRacks.png", 
+            image: gearRack, 
             details: "Material: 20 CrMnTi Rings | Dim Range: Up to 1500 mm | Machinery: CNC 5 Axis, Hobbing" 
-          }
-        ]
-      },
-      {
-        name: "C-Class Items",
-        products: [
-          { 
-            name: "C Class – Fasteners", 
-            image: "src/assets/images/CFasteners.png", 
-            details: "Material: Inconel 718, SS 304, 316 | Dim Range: Dia 2 mm to 12.7 mm, Length 5 mm to 110 mm | Machinery: 4 Head Cold/Hot Forging machine, Thread Rolling | Special Process: Heat Treatment, Passivation, Anodising, Coating" 
-          },
-          { 
-            name: "C Class – Kitting", 
-            image: "src/assets/images/Kitting.png", 
-            details: "Outsource Springs, Nuts & Hardware | Incoming Inspection | BOM Preparation | Traceability & Documentation Control | Standard Packing & Labeling" 
           }
         ]
       }

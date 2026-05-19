@@ -266,8 +266,8 @@
 
 
 
-
 import React, { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom"; 
 import { motion, AnimatePresence } from "framer-motion";
 import { sectorData } from "../../data/capabilitiesData";
 import {
@@ -285,7 +285,36 @@ const SectorIntelligence = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const scrollContainerRef = useRef(null);
-  
+  const location = useLocation(); 
+
+  // Mapping Route Parameters to Internal sectorData Array Indexes
+  useEffect(() => {
+    if (location.state && location.state.initialSectorTarget) {
+      const targetFlag = location.state.initialSectorTarget;
+      let sectorIndex = 0;
+
+      // Map incoming flags to your array allocation configurations
+      if (targetFlag === "aerospace") sectorIndex = 0;
+      else if (targetFlag === "oil-gas") sectorIndex = 1;
+      else if (targetFlag === "power") sectorIndex = 2;
+
+      setActiveSector(sectorIndex);
+      setActiveSubGroup(0);
+      setActiveProduct(0);
+
+      // Yield for component initialization framework rendering, then lock smooth scroll focus
+      setTimeout(() => {
+        const structuralSection = document.getElementById("sector-intelligence");
+        if (structuralSection) {
+          structuralSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 150);
+
+      // Clean context state registry tracking properties to avoid hard-reload layout jumps
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
+
   // Dynamic Data Resolution
   const currentSector = sectorData?.[activeSector] || {};
   const hasSubGroups = currentSector?.subGroups && currentSector.subGroups.length > 0;
@@ -296,7 +325,7 @@ const SectorIntelligence = () => {
 
   const displayItem = products[activeProduct] || products[0] || {};
 
-  // Reset indices when changing sectors
+  // Reset inner sequential indices when updating structural domains
   useEffect(() => {
     setActiveSubGroup(0);
     setActiveProduct(0);
@@ -403,7 +432,7 @@ const SectorIntelligence = () => {
                       {activeTitle}
                     </h3>
 
-                    {/* UPDATED DESCRIPTION AREA (Correctly placed inside the overlay) */}
+                    {/* DESCRIPTION OVERLAY PANEL */}
                     <div className="text-blue-50 text-[11px] md:text-sm 2xl:text-2xl leading-relaxed max-w-xl border-l-2 border-brand-blue pl-4 md:pl-6 bg-[#022049]/60 backdrop-blur-sm py-3">
                       {isHovered ? (
                         <div className="flex flex-col gap-1">

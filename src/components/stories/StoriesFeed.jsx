@@ -448,6 +448,8 @@ import news3 from "../../assets/images/news3.webp";
 import news4 from "../../assets/images/news4.jpeg";
 import news5 from "../../assets/images/news5.jpeg";
 import news6 from "../../assets/images/news6.jpg";
+import news7 from "../../assets/images/news7.jpeg";
+import news8 from "../../assets/images/news8.png";
 
 
 const categories = ["ALL", "TECHNOLOGY", "MANUFACTURING", "PRESS RELEASES"];
@@ -456,6 +458,38 @@ const categories = ["ALL", "TECHNOLOGY", "MANUFACTURING", "PRESS RELEASES"];
 const blogPosts = [
   { 
     id: "01", 
+    category: "MANUFACTURING", 
+    date: "15 MAY 2026", 
+    readingTime: "3 Min Read",
+    title: "Raghu Vamsi targets ₹500 crore aerospace push in Andhra Pradesh", 
+    image: news8,
+    fullDescription: "A landmark MoU signed with the Andhra Pradesh Economic Development Board (APEDB) to establish an integrated 100-acre Aerospace & Defence manufacturing and testing ecosystem.",
+    content: [
+      "In a decisive step toward self-reliance in defense, Raghu Vamsi Machine Tools Pvt. Ltd. has signed a Memorandum of Understanding (MoU) with the Andhra Pradesh Economic Development Board (APEDB), Government of Andhra Pradesh. This ambitious partnership aims to establish a fully integrated Aerospace & Defence manufacturing ecosystem within the state, focusing heavily on indigenous propulsion and autonomous systems.",
+      "The proposed project represents a massive ₹500 Crore investment requiring 100 acres of land. Once fully operational, the facility holds a powerful employment potential to create 1,000 direct and 2,000 indirect jobs, serving as a significant economic and industrial driver for the region's technical workforce.",
+      "The layout is structured to deliver end-to-end mission capabilities under a single integrated ecosystem, encompassing Micro Turbojet Engine manufacturing, tactical UAV production, advanced precision aerospace manufacturing, and a dedicated UAV Testing, Evaluation & Flight Validation Range—a combination rarely attempted simultaneously in the Indian private sector.",
+      "Beyond physical manufacturing, this hub is designed to become a critical capability creation platform for India's next generation of defense platforms. The project will actively strengthen domestic supply chains across propulsion systems, autonomous defense technologies, tactical UAV platforms, aerospace-grade precision manufacturing, composites, structures, avionics, and systems validation.",
+      "The historic MoU was formally executed in the presence of Hon’ble Raksha Mantri Shri Rajnath Singh Ji and Hon’ble Chief Minister of Andhra Pradesh Shri Nara Chandrababu Naidu Ji during the Defence Technology Showcase in Andhra Pradesh. This initiative marks a transition away from isolated component sourcing toward building robust, globally competitive capability ecosystems."
+    ] 
+},
+{ 
+    id: "02", 
+    category: "PRESS RELEASES", 
+    date: "01 FEB 2026", 
+    readingTime: "3 Min Read",
+    title: "Raghu Vamsi Group’s Arrobot showcases indigenous autonomous systems at Wings India 2026", 
+    image: news7,
+    fullDescription: "Arrobot captures the spotlight at Asia's largest civil aviation exhibition, unveiling high-spec autonomous aircraft and helicopter ground tugs engineered for advanced airside efficiency.",
+    content: [
+      "Arrobot, the deep-tech and autonomous systems arm of Raghu Vamsi Aerospace Group, officially showcased its expanding portfolio of indigenously developed unmanned platforms at Wings India 2026. Held at Begumpet Airport in Hyderabad, Asia’s largest aerospace and civil aviation exhibition served as the premier stage for Arrobot to demonstrate its high-level systems engineering and platform integration capabilities.",
+      "A primary highlight of the exhibition was the unveiling of Arrobot's new autonomous aircraft and helicopter ground tugs. Designed to significantly improve airside efficiency, operational safety, and turnaround times, these intelligent platforms support both operator-assisted and fully autonomous terminal operations, bridging a critical gap in modern airport infrastructure.",
+      "The next-generation autonomous aircraft tug was formally introduced before an elite gathering of aerospace stakeholders, including senior officials from the Government of Telangana, the National Advisory Board, Hindustan Aeronautics Limited (HAL), Safran India, the Aerospace India Association, and the Confederation of Indian Industry (CII).",
+      "Vamsi Vikas, Founder and Managing Director of Raghu Vamsi Aerospace Group, emphasized that India’s aerospace sector has built strong manufacturing foundations and is now mature enough to own complete lifecycle systems across both defense and civil aviation. He noted that Arrobot represents this next strategic phase of system ownership and group growth.",
+      "All systems on display are engineered for immediate deployment readiness and scalability rather than serving as mere concept prototypes. Ravi Achanta, CEO of Arrobot, added that the focus remains on building autonomous platforms that run reliably in complex, real-world environments with an uncompromising emphasis on precision and seamless airside logistics integration."
+    ] 
+},
+  { 
+    id: "03", 
     category: "TECHNOLOGY", 
     date: "22 JAN 2026", 
     readingTime: "3 Min Read",
@@ -471,7 +505,7 @@ const blogPosts = [
     ]
 },
   { 
-    id: "02", 
+    id: "04", 
     category: "MANUFACTURING", 
     date: "27 SEPT 2026", 
     readingTime: "4 Min Briefing",
@@ -487,7 +521,7 @@ const blogPosts = [
     ]
 },
   { 
-    id: "03", 
+    id: "05", 
     category: "PRESS RELEASES", 
     date: "13 NOV 2025", 
     readingTime: "2 Min Briefing",
@@ -503,7 +537,7 @@ const blogPosts = [
     ]
 },
   { 
-    id: "04", 
+    id: "06", 
     category: "TECHNOLOGY", 
     date: "19 JUN 2025", 
     readingTime: "5 Min Briefing",
@@ -519,7 +553,7 @@ const blogPosts = [
     ]
 },
   { 
-    id: "05", 
+    id: "07", 
     category: "MANUFACTURING", 
     date: "13 NOV 2024", 
     readingTime: "4 Min Briefing",

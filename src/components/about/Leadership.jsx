@@ -12,7 +12,6 @@ import vinodImg from "../../assets/images/vinod.webp";
 import praveenImg from "../../assets/images/praveen.webp";
 import raoImg from "../../assets/images/rao.webp";
 import harshaImg from "../../assets/images/harsha.webp";
-import maniImg from "../../assets/images/mani.webp";
 import mohGImg from "../../assets/images/mohG.webp";
 import abhishekImg from "../../assets/images/abhishek.webp";
 import ramaswamyImg from "../../assets/images/ramaswamy.webp";
@@ -58,10 +57,9 @@ const Leadership = () => {
 
   const functionalVPs = [
     { name: "Vinod Desai", role: "VP - Supply Chain", image: vinodImg, linkedin: "https://www.linkedin.com/in/vinodddesai/" },
-    { name: "Praveen Munukutla", role: "VP - Finance", image: praveenImg, linkedin: "#" },
+    { name: "Praveen Munukutla", role: "VP - Finance", image: praveenImg, linkedin: "https://www.linkedin.com/in/ca-praveen-munukutla-b3254b1b/" },
     { name: "D Srinivasa Rao", role: "VP - Aerospace", image: raoImg, linkedin: "https://www.linkedin.com/in/srinivasa-rao-dangeti-dsr-8b89a9175/" },
     { name: "Harsha Vardhan J", role: "VP - Industrial", image: harshaImg, linkedin: "https://www.linkedin.com/in/harshavardhan-reddy-8bb0b7165/" },
-    { name: "Mani Padagalingam", role: "VP - Compliance", image: maniImg, linkedin: "https://www.linkedin.com/in/mani-padagalingam-48009213/" },
     { name: "Mohith Garg", role: "VP - Engineering", image: mohGImg, linkedin: "https://www.linkedin.com/in/mohit-garg-71188757/" },
     { name: "Abhishek Garg", role: "VP - Strategy & Branding", image: abhishekImg, linkedin: "https://www.linkedin.com/in/abhgarg/" }, 
     { name: "Ramaswamy Dorairajan", role: "VP - Value Engineering", image: ramaswamyImg, linkedin: "https://www.linkedin.com/in/ramaswamy-dorairajan-aa937aaa/" },

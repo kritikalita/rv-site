@@ -4,6 +4,14 @@ import { TbTarget, TbSettingsAutomation, TbArrowRight, TbAccessPoint, TbMicrosco
 import capHero from "../../assets/images/cap-hero.webp";
 
 const CapabilitiesHero = () => {
+  // Smooth scroll handler targeting the section ID
+  const scrollToGrid = () => {
+    const targetElement = document.getElementById('services-grid');
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen w-full flex items-center bg-[#010816] overflow-hidden pt-20 md:pt-0">
       
@@ -55,7 +63,11 @@ const CapabilitiesHero = () => {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
-              <button className="group relative flex items-center gap-4 bg-brand-blue text-white px-8 py-4 2xl:px-12 2xl:py-6 font-black uppercase text-[10px] 2xl:text-xs tracking-[0.3em] overflow-hidden">
+              {/* Added onClick execution here */}
+              <button 
+                onClick={scrollToGrid}
+                className="group relative flex items-center gap-4 bg-brand-blue text-white px-8 py-4 2xl:px-12 2xl:py-6 font-black uppercase text-[10px] 2xl:text-xs tracking-[0.3em] overflow-hidden"
+              >
                 <span className="relative z-10 flex items-center gap-2">
                   Technical Portfolio <TbArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </span>

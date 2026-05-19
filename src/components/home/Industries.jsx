@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiArrowRight } from 'react-icons/hi';
 import { TbPlane, TbActivity, TbFlame, TbArrowUpRight } from "react-icons/tb";
@@ -13,7 +13,8 @@ const industries = [
     icon: TbPlane, 
     image: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070&auto=format&fit=crop", 
     desc: "Critical structural components and propulsion systems for global aviation.", 
-    stat: "10k+ Units"
+    stat: "10k+ Units",
+    targetSector: "aerospace" 
   },
   { 
     id: "02", 
@@ -21,7 +22,8 @@ const industries = [
     icon: TbFlame, 
     image: oilImg, 
     desc: "Precision flow control and high-durability valves for extreme environments.", 
-    stat: "API Certified"
+    stat: "API Certified",
+    targetSector: "oil-gas" 
   },
   { 
     id: "03", 
@@ -29,24 +31,30 @@ const industries = [
     icon: TbActivity, 
     image: powerImg, 
     desc: "Advanced engineering solutions for sustainable energy and national grids.", 
-    stat: "Grid Scale"
+    stat: "Grid Scale",
+    targetSector: "power" 
   },
 ];
 
 const Industries = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
+  const navigate = useNavigate();
+
+  // Redirect to capabilities page and pass selected sector string token state
+  const handleExploreRedirect = (e, targetSector) => {
+    e.stopPropagation(); // Prevents layout clash with hover expansion
+    navigate('/capabilities', { state: { initialSectorTarget: targetSector } });
+  };
 
   return (
     <section className="relative py-12 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
-      
       {/* Background Blueprint Grid */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#0047AB 1px, transparent 1px), linear-gradient(90deg, #0047AB 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
       />
 
       <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-6 relative z-10 w-full">
-        
-        {/* HEADER SECTION - Styled to match Intro */}
+        {/* HEADER SECTION */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 md:mb-16 gap-8">
           <div className="max-w-3xl">
             <motion.div 
@@ -85,7 +93,6 @@ const Industries = () => {
             </Link>
           </motion.div>
         </div>
-        
 
         {/* EXPANDING GRID SYSTEM */}
         <div className="flex flex-col md:flex-row h-[600px] md:h-[500px] lg:h-[600px] 2xl:h-[850px] gap-4">
@@ -135,7 +142,6 @@ const Industries = () => {
                         transition={{ duration: 0.4 }}
                         className="max-w-xl 2xl:max-w-4xl"
                       >
-                        {/* Paragraph style matched to Intro Section */}
                         <p className="text-blue-100/90 text-base sm:text-lg md:text-xl lg:text-xl 2xl:text-4xl leading-relaxed border-l-4 border-brand-blue/50 pl-6 md:pl-10 mb-8">
                           {item.desc}
                         </p>
@@ -146,7 +152,10 @@ const Industries = () => {
                               <span className="text-white font-bold 2xl:text-2xl uppercase tracking-wider">{item.stat}</span>
                            </div>
                            <div className="w-px h-8 bg-white/10" />
-                           <div className="flex items-center gap-2 group/link">
+                           <div 
+                              onClick={(e) => handleExploreRedirect(e, item.targetSector)}
+                              className="flex items-center gap-2 group/link cursor-pointer hover:opacity-80 transition-opacity"
+                           >
                               <span className="text-[10px] 2xl:text-sm font-black text-white uppercase tracking-[0.3em]">Explore</span>
                               <HiArrowRight className="text-brand-blue group-hover:translate-x-2 transition-transform" />
                            </div>

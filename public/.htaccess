@@ -1,8 +1,18 @@
+
+
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
+  
+  # If the requested resource is a real file or directory, load it directly
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  
+  # Otherwise, route everything else to index.html
+  RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+# Serve WebP images with correct MIME-type
+<IfModule mod_mime.c>
+  AddType image/webp .webp
 </IfModule>
