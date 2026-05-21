@@ -64,7 +64,7 @@ const Leadership = () => {
     { name: "Abhishek Garg", role: "VP - Strategy & Branding", image: abhishekImg, linkedin: "https://www.linkedin.com/in/abhgarg/" }, 
     { name: "Ramaswamy Dorairajan", role: "VP - Value Engineering", image: ramaswamyImg, linkedin: "https://www.linkedin.com/in/ramaswamy-dorairajan-aa937aaa/" },
     { name: "JS Mohan", role: "VP - BD & Power", image: mohanImg, linkedin: "#" },
-    { name: "Muthuswami Prabhakaran", role: "VP - Quality Assurance", image: prabhakaranImg, linkedin: "#" },
+    { name: "Prabhakaran Muthusamy", role: "VP - Quality Assurance", image: prabhakaranImg, linkedin: "https://www.linkedin.com/in/prabhakaran-muthusamy-8b850636/" },
     { name: "Yadagiri Gaddam", role: "AVP - Production", image: yadgiriImg, linkedin: "https://www.linkedin.com/in/yadagiri-gaddam-27b70b57/" },
     { name: "Rakesh Rai", role: "AVP - HR", image: rakeshImg, linkedin: "https://www.linkedin.com/in/rakesh-rai-79b91843/" },
     { name: "Venkat Prasad", role: "AVP - Industrial Engineering", image: venkataImg, linkedin: "https://www.linkedin.com/in/venkata-prasad-k-71b36511a/" },

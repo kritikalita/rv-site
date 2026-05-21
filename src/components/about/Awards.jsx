@@ -9,7 +9,7 @@ import halLogo from "../../assets/logos/hal.webp";
 import collinsLogo from "../../assets/logos/collins.webp";
 
 // Import your background image here
-import awardsBg from "../../assets/images/awards.png"; 
+import awardsBg from "../../assets/images/awards.webp"; 
 
 const awardData = [
   { issuer: "Honeywell", logo: honeywellLogo, title: "Best Supplier", category: "Faster Execution & Delivery", year: "2023" },

@@ -10,8 +10,6 @@ import Capabilities from './pages/Capabilities';
 import Stories from './pages/Stories';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
 import JobSearchResults from './pages/JobSearchResults'; 
 import Disclosures from './pages/Disclosures';
 
@@ -78,14 +76,6 @@ const AppContent = () => {
           <Route path="/careers/search" element={<PageTransition><JobSearchResults /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           <Route path="/disclosures" element={<Disclosures />} />
-          <Route 
-            path="/admin-control-hq" 
-            element={
-              <ProtectedAdmin>
-                <PageTransition><AdminDashboard /></PageTransition>
-              </ProtectedAdmin>
-            } 
-          />
         </Routes>
       </AnimatePresence>
 
