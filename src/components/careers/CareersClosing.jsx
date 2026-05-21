@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TbArrowUpRight, TbCircleFilled } from "react-icons/tb";
 import closeImg from "../../assets/images/careerClose.webp";
-
+import { Link } from "react-router-dom";
 
 const CareersClosing = () => {
   return (
@@ -56,9 +56,15 @@ const CareersClosing = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-10 py-5 bg-brand-blue text-white font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition-all duration-300 flex items-center justify-center gap-3 group">
-                  Apply Now <TbArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
+<Link
+  to="/careers/search"
+  className="px-10 py-5 bg-brand-blue text-white font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition-all duration-300 flex items-center justify-center gap-3 group"
+>
+  Apply Now
+
+  <TbArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+</Link>
+
                 <button className="px-10 py-5 border border-slate-200 text-slate-900 font-black uppercase tracking-widest text-[10px] hover:bg-slate-50 transition-all duration-300">
                   Join Talent Pool
                 </button>

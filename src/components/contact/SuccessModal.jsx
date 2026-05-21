@@ -26,7 +26,7 @@ const SuccessModal = ({ isOpen, onClose, subsidiary }) => {
                   <span className="text-[9px] md:text-[10px] 2xl:text-base font-mono font-bold text-[#0047AB] uppercase tracking-[0.3em] block mb-1">Successfully Sent</span>
                   {/* Simplified Title */}
                   <h3 className="text-xl md:text-2xl 2xl:text-5xl font-bold text-brand-dark tracking-tight">Inquiry Received.</h3>
-                </div>a
+                </div>
               </div>
 
               <div className="border border-white/10 p-5 md:p-6 2xl:p-10 mb-6 md:mb-8 font-mono shadow-inner" style={{ background: 'linear-gradient(135deg, #022049 0%, #063677 100%)' }}>

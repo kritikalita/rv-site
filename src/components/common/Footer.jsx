@@ -23,24 +23,21 @@ const Footer = () => {
       { name: "Careers", path: "/careers" },
     ],
     Capabilities: [
-      { name: "Machining", path: "/capabilities" },
-      { name: "Engineering", path: "/capabilities" },
-      { name: "Fabrication", path: "/capabilities" },
-      { name: "Gears", path: "/capabilities#sector-intelligence" },
-      { name: "Fasteners", path: "/capabilities#sector-intelligence" },
-      { name: "Surface Treatment", path: "/capabilities#sector-intelligence" },
-      { name: "Assembly & Weld", path: "/capabilities#sector-intelligence" },
-      { name: "Electro Assembly", path: "/capabilities#sector-intelligence" },
-      { name: "Wire Harness", path: "/capabilities#sector-intelligence" },
-      { name: "Testing", path: "/capabilities#sector-intelligence" },
-    ],
+  { name: "Machining", path: "/capabilities#0" },
+  { name: "Engineering", path: "/capabilities#1" },
+  { name: "Fabrication", path: "/capabilities#2" },
+  { name: "Gears", path: "/capabilities#3" },
+  { name: "Fasteners", path: "/capabilities#4" },
+  { name: "Surface Treatment", path: "/capabilities#5" },
+  { name: "Assembly & Weld", path: "/capabilities#6" },
+  { name: "Electro Assembly", path: "/capabilities#7" },
+  { name: "Wire Harness", path: "/capabilities#8" },
+  { name: "Testing", path: "/capabilities#9" },
+],
     Subsidiaries: [
       { name: "Arrobot", path: "https://www.arrobot.co/", isExternal: true },
       { name: "Comprotech", path: "https://comprotechengineering.com/", isExternal: true },
       { name: "WMT Precision", path: "https://wmtprecision.com/", isExternal: true },
-      { name: "PMC Group", path: "https://pmcgroup.co.uk", isExternal: true },
-      { name: "Advanced Systems", path: "https://raghuvamsi.com/advanced-systems", isExternal: true },
-      { name: "Engines", path: "https://raghuvamsi.com/engines", isExternal: true },
     ],
     Resources: [
       { name: "Latest News", path: "/stories" },
@@ -155,34 +152,52 @@ const Footer = () => {
           </div>
         </div>
 
+{/* BOTTOM BAR */}
+<div className="pt-8 md:pt-10 border-t border-white/5 flex flex-col gap-6">
 
+  {/* TOP ROW */}
+<div className="flex flex-col md:flex-row items-center gap-3 md:gap-5 text-[9px] md:text-[10px] 2xl:text-xs font-mono text-white/35 uppercase tracking-[0.2em] text-center">
+  
+  <span>
+    © {currentYear} Raghu Vamsi Group
+  </span>
 
-        
+  <div className="h-3 w-[1px] bg-white/10 hidden md:block" />
 
-        {/* BOTTOM BAR: Legal and Compliance */}
-        <div className="pt-8 md:pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-[9px] md:text-[10px] 2xl:text-xs font-mono text-white/30 uppercase tracking-[0.2em] text-center">
-            <span>© {currentYear} Raghu Vamsi Group</span>
-            <div className="h-3 w-[1px] bg-white/10 hidden md:block" />
-            <span className="flex items-center gap-2">
-              <TbShieldCheck className="text-blue-400/50" />
-              All Rights Reserved
-            </span>
-          </div>
+  <span>
+    All Rights Reserved
+  </span>
 
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-            {["Privacy", "Terms", "Export Control"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-[8px] md:text-[9px] 2xl:text-xs font-mono font-bold text-white/20 hover:text-blue-400 uppercase tracking-widest transition-colors"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
+</div>
+
+  {/* DEVELOPER CREDIT */}
+  <div className="flex justify-center">
+    <a
+      href="https://www.linkedin.com/in/kritikalita/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-2 text-white/40 hover:text-white transition-all duration-300"
+    >
+      <div className="w-1.5 h-1.5 rounded-full bg-blue-400/70" />
+
+      <span className="text-[9px] md:text-[10px] font-mono tracking-[0.2em] uppercase">
+        Designed & Developed by
+      </span>
+
+      <span className="text-[10px] md:text-xs font-semibold text-blue-300 group-hover:text-blue-200 transition-colors">
+        Kriti K.
+      </span>
+
+      <TbBrandLinkedin
+        size={13}
+        className="opacity-60 group-hover:opacity-100 transition-opacity"
+      />
+    </a>
+  </div>
+</div>
       </div>
+      
+      
     </footer>
   );
 };

@@ -48,7 +48,9 @@ const Ethos = () => {
   ];
 
   return (
-    <section className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
+    <section
+    id="ethos" 
+    className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
       
       {/* UNIFORM BACKGROUND */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 

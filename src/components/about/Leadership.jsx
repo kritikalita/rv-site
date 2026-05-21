@@ -137,7 +137,9 @@ const Leadership = () => {
   );
 
   return (
-    <section className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
+    <section 
+    id="leadership"
+    className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: "linear-gradient(#0047AB 1px, transparent 1px), linear-gradient(90deg, #0047AB 1px, transparent 1px)", backgroundSize: "40px 40px" }} 
       />

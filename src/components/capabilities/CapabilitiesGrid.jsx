@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import {
   TbCircleFilled,
   TbDatabase,
@@ -14,6 +15,7 @@ const CapabilitiesGrid = () => {
   const [active, setActive] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const location = useLocation();
 
   const currentData = capabilitiesData[active];
   const hasInfra = currentData.infra && currentData.infra.length > 0;
@@ -26,6 +28,29 @@ const CapabilitiesGrid = () => {
   const toggleInfra = (idx) => {
     setExpandedIndex((prevIndex) => (prevIndex === idx ? null : idx));
   };
+
+  useEffect(() => {
+  if (location.hash) {
+    const index = parseInt(location.hash.replace("#", ""));
+
+    if (!isNaN(index)) {
+      setActive(index);
+
+      setExpandedIndex(null);
+
+      setTimeout(() => {
+        const section = document.getElementById("services-grid");
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    }
+  }
+}, [location]);
 
   return (
     <section

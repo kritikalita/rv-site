@@ -21,31 +21,63 @@ const ContactSection = () => {
     "ARROBOT"
   ];
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setIsSending(true);
+
+const sendEmail = async (e) => {
+  e.preventDefault();
+
+  if (isSending) return;
+
+  setIsSending(true);
+
+  try {
     const data = new FormData(form.current);
     setSelectedSubsidiary(data.get("subsidiary"));
 
-    const SERVICE_ID = "service_wkyynqh"; 
+    const SERVICE_ID = "service_dftddnc";
     const PUBLIC_KEY = "TEpmXn7oEVRJsRfbR";
-    const INTERNAL_TEMPLATE = "template_c3f83bo"; 
+
+    const INTERNAL_TEMPLATE = "template_c3f83bo";
     const AUTO_REPLY_TEMPLATE = "template_ala64ji";
 
-    emailjs.sendForm(SERVICE_ID, INTERNAL_TEMPLATE, form.current, PUBLIC_KEY)
-      .then(() => new Promise(resolve => setTimeout(resolve, 500)))
-      .then(() => emailjs.sendForm(SERVICE_ID, AUTO_REPLY_TEMPLATE, form.current, PUBLIC_KEY))
-      .then(() => {
-        setShowSuccess(true);
-        setIsSending(false);
-        form.current.reset();
-      })
-      .catch((error) => {
-        console.error("Mail_Error:", error);
-        setIsSending(false);
-        alert("System busy. Please try again in a few seconds.");
-      });
-  };
+    // 1. SEND INTERNAL MAIL
+    await emailjs.sendForm(
+      SERVICE_ID,
+      INTERNAL_TEMPLATE,
+      form.current,
+      PUBLIC_KEY
+    );
+
+    // SMALL DELAY
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    // 2. SEND AUTO REPLY
+    await emailjs.sendForm(
+      SERVICE_ID,
+      AUTO_REPLY_TEMPLATE,
+      form.current,
+      PUBLIC_KEY
+    );
+
+    setShowSuccess(true);
+
+    form.current.reset();
+
+  } catch (error) {
+    console.error("EMAIL ERROR:", error);
+
+    alert(
+      error?.text ||
+      error?.message ||
+      "Failed to send message."
+    );
+
+  } finally {
+    setIsSending(false);
+  }
+};
+
+
+
 
   return (
     <section className="relative min-h-screen bg-white flex flex-col lg:flex-row border-t border-brand-border overflow-x-hidden">
@@ -75,10 +107,25 @@ const ContactSection = () => {
               <label className="text-[10px] md:text-[12px] 2xl:text-xl font-black text-brand-blue uppercase tracking-widest block mb-2 opacity-80 flex items-center gap-2">
                Target Subsidiary
               </label>
-              <select required name="subsidiary" className="w-full bg-transparent outline-none text-brand-dark font-bold text-sm md:text-base 2xl:text-3xl tracking-tight cursor-pointer appearance-none">
-                <option value="" disabled selected>Select Company Unit</option>
-                {subsidiaries.map(name => <option key={name} value={name}>{name}</option>)}
-              </select>
+    
+<select
+  required
+  name="subsidiary"
+  defaultValue=""
+  className="w-full bg-transparent outline-none text-brand-dark font-bold text-sm md:text-base 2xl:text-3xl tracking-tight cursor-pointer appearance-none"
+>
+  <option value="" disabled>
+    Select Company Unit
+  </option>
+
+  {subsidiaries.map((name) => (
+    <option key={name} value={name}>
+      {name}
+    </option>
+  ))}
+</select>
+
+
             </div>
 
             {/* INPUT GRID */}

@@ -2,10 +2,43 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TbArrowRight } from "react-icons/tb";
 import art1 from "../../assets/images/ravi.webp";
-
+import art2 from "../../assets/images/news1.jpg";
+import art3 from "../../assets/images/news2.jpeg";
+import preetiImg from "../../assets/images/preeti.webp";
+import art4 from "../../assets/images/vamsi.webp";
 
 const MonthlyJournal = () => {
   const journals = [
+    {
+      id: "JRNL-15",
+      vol: "VOL 03",
+      date: "08 MAY 2026", 
+      category: "Aerospace & Defense",
+      title: "India's Drone Future Needs Scale, Reliability, Localisation",
+      author: {
+        name: "Vamsi Vikas Ganesula",
+        role: "Founder & Managing Director, Raghu Vamsi Aerospace Group", // Updated role
+      },
+      preview: "Outlining how global conflicts, supply chain localisation, edge AI technologies, and policy support are reshaping India’s drone and counter-drone ecosystem.", // Updated preview based on interview text
+      image: art4,
+      tags: ["Drones", "Counter-UAS", "Localisation", "Defense"], // Updated tags
+      externalLink: "https://ipfonline.com/news/detail/aerospacedefence/indias-drone-future-needs-scale-reliability-localisation-vamsi-vikas-ganesula/18831"
+    },
+    {
+      id: "JRNL-13",
+      vol: "VOL 02",
+      date: "06 APR 2026",
+      category: "Aerospace Manufacturing",
+      title: "India's Aerospace Manufacturing Moves Up the Value Chain",
+      author: {
+        name: "Preeti Vamsi",
+        role: "Group CEO & Executive Director RVMT",
+      },
+      preview: "An inside look at the industry's transition towards complex structural assemblies, the integration of MSMEs, and the critical role of advanced materials and automation.",
+      image: preetiImg,
+      tags: ["Aerospace", "Manufacturing", "Supply Chain"],
+      externalLink: "https://www.oemupdate.com/news/indias-aerospace-manufacturing-moves-up-the-value-chain/"
+    },
     {
       id: "JRNL-12",
       vol: "VOL 01",
@@ -19,12 +52,13 @@ const MonthlyJournal = () => {
       preview: "An exploration of situational awareness in robotics and why rule-based systems struggle with real-world factory variability.",
       image: art1,
       tags: ["DeepTech", "Industrial AI", "Arrobot"],
-      // Use this link for the external redirection
       externalLink: "https://neosciencehub.com/intelligence-means-reducing-fragility-replacing-humans-is-not-the-goal/"
     }
   ];
 
   const handleLinkClick = (url) => {
+    // Prevent opening if there's no real link yet
+    if (url === "#") return; 
     window.open(url, "_blank", "noopener,noreferrer");
   };
 

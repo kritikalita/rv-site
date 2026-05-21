@@ -41,7 +41,9 @@ const accreditationGroups = [
 
 const Accreditations = () => {
   return (
-    <section className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
+    <section 
+    id="accreditations"
+    className="relative py-16 md:py-24 2xl:py-32 bg-white overflow-hidden border-t border-brand-border">
       
       {/* UNIFORM BACKGROUND: Blueprint Grid Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 

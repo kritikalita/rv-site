@@ -114,6 +114,18 @@ export const capabilitiesData = [
       para3:
         "Our commitment to the use of Statistical Process Control on the shop floor provides an objective method to validate the capabilities of our processes.",
     },
+    infra: [
+      {
+        name: "CAD/CAM DESIGN",
+        details:
+          "Equipped with advanced CAD/CAM software for 3D modelling, manufacturing feasibility studies, fixture design, and toolpath generation. Supports complex multi-axis machining strategies, simulation, and process optimization to ensure precision, repeatability, and manufacturability.",
+      },
+      {
+        name: "ENGINEERING PROCESS PLANNING",
+        details:
+          "Structured process planning for precision components, covering routing, tooling selection, fixture strategy, inspection requirements, and special process planning. Ensures seamless transition from customer drawings and CAD models to controlled manufacturing execution.",
+      },
+    ],
     image: capEngImg,
   },
   {
