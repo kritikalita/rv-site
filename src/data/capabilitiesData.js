@@ -116,15 +116,40 @@ export const capabilitiesData = [
     },
     infra: [
       {
-        name: "CAD/CAM DESIGN",
+        name: "CAD DESIGN",
         details:
-          "Equipped with advanced CAD/CAM software for 3D modelling, manufacturing feasibility studies, fixture design, and toolpath generation. Supports complex multi-axis machining strategies, simulation, and process optimization to ensure precision, repeatability, and manufacturability.",
+          "Equipped for 3D modelling, component detailing, assembly design, fixture concepts, and manufacturing feasibility studies. Supports design validation, drawing interpretation, GD&T review, and manufacturability assessment for precision-engineered components.",
       },
       {
-        name: "ENGINEERING PROCESS PLANNING",
+        name: "CAM PROGRAMMING",
         details:
-          "Structured process planning for precision components, covering routing, tooling selection, fixture strategy, inspection requirements, and special process planning. Ensures seamless transition from customer drawings and CAD models to controlled manufacturing execution.",
+          "Advanced CAM programming for 3-axis, 4-axis, 5-axis, turn-mill, and Swiss machining operations. Supports toolpath generation, machining simulation, cycle-time optimization, collision checks, and repeatable manufacturing execution.",
       },
+      {
+        name: "NPD",
+        details:
+          "New Product Development support from RFQ review to production readiness. Covers feasibility study, process definition, prototype planning, manufacturing trials, risk assessment, and smooth transition from development to serial production.",
+      },
+      {
+        name: "TOOLS DESIGN",
+        details:
+          "In-house tooling and fixture design for precision machining, inspection, and dedicated production setups. Supports multi-piece fixtures, workholding solutions, gauges, jigs, and process-specific tooling to improve accuracy and productivity.",
+      },
+      {
+        name: "APPLICATION ENGINEERING",
+        details:
+          "Technical support for customer requirements, RFQ evaluation, material-process selection, machining strategy, and manufacturability improvement. Bridges customer specifications with internal engineering, production, and quality teams.",
+      },
+      {
+        name: "QUALITY ASSURANCE",
+        details:
+          "System-driven quality management covering process control, documentation, audits, traceability, corrective actions, and compliance with customer and industry requirements. Focused on prevention, consistency, and continuous improvement.",
+      },
+      {
+        name: "FAI",
+        details:
+          "5. First Article Inspection support for validating new or revised parts before production release. Covers ballooned drawings, dimensional inspection reports, material and process verification, and complete documentation for customer approval.",
+      }
     ],
     image: capEngImg,
   },
