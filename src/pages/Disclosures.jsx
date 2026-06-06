@@ -22,12 +22,12 @@ const disclosures = [
 ];
 
 const policies = [
-  { title: "CSR Policy", path: "RVMT_CSR Policy.pdf" },
+  { title: "CSR Policy", path: "RVMT_CSR_Policy.pdf" },
   { title: "POSH Policy", path: "RVMT-POSH_Policy.pdf" },
   { title: "Annual Return FY 24-25", path: "24-25.pdf" },
   { title: "Annual Return FY 23-24", path: "23-24.pdf" },
   { title: "Annual Return FY 22-23", path: "22-23.pdf" },
-  { title: "AGM Notice FY 24-25", path: "/files/AGM_Notice_24.pdf" },
+  { title: "AGM Notice FY 24-25", path: "RVMT_Notice_2024-25.pdf" },
 ];
 
 const Disclosures = () => {

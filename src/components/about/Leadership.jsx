@@ -46,7 +46,7 @@ const Leadership = () => {
     ],
     missionSystemsAndPropulsion: [
       { name: "Ravindra Naidu", role: "CEO", image: naiduImg, id: "MISSION", linkedin: "https://www.linkedin.com/in/ravindra-b-naidu-9671a421/" },
-      { name: "Jagdish", role: "Head Engines", image: jagdishImg, id: "MISSION", linkedin: "#" },
+      { name: "Jagdish Akella", role: "Head Engines", image: jagdishImg, id: "MISSION", linkedin: "https://www.linkedin.com/in/jagadish-akella-3b2346185/" },
     ],
     deepTechAndAutonomousProducts: [
       { name: "Ravi Achanta", role: "Co-Founder & CEO", image: raviImg, id: "TECH", linkedin: "https://www.linkedin.com/in/ravi-achanta-30730621/" },

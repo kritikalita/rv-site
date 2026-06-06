@@ -169,7 +169,23 @@ export const capabilitiesData = [
         "From engine parts like combustion liners to cabin interiors, our concurrent engineering kitting and pre-fit assembly solutions help customers reduce installation time and part count while improving quality.",
     },
     specs: ["4kW Fiber Laser", "8-Axis Bending", "Hydro Forming"],
-    // infra: ["Hydro-form Units", "8-Axis Benders"],
+     infra: [
+      {
+        name: "Aerospace Sheet Metal Components",
+        details:
+          "Brackets, mounting supports, C-brackets, covers, panels, guards, shrouds, and structural sheet-metal parts",
+      },
+      {
+        name: "Ducts & Tube-Related Fabrications ",
+        details:
+          "Tubes, ducts, flow-path components, air/fuel routing parts, and sheet-metal ducting assemblies",
+      },
+      {
+        name: "Precision Brackets & Supports",
+        details:
+          "Engine brackets, equipment mounting brackets, avionics supports, sensor brackets, and lightweight structural supports",
+      }
+    ],
     image: capSheetImg,
   },
 
@@ -317,7 +333,7 @@ export const capabilitiesData = [
         "Beyond in-house capabilities, we manage strategic partnerships with OEM-approved vendors for HVOF/Thermal spray, Brazing, and Micro-structure testing, ensuring a complete end-to-end surface solution.",
     },
     specs: ["Level 3 MPI/FPI", "Anodize Type II/III", "Titanium Cleaning"],
-    // infra: ["2500L Tanks", "Robotic Painting"],
+    infra: ["Passivation - Type 2, Type 7 & Type 8", "Sulphuric acid Anodizing", "Chromic Acid Anodizing", "Zinc & Cadmium Plating", "Chemical Conversion Coating - Type 1 & Type 2"],
     image: capSurfImg,
   },
 
@@ -401,7 +417,7 @@ export const capabilitiesData = [
         "Our commitment to quality is reflected in our rigorous testing protocols, which are designed to validate the integrity and reliability of our products in real-world conditions. We work closely with our customers to develop customized testing solutions that meet their specific requirements.",
     },
     specs: ["CMM Inspection", "Torque Testing", "Vibration Analysis"],
-    // infra: ["Metrology Lab", "Functional Test Cells"],
+    infra: ["Flouroscent penetrant inspection", "Magnetic particle inspection", "Pre-penetrant etching"],
     image: capTreadImg,
   }
 ];

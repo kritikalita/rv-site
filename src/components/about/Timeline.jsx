@@ -19,6 +19,7 @@ import img2020 from "../../assets/images/2020.webp";
 import img2021 from "../../assets/images/2021.png";
 import img2022 from "../../assets/images/2022.png";
 import img2023 from "../../assets/images/2023.png";
+import img2024 from "../../assets/images/2024.jpeg";
 
 const history = [
   {
@@ -134,6 +135,24 @@ const history = [
     title: "ARROBOT: Robotics & AI Division",
     desc: "Raghu Vamsi launched ARROBOT, a cutting-edge startup dedicated to AI-driven automation and robotics. Combining engineering expertise with innovation, ARROBOT focuses on redefining industrial efficiency and sustainability through autonomous ground vehicles and intelligent robotic solutions.",
     image: img2023
+  },
+  {
+    year: "2024",
+    title: "Started manufacturing Micro Jet Engines ",
+    desc: "Raghu Vamsi launched ARROBOT, a cutting-edge startup dedicated to AI-driven automation and robotics. Combining engineering expertise with innovation, ARROBOT focuses on redefining industrial efficiency and sustainability through autonomous ground vehicles and intelligent robotic solutions.",
+    image: img2024
+  },
+  {
+    year: "2025",
+    title: "Acquisition of PMC Group, UK",
+    desc: "Raghu Vamsi acquired PMC Group, UK, marking a significant step in its global expansion strategy. The acquisition strengthened the company's presence in international markets, enhanced its manufacturing capabilities, and broadened its portfolio of advanced engineering solutions for the aerospace and defense sectors.",
+    image: img2024
+  },
+  {
+    year: "2025",
+    title: "Acquisition of WMT Precision LLC, USA",
+    desc: "Raghu Vamsi acquired WMT Precision LLC, USA, strengthening its global manufacturing footprint and expanding its capabilities in precision engineering. This strategic acquisition enhanced the company's access to advanced technologies, international markets, and high-quality aerospace and defense manufacturing expertise.",
+    image: img2024
   },
 ];
 
